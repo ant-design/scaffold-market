@@ -1,3 +1,4 @@
+import GitHub from 'github-api';
 
 export default {
 
@@ -7,6 +8,7 @@ export default {
 
   subscriptions: {
     setup({ dispatch, history }) {  // eslint-disable-line
+      dispatch({ type: 'fetch' });
     },
   },
 
