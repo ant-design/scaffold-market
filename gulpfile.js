@@ -46,5 +46,5 @@ gulp.task('listScaffolds', () => {
     .pipe(yaml({ safe: true }))
     .pipe(generatorData('list.json'))
     .pipe(beautify({ indent_size: 2 }))
-    .pipe(gulp.dest(dist));
+    .pipe(gulp.dest(out));
 });
