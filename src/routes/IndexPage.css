@@ -13,12 +13,6 @@
   letter-spacing: -1px;
 }
 
-.welcome {
-  height: 328px;
-  background: url(../assets/yay.jpg) no-repeat center 0;
-  background-size: 388px 328px;
-}
-
 .list {
   font-size: 1.2em;
   margin-top: 1.8em;
