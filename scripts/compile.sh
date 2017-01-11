@@ -1,3 +1,3 @@
-npm install
+#!/bin/bash
 npm run build
 gulp listScaffolds
