@@ -1,0 +1,10 @@
+language: generic # don't install any environment
+
+script: bash ./scripts/deploy.sh
+env:
+  global:
+  - ENCRYPTION_LABEL: "ffda7dbc26ad"
+  - COMMIT_AUTHOR_EMAIL: "surgesoft@gmail.com"
+language: node_js
+node_js:
+  - stable
