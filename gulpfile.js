@@ -8,10 +8,11 @@ var path = require('path');
 var yaml = require('gulp-yaml');
 
 var dist = path.join(__dirname, 'dist');
+var out = path.join(__dirname, 'out');
 
-// gulp.task('copy', () => gulp.src('data/list.json').pipe(gulp.dest(dist)));
+gulp.task('copy', () => gulp.src('dist/**/*').pipe(gulp.dest(out)));
 
-gulp.task('default', ['listScaffolds'], () => ghpages.publish(dist));
+gulp.task('default', ['listScaffolds', 'copy']);
 
 function generatorData(fileName) {
   const list = [];
