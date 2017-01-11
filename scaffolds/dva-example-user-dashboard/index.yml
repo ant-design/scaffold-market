@@ -1,0 +1,9 @@
+url: 'https://github.com/dvajs/dva-example-user-dashboard/'
+name: dva-example-user-dashboard
+git_url: 'git://github.com/dvajs/dva-example-user-dashboard.git'
+chineseName: dva-example-user-dashboard
+author: dvajs
+description: "\uD83D\uDC72 \uD83D\uDC6C \uD83D\uDC68‍\uD83D\uDC69‍\uD83D\uDC67 \uD83D\uDC68‍\uD83D\uDC69‍\uD83D\uDC66‍\uD83D\uDC66"
+version: 0.0.1
+industry: react
+source: npm
