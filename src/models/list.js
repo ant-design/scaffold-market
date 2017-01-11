@@ -1,10 +1,10 @@
-import GitHub from 'github-api';
+import { fetch } from '../services/list';
 
 export default {
 
-  namespace: 'example',
+  namespace: 'list',
 
-  state: {},
+  state: [],
 
   subscriptions: {
     setup({ dispatch, history }) {  // eslint-disable-line
@@ -14,13 +14,14 @@ export default {
 
   effects: {
     *fetch({ payload }, { call, put }) {  // eslint-disable-line
-      yield put({ type: 'save' });
+      const { data } = yield call(fetch);
+      yield put({ type: 'save', payload: data });
     },
   },
 
   reducers: {
-    save(state, action) {
-      return { ...state, ...action.payload };
+    save(state, { payload }) {
+      return payload.list;
     },
   },
 

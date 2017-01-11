@@ -3,6 +3,8 @@
   font-family: Georgia, sans-serif;
   margin-top: 3em;
   text-align: center;
+  width: 60em;
+  margin:0 auto;
 }
 
 .title {
@@ -22,8 +24,35 @@
   margin-top: 1.8em;
   list-style: none;
   line-height: 1.5em;
+  text-align: left;
 }
 
 .list code {
   background: #f7f7f7;
+}
+
+
+article {
+  position: relative;
+
+  header {
+    font-size: 16px;
+    font-weight: bold;
+  }
+}
+
+.actions {
+  top: 7px;
+  right: 0;
+  position: absolute;
+}
+
+
+.link {
+  margin: 0 12px;
+}
+
+.avatar {
+  width: 32px;
+  height: 32px;
 }

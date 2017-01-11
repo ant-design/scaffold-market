@@ -1,5 +1,6 @@
 import dva from 'dva';
 import './index.html';
+import 'antd/dist/antd.min.css';
 import './index.css';
 
 // 1. Initialize
@@ -9,7 +10,9 @@ const app = dva();
 // app.use({});
 
 // 3. Model
-app.model(require('./models/home'));
+app.model(require('./models/auth'));
+app.model(require('./models/list'));
+app.model(require('./models/contribute'));
 
 // 4. Router
 app.router(require('./router'));
