@@ -1,5 +1,7 @@
 language: generic # don't install any environment
 
+before_install:
+ - chmod +x ./scripts/compile.sh
 script: bash ./scripts/deploy.sh
 env:
   global:
