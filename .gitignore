@@ -5,8 +5,10 @@
 
 # production
 /dist
+/out
 
 # misc
 .DS_Store
 npm-debug.log*
 deploy_key
+deploy_key.pub
