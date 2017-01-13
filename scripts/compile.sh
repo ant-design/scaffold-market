@@ -3,19 +3,18 @@
 # include parse_yaml function
 . scripts/parse_yaml.sh
 
-npm run build
-gulp
+# npm run build
+# gulp
 
-cp -r scaffolds/* out/
+# cp -r scaffolds/* out/
 cd out
-
+git add .
 for D in *; do
     if [ -d "${D}" ]; then
         if [ "$D" = "static" ]; then
             echo "scaped static folder."
             continue
         fi
-        git add .
         # cd $D
         if [ $(git status --porcelain | grep $D | wc -l) -lt 1 ]; then
             echo "No changes to the output on scaffold ${D}; exiting."
