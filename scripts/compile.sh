@@ -10,7 +10,11 @@ cp -r scaffolds/* out/
 cd out
 
 for D in *; do
-    if [ -d "${D}" ] && ![ "${D}" -eq "static" ]; then
+    if [ -d "${D}" ]; then
+        if [ "$D" = "static" ]; then
+            echo "scaped static folder."
+            continue
+        fi
         # cd $D
         if [ $(git status --porcelain | grep $D | wc -l) -lt 1 ]; then
             echo "No changes to the output on scaffold ${D}; exiting."
