@@ -3,10 +3,10 @@
 # include parse_yaml function
 . scripts/parse_yaml.sh
 
-# npm run build
-# gulp
+npm run build
+gulp
 
-# cp -r scaffolds/* out/
+cp -r scaffolds/* out/
 cd out
 git add .
 for D in *; do
