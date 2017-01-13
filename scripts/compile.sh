@@ -10,7 +10,7 @@ cp -r scaffolds/* out/
 cd out
 
 for D in *; do
-    if [ -d "${D}" ]; then
+    if [ -d "${D}" ] && ![ "${D}" -eq "static" ]; then
         # cd $D
         if [ $(git status --porcelain | grep $D | wc -l) -lt 1 ]; then
             echo "No changes to the output on scaffold ${D}; exiting."
