@@ -29,7 +29,7 @@ for D in *; do
 
         echo "try to build scaffold ${D} at ${REPO}"
         cd _temp
-        tnpm install
+        npm install
         npm run build
         cp -r dist/* ../
         cd ../../
