@@ -9,7 +9,10 @@ export default function ScaffoldItem({ data, styles }) {
       </header>
       <div>{data.description}</div>
       <div className={styles.actions}>
-        <Button> Open in IDE</Button>
+        <Button.Group>
+          <Button><a href={`${data.name}`} target="_blank"> DEMO </a></Button>
+          <Button> Open in IDE</Button>
+        </Button.Group>
       </div>
     </article>
   </li>);
