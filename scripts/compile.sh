@@ -32,6 +32,7 @@ for D in *; do
         npm install
         npm run build
         cp -r dist/* ../
+        rm -rf _temp
         cd ../../
     fi
 done
