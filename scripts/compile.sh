@@ -1,10 +1,10 @@
 #!/bin/bash
 
-# include parse_yaml functio
+# include parse_yaml function
 . scripts/parse_yaml.sh
 
-# npm run build
-# gulp
+npm run build
+gulp
 
 cp -r scaffolds/* out/
 cd out
@@ -25,7 +25,7 @@ for D in *; do
 
         echo "try to build scaffold ${D} at ${REPO}"
         cd _temp
-        tnpm install
+        npm install
         npm run build
         cp dist/* ../
         cd ../../
