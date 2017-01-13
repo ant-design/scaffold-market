@@ -11,15 +11,25 @@ cd out
 
 for D in *; do
     if [ -d "${D}" ]; then
-        echo "${D}"   # your processing here
+        # cd $D
+        if [ $(git status --porcelain | grep $D | wc -l) -lt 1 ]; then
+            echo "No changes to the output on scaffold ${D}; exiting."
+            continue
+        fi
         cd $D
-        git diff ./ | wc -l
-        # eval $(parse_yaml index.yml "config_")
-        # REPO=$(echo ${config_git_url} | sed "s/'//g")
-        # echo $REPO
-        # git clone $REPO src
-        # cd src
-        # npm install
-        cd ..
+
+        eval $(parse_yaml index.yml "config_")
+        REPO=$(echo ${config_git_url} | sed "s/'//g")
+
+        git clone $REPO _temp --depth=1
+
+        echo "try to build scaffold ${D} at ${REPO}"
+        cd _temp
+        tnpm install
+        npm run build
+        cp dist/* ../
+        cd ../../
     fi
 done
+
+cd ..

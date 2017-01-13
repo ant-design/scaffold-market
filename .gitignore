@@ -7,6 +7,9 @@
 /dist
 /out
 
+# gh-pages
+/_temp
+
 # misc
 .DS_Store
 npm-debug.log*
