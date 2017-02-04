@@ -1,0 +1,9 @@
+url: 'https://github.com/zhaotoday/react-antd'
+name: react-antd
+git_url: 'git://github.com/zhaotoday/react-antd.git'
+chineseName: react-antd
+author: zhaotoday
+description: A boilerplate for react project based on antd. 基于 antd 的 react 项目模板。 — Edit
+version: 0.0.1
+industry: react
+source: npm
