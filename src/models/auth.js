@@ -3,7 +3,6 @@ import store from 'store';
 import firebase from '../utils/firebase';
 
 export default {
-
   namespace: 'auth',
 
   state: {
@@ -25,7 +24,9 @@ export default {
       const provider = new firebase.auth.GithubAuthProvider();
       provider.addScope('repo');
       const authResult = yield firebase.auth().signInWithPopup(provider);
-      // yield put({ type: 'save', payload: { ...authResult, accessToken: authResult.credential.accessToken } });
+      // yield put({ type: 'save', payload: {
+      //  ...authResult, accessToken: authResult.credential.accessToken
+      // }});
       yield put({ type: 'contribute/showModal' });
       store.set('accessToken', authResult.credential.accessToken);
       yield put({ type: 'github', payload: authResult.credential.accessToken });
@@ -47,7 +48,6 @@ export default {
       return { ...state, ...payload };
     },
   },
-
 };
 
 // b6b22ca4475ff538f9ba2331139e4e1e542c7686

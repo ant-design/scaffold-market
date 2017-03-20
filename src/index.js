@@ -1,6 +1,6 @@
 import dva from 'dva';
-import './index.html';
 import 'antd/dist/antd.min.css';
+import './index.html';
 import './index.css';
 
 // 1. Initialize

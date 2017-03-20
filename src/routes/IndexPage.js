@@ -18,9 +18,7 @@ function IndexPage({ list, user, dispatch }) {
       </div> :
       <a onClick={() => dispatch({ type: 'auth/login' })} >login with github</a>}
       <ul className={styles.list}>
-        {list.map((item, idx) =>
-          <ScaffoldItem key={`${idx}-${item.name}`} data={item} styles={styles} />
-        )}
+        {list.map(item => <ScaffoldItem key={item.name} data={item} styles={styles} />)}
       </ul>
     </div>
   );

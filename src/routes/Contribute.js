@@ -1,7 +1,6 @@
 import React from 'react';
 import { connect } from 'dva';
 import ContributeForm from '../components/ContributeForm';
-
 import styles from './Contribute.css';
 
 class Contribute extends React.Component {
@@ -11,13 +10,15 @@ class Contribute extends React.Component {
     }
   }
   render() {
-    const { auth, contribute } = this.props;
+    const { auth } = this.props;
     if (!auth) {
-      return <div> you have not login </div>;
+      return <div>you have not login</div>;
     }
-    return (<div className={styles.contribute}>
-      <ContributeForm />
-    </div>);
+    return (
+      <div className={styles.contribute}>
+        <ContributeForm />
+      </div>
+    );
   }
 }
 

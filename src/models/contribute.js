@@ -3,7 +3,6 @@ import yaml from 'js-yaml';
 import { parseGithubUrl } from '../utils/github';
 
 export default {
-
   namespace: 'contribute',
 
   state: {
@@ -12,7 +11,7 @@ export default {
   },
 
   effects: {
-    *validateRepo({ payload }, { put, call, select }) {
+    *validateRepo({ payload }, { put, select }) {
       // https://github.com/dvajs/dva-example-user-dashboard/
       const { user, repo } = parseGithubUrl(payload);
       if (user && repo) {
@@ -26,19 +25,20 @@ export default {
 
         // parse package.json of repo
         const packageJson = yield repos.getContents('master', 'package.json', true);
+        // eslint-disable-next-line
         console.log('>> packageJson', packageJson);
         yield put({
           type: 'saveRepo',
           payload: {
             ...data,
-            isValidScaffold: packageJson.data.scripts.hasOwnProperty('start'),
-            isReact: packageJson.data.dependencies.hasOwnProperty('react'),
-            isAngular: packageJson.data.dependencies.hasOwnProperty('angular'),
+            isValidScaffold: 'start' in packageJson.data.scripts,
+            isReact: 'react' in packageJson.data.dependencies,
+            isAngular: 'angular' in packageJson.data.dependencies,
           },
         });
       }
     },
-    *submit({ payload }, { put, select }) {
+    *submit({ payload }, { select }) {
       const { auth } = yield select();
       const { accessToken } = auth;
       const github = new Github({ token: accessToken });
@@ -67,15 +67,12 @@ export default {
         body: yaml.safeDump(payload),
       });
 
+      // eslint-disable-next-line
       console.log('>> pullRequestResult', pullRequestResult);
-
 
       // const master = yield forkedRepo.getBranch('master');
       // const masterSHA = master.data.commit.sha;
-
       // createTree
-
-
     },
   },
 
@@ -84,5 +81,4 @@ export default {
       return { ...state, repo: payload };
     },
   },
-
 };
