@@ -1,4 +1,3 @@
-
 const regex = /https?:\/\/(www\.)?github\.com\/([\w-]+)\/([\w-]+)/g;
 
 export function parseGithubUrl(url) {

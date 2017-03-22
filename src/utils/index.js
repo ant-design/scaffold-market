@@ -6,3 +6,7 @@ export function getParameterByName(name, url) {
   if (!results[2]) return '';
   return decodeURIComponent(results[2].replace(/\+/g, ' '));
 }
+
+export function isLocaleZhCN() {
+  return localStorage.getItem('locale') === 'zh-CN';
+}

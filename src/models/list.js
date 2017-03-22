@@ -1,19 +1,18 @@
 import { fetch } from '../services/list';
 
 export default {
-
   namespace: 'list',
 
   state: [],
 
   subscriptions: {
-    setup({ dispatch, history }) {  // eslint-disable-line
+    setup({ dispatch }) {
       dispatch({ type: 'fetch' });
     },
   },
 
   effects: {
-    *fetch({ payload }, { call, put }) {  // eslint-disable-line
+    *fetch({ payload }, { call, put }) {
       const { data } = yield call(fetch);
       yield put({ type: 'save', payload: data });
     },
@@ -24,5 +23,4 @@ export default {
       return payload.list;
     },
   },
-
 };
