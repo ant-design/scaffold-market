@@ -4,7 +4,8 @@ export default {
   locale: 'zh-CN',
   data: appLocaleData,
   messages: {
-    welcome: '你好！',
     login: '使用 GitHub 登录',
+    submit: '提交脚手架',
+    help: '帮助',
   },
 };

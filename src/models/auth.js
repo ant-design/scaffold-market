@@ -32,6 +32,7 @@ export default {
       yield put({ type: 'github', payload: authResult.credential.accessToken });
     },
     *github({ payload }, { put }) {
+      yield put({ type: 'startLogin' });
       const github = new Github({
         token: payload,
       });
@@ -44,9 +45,16 @@ export default {
   },
 
   reducers: {
-    save(state, { payload }) {
-      return { ...state, ...payload };
-    },
+    startLogin: state => ({
+      ...state,
+      user: {
+        logining: true,
+      },
+    }),
+    save: (state, { payload }) => ({
+      ...state,
+      ...payload,
+    }),
   },
 };
 

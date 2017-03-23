@@ -1,5 +1,5 @@
 import React from 'react';
-import { Radio } from 'antd';
+import { Button, Icon } from 'antd';
 import { connect } from 'dva';
 import { Link } from 'dva/router';
 import { IntlProvider, addLocaleData, FormattedMessage } from 'react-intl';
@@ -14,50 +14,58 @@ class CommonLayout extends React.Component {
   state = {
     locale: isLocaleZhCN() ? 'zh-CN' : 'en-US',
   }
-  handleLocaleChange = (e) => {
-    localStorage.setItem('locale', e.target.value);
-    this.setState({
-      locale: e.target.value,
-    });
+  handleLocaleChange = () => {
+    const locale = this.state.locale === 'zh-CN' ? 'en-US' : 'zh-CN';
+    localStorage.setItem('locale', locale);
+    this.setState({ locale });
   }
   render() {
     const { dispatch, user, children } = this.props;
-    const appLocale = this.state.locale === 'zh-CN' ? zhCN : enUS;
+    const { locale } = this.state;
+    const appLocale = locale === 'zh-CN' ? zhCN : enUS;
     return (
       <IntlProvider locale={appLocale.locale} messages={appLocale.messages}>
-        <div className={styles.container}>
+        <div>
           <header className={styles.header}>
             <h1 className={styles.title}>
-              <Link to="/">Logo</Link>
+              <Link to="/">LOGO</Link>
             </h1>
-            <Radio.Group
-              value={this.state.locale}
-              onChange={this.handleLocaleChange}
-              className={styles.changeLocale}
-              size="small"
-            >
-              <Radio.Button value="en-US">English</Radio.Button>
-              <Radio.Button value="zh-CN">中文</Radio.Button>
-            </Radio.Group>
             <div className={styles.right}>
               {user ? (
-                <div>
-                  <span>
-                    <FormattedMessage id="welcome" />
-                    {user.name}
-                    <img alt="avatar" className={styles.avatar} src={user.avatar_url} />
-                  </span>
-                  <Link className={styles.link} to="contribute">Contribute a new Scaffold</Link>
-                  <Link className={styles.link} to="help">How to create a new Scaffold</Link>
-                </div>
+                <span>
+                  <Link className={styles.link} to="contribute">
+                    <Icon type="plus-circle-o" />
+                    <FormattedMessage id="submit" />
+                  </Link>
+                  <Link className={styles.link} to="help">
+                    <Icon type="question-circle-o" />
+                    <FormattedMessage id="help" />
+                  </Link>
+                  {!user.logining && (
+                    <span>
+                      <img alt="avatar" className={styles.avatar} src={user.avatar_url} />
+                      {user.name}
+                    </span>
+                  )}
+                </span>
               ) : (
                 <a onClick={() => dispatch({ type: 'auth/login' })}>
+                  <Icon type="github" />
                   <FormattedMessage id="login" />
                 </a>
               )}
+              <Button
+                className={styles.changeLocale}
+                onClick={this.handleLocaleChange}
+                size="small"
+              >
+                {locale === 'zh-CN' ? 'EN' : '中文'}
+              </Button>
             </div>
           </header>
-          <div>{children}</div>
+          <div className={styles.container}>
+            {children}
+          </div>
         </div>
       </IntlProvider>
     );

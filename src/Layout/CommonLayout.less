@@ -1,35 +1,51 @@
-.container {
-
-}
+@import '~antd/lib/style/themes/default.less';
 
 .header {
   height: 64px;
   line-height: 64px;
-  border-bottom: 1px solid #d9d9d9;
+  border-bottom: 1px solid @border-color-base;
   overflow: hidden;
   padding: 0 40px;
+  font-size: 14px;
+
+  .title {
+    font-size: 24px;
+    float: left;
+  }
+
+  .changeLocale {
+    margin-left: 24px;
+  }
+
+  .right {
+    float: right;
+  }
+
+  .link {
+    margin-right: 24px;
+  }
+
+  .avatar {
+    width: 16px;
+    height: 16px;
+    border-radius: 100%;
+    vertical-align: middle;
+    margin-right: 8px;
+    position: relative;
+    top: -2px;
+  }
+
+  a {
+    color: @text-color;
+    &:hover {
+      color: @primary-color;
+    }
+    > i {
+      margin-right: 8px;
+    }
+  }
 }
 
-.title {
-  font-size: 2.5rem;
-  font-weight: normal;
-  float: left;
-}
-
-.changeLocale {
-  float: left;
-  margin-left: 24px;
-}
-
-.right {
-  float: right;
-}
-
-.link {
-  margin: 0 12px;
-}
-
-.avatar {
-  width: 32px;
-  height: 32px;
+.container {
+  padding: 40px;
 }

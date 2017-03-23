@@ -4,7 +4,8 @@ export default {
   locale: 'en-US',
   data: appLocaleData,
   messages: {
-    welcome: 'Hello!',
-    login: 'Login with GitHub',
+    login: 'Login in',
+    submit: 'Sumbit a template',
+    help: 'Help',
   },
 };
