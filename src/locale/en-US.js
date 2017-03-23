@@ -5,5 +5,6 @@ export default {
   data: appLocaleData,
   messages: {
     welcome: 'Hello!',
+    login: 'Login with GitHub',
   },
 };

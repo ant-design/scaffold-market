@@ -24,7 +24,6 @@
   background: #f7f7f7;
 }
 
-
 article {
   position: relative;
   margin: 16px 0;
@@ -38,14 +37,4 @@ article {
   top: 7px;
   right: 0;
   position: absolute;
-}
-
-
-.link {
-  margin: 0 12px;
-}
-
-.avatar {
-  width: 32px;
-  height: 32px;
 }
