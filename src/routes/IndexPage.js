@@ -3,15 +3,13 @@ import { connect } from 'dva';
 import ScaffoldItem from '../components/ScaffoldItem';
 import styles from './IndexPage.css';
 
-function IndexPage({ list }) {
-  return (
-    <div className={styles.normal}>
-      <ul className={styles.list}>
-        {list.map(item => <ScaffoldItem key={item.name} data={item} styles={styles} />)}
-      </ul>
-    </div>
-  );
-}
+const IndexPage = ({ list }) => (
+  <div className={styles.normal}>
+    <ul className={styles.list}>
+      {list.map(item => <ScaffoldItem key={item.name} data={item} styles={styles} />)}
+    </ul>
+  </div>
+);
 
 IndexPage.propTypes = {
   list: PropTypes.array,
