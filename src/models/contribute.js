@@ -55,9 +55,15 @@ export default {
       yield forkedRepo.createBranch('master', branchName);
 
       // update list
-      yield forkedRepo.writeFile(branchName, `scaffolds/${payload.name}/index.yml`, yaml.safeDump(payload), 'submit new scaffold', {
-        encode: 'utf-8',
-      });
+      yield forkedRepo.writeFile(
+        branchName,
+        `scaffolds/${payload.name}/index.yml`,
+        yaml.safeDump(payload),
+        'submit new scaffold',
+        {
+          encode: 'utf-8',
+        },
+      );
 
       // pr
       const pullRequestResult = yield scaffoldRepo.createPullRequest({
