@@ -2,7 +2,7 @@ language: generic # don't install any environment
 
 before_install:
  - chmod +x ./scripts/compile.sh
-script: bash ./scripts/deploy.sh
+script:
   - |
     if [ "$TEST_TYPE" = lint ]; then
       npm run lint
