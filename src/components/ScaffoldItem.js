@@ -1,11 +1,15 @@
 import React from 'react';
 import { Icon, Button } from 'antd';
+import { Link } from 'dva/router';
 
 export default function ScaffoldItem({ data, styles }) {
   return (
     <li>
       <article>
-        <header>{data.name}[{data.chineseName}]
+        <header>
+          <Link to={`/templates/${data.name}`}>
+            {data.name}[{data.chineseName}]
+          </Link>
           <a href={data.source}><Icon type="github" /></a>
         </header>
         <div>{data.description}</div>
