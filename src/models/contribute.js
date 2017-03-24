@@ -50,19 +50,19 @@ export default {
 
       const forkedRepo = yield github.getRepo(user, repo);
 
-      const brachName = `scaffold-${payload.name}`;
+      const branchName = `scaffold-${payload.name}`;
       // create branch
-      yield forkedRepo.createBranch('master', brachName);
+      yield forkedRepo.createBranch('master', branchName);
 
       // update list
-      yield forkedRepo.writeFile(brachName, `scaffolds/${payload.name}/index.yml`, yaml.safeDump(payload), 'submit new scaffold', {
+      yield forkedRepo.writeFile(branchName, `scaffolds/${payload.name}/index.yml`, yaml.safeDump(payload), 'submit new scaffold', {
         encode: 'utf-8',
       });
 
       // pr
       const pullRequestResult = yield scaffoldRepo.createPullRequest({
         title: `add scaffold ${payload.name} to antd scaffold`,
-        head: `${user}:${brachName}`,
+        head: `${user}:${branchName}`,
         base: 'master',
         body: yaml.safeDump(payload),
       });
