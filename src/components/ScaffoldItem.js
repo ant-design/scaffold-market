@@ -13,7 +13,7 @@ export default function ScaffoldItem({ data, styles }) {
           <a href={data.source}><Icon type="github" /></a>
         </header>
         <div>{data.description}</div>
-        <div><Icon type="star" />{data.gitInfo.stargazers_count}</div>
+        <div><Icon type="star" />{data.stargazers_count}</div>
         <div className={styles.actions}>
           <Button.Group>
             <Button>

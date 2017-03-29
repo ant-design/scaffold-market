@@ -28,11 +28,14 @@ export default {
         const response = yield repos.getDetails();
         list[i] = {
           ...list[i],
-          gitInfo: response.data,
+          ...response.data,
         };
       }
 
-      yield put({ type: 'save', payload: list });
+      yield put({
+        type: 'save',
+        payload: list.sort((a, b) => b.stargazers_count - a.stargazers_count),
+      });
     },
   },
 
