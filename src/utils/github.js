@@ -1,15 +1,9 @@
-const regex = /https?:\/\/(www\.)?github\.com\/([\w-]+)\/([\w-]+)/g;
+import parse from 'parse-github-repo-url';
 
 export function parseGithubUrl(url) {
-  const result = regex.exec(url);
-  if (!result) {
-    return {
-      user: null,
-      repo: null,
-    };
-  }
+  const [user, repo] = parse(url);
   return {
-    user: result[2],
-    repo: result[3],
+    user,
+    repo,
   };
 }
