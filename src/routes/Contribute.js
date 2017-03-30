@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'dva';
 import ContributeForm from '../components/ContributeForm';
-import styles from './Contribute.css';
+import styles from './Contribute.less';
 
 class Contribute extends React.Component {
   componentWillMount() {

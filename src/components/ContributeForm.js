@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'dva';
 import { Select, Button, Input, Form } from 'antd';
+import styles from './ContributeForm.less';
 
 const FormItem = Form.Item;
 
@@ -12,15 +13,15 @@ const labelProps = {
 function ConstributeForm({ contribute, dispatch, form }) {
   const { getFieldDecorator, validateFields } = form;
   return (
-    <Form>
-      <h3>Contribute to Antd Scaffold</h3>
-      <FormItem label="source (github url)" hasFeedback {...labelProps} >
+    <Form className={styles.form}>
+      <h3 className={styles.title}>在 Template 上添加一个项目</h3>
+      <FormItem hasFeedback>
         {getFieldDecorator('url', {
           initialValue: 'https://github.com/dvajs/dva-example-user-dashboard/',
           rules: [
             { type: 'string', required: true, pattern: /^https?:\/\/(www\.)?github\.com\/([\w-]+)\/([\w-]+)\/?/, message: 'url must be valid github url' },
           ],
-        })(<Input />)}
+        })(<Input placeholder="请填写脚手架的 GitHub 地址" />)}
       </FormItem>
       {contribute.repo ? <div>
         <FormItem label="name " hasFeedback {...labelProps}>
@@ -64,18 +65,21 @@ function ConstributeForm({ contribute, dispatch, form }) {
             Submit
           </Button>
         </FormItem>
-      </div> : <FormItem>
-        <Button
-          type="primary"
-          onClick={() => validateFields(['url'], { force: true }, (err, values) => {
-            if (!err) {
-              dispatch({ type: 'contribute/validateRepo', payload: values.url });
-            }
-          })}
-        >
-          Next
-        </Button>
-      </FormItem>}
+      </div> : (
+        <FormItem style={{ marginTop: 55 }}>
+          <Button
+            type="primary"
+            size="large"
+            onClick={() => validateFields(['url'], { force: true }, (err, values) => {
+              if (!err) {
+                dispatch({ type: 'contribute/validateRepo', payload: values.url });
+              }
+            })}
+          >
+            添加项目
+          </Button>
+        </FormItem>
+      )}
     </Form>
   );
 }

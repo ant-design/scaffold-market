@@ -17,6 +17,7 @@
   },
   "theme": {
     "@btn-border-radius-base": "100px",
-    "@btn-border-radius-sm": "100px"
+    "@btn-border-radius-sm": "100px",
+    "@body-background": "#FAFAFA"
   }
 }
