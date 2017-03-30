@@ -1,15 +1,7 @@
 .normal {
-  font-family: Georgia, sans-serif;
   margin-top: 3em;
   text-align: center;
-  width: 60em;
-  margin:0 auto;
-}
-
-.title {
-  font-size: 2.5rem;
-  font-weight: normal;
-  letter-spacing: -1px;
+  margin: 0 auto;
 }
 
 .list {
@@ -20,21 +12,8 @@
   text-align: left;
 }
 
-.list code {
-  background: #f7f7f7;
-}
-
-article {
-  position: relative;
-  margin: 16px 0;
-  header {
-    font-size: 16px;
-    font-weight: bold;
-  }
-}
-
-.actions {
-  top: 7px;
-  right: 0;
-  position: absolute;
+.loading {
+  height: 200px;
+  line-height: 200px;
+  text-align: center;
 }

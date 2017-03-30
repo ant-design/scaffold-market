@@ -27,40 +27,42 @@ class CommonLayout extends React.Component {
       <IntlProvider locale={appLocale.locale} messages={appLocale.messages}>
         <div>
           <header className={styles.header}>
-            <h1 className={styles.title}>
-              <Link to="/">LOGO</Link>
-            </h1>
-            <div className={styles.right}>
-              {user ? (
-                <span>
-                  <Link className={styles.link} to="contribute">
-                    <Icon type="plus-circle-o" />
-                    <FormattedMessage id="submit" />
-                  </Link>
-                  <Link className={styles.link} to="help">
-                    <Icon type="question-circle-o" />
-                    <FormattedMessage id="help" />
-                  </Link>
-                  {!user.logining && (
-                    <span>
-                      <img alt="avatar" className={styles.avatar} src={user.avatar_url} />
-                      {user.name}
-                    </span>
-                  )}
-                </span>
-              ) : (
-                <a onClick={() => dispatch({ type: 'auth/login' })}>
-                  <Icon type="github" />
-                  <FormattedMessage id="login" />
-                </a>
-              )}
-              <Button
-                className={styles.changeLocale}
-                onClick={this.handleLocaleChange}
-                size="small"
-              >
-                {locale === 'zh-CN' ? 'EN' : '中文'}
-              </Button>
+            <div className={styles.headerContent}>
+              <h1 className={styles.title}>
+                <Link to="/">LOGO</Link>
+              </h1>
+              <div className={styles.right}>
+                {user ? (
+                  <span>
+                    <Link className={styles.link} to="contribute">
+                      <Icon type="plus-circle-o" />
+                      <FormattedMessage id="submit" />
+                    </Link>
+                    <Link className={styles.link} to="help">
+                      <Icon type="question-circle-o" />
+                      <FormattedMessage id="help" />
+                    </Link>
+                    {!user.logining && (
+                      <span>
+                        <img alt="avatar" className={styles.avatar} src={user.avatar_url} />
+                        {user.name}
+                      </span>
+                    )}
+                  </span>
+                ) : (
+                  <a onClick={() => dispatch({ type: 'auth/login' })}>
+                    <Icon type="github" />
+                    <FormattedMessage id="login" />
+                  </a>
+                )}
+                <Button
+                  className={styles.changeLocale}
+                  onClick={this.handleLocaleChange}
+                  size="small"
+                >
+                  {locale === 'zh-CN' ? 'EN' : '中文'}
+                </Button>
+              </div>
             </div>
           </header>
           <div className={styles.container}>

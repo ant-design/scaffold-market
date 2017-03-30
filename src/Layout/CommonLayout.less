@@ -5,8 +5,12 @@
   line-height: 64px;
   border-bottom: 1px solid @border-color-base;
   overflow: hidden;
-  padding: 0 40px;
   font-size: 14px;
+
+  .headerContent {
+    width: 1206px;
+    margin: 0 auto;
+  }
 
   .title {
     font-size: 24px;
@@ -47,5 +51,11 @@
 }
 
 .container {
-  padding: 40px;
+  width: 1206px;
+  margin: 40px auto;
+  &:after {
+    content: '';
+    clear: both;
+    display: block;
+  }
 }
