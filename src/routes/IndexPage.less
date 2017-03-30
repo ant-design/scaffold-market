@@ -5,11 +5,14 @@
 }
 
 .list {
-  font-size: 1.2em;
   margin-top: 1.8em;
   list-style: none;
-  line-height: 1.5em;
-  text-align: left;
+  margin-left: -32px;
+  &:after {
+    content: '';
+    clear: both;
+    display: block;
+  }
 }
 
 .loading {

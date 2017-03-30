@@ -2,7 +2,7 @@ import React, { PropTypes } from 'react';
 import { connect } from 'dva';
 import { Spin } from 'antd';
 import ScaffoldItem from '../components/ScaffoldItem';
-import styles from './IndexPage.css';
+import styles from './IndexPage.less';
 
 const IndexPage = ({ list }) => (
   <div className={styles.normal}>
