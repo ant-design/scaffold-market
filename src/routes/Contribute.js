@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'dva';
-import ContributeForm from '../components/ContributeForm';
+import Start from '../components/Contribute/Start';
+import Submit from '../components/Contribute/Submit';
 import styles from './Contribute.less';
 
 class Contribute extends React.Component {
@@ -13,13 +14,15 @@ class Contribute extends React.Component {
     this.props.dispatch({ type: 'contribute/saveRepo', pyaload: null });
   }
   render() {
-    const { auth } = this.props;
+    const { auth, contribute: { repo }, dispatch } = this.props;
     if (!auth) {
       return <div>you have not login</div>;
     }
     return (
       <div className={styles.contribute}>
-        <ContributeForm />
+        {repo
+          ? <Submit dispatch={dispatch} repo={repo} />
+          : <Start dispatch={dispatch} />}
       </div>
     );
   }
