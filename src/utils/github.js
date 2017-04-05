@@ -1,9 +1,9 @@
-import parse from 'parse-github-repo-url';
+import parse from 'parse-github-url';
 
 export function parseGithubUrl(url) {
-  const [user, repo] = parse(url);
+  const { owner, name } = parse(url);
   return {
-    user,
-    repo,
+    user: owner,
+    repo: name,
   };
 }

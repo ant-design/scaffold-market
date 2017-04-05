@@ -15,13 +15,13 @@ function ConstributeForm({ contribute, dispatch, form }) {
   return (
     <Form className={styles.form}>
       <h3 className={styles.title}>在 Template 上添加一个项目</h3>
-      <FormItem hasFeedback>
+      <FormItem>
         {getFieldDecorator('url', {
           initialValue: 'https://github.com/dvajs/dva-example-user-dashboard/',
           rules: [
             { type: 'string', required: true, pattern: /^https?:\/\/(www\.)?github\.com\/([\w-]+)\/([\w-]+)\/?/, message: 'url must be valid github url' },
           ],
-        })(<Input placeholder="请填写脚手架的 GitHub 地址" />)}
+        })(<Input className={styles.input} placeholder="请填写脚手架的 GitHub 地址" />)}
       </FormItem>
       {contribute.repo ? <div>
         <FormItem label="name " hasFeedback {...labelProps}>
@@ -83,7 +83,6 @@ function ConstributeForm({ contribute, dispatch, form }) {
     </Form>
   );
 }
-
 
 export default connect(props => ({
   contribute: props.contribute,

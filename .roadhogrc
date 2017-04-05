@@ -16,8 +16,10 @@
     }
   },
   "theme": {
+    "@primary-color": "#2DB7F5",
     "@btn-border-radius-base": "100px",
     "@btn-border-radius-sm": "100px",
-    "@body-background": "#FAFAFA"
+    "@body-background": "#FAFAFA",
+    "@btn-padding-lg": "8px 32px"
   }
 }
