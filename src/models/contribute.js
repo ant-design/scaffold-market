@@ -1,4 +1,5 @@
 import Github from 'github-api';
+import { routerRedux } from 'dva/router';
 import yaml from 'js-yaml';
 import { parseGithubUrl } from '../utils/github';
 
@@ -38,7 +39,7 @@ export default {
         });
       }
     },
-    *submit({ payload }, { select }) {
+    *submit({ payload }, { select, put }) {
       const { auth } = yield select();
       const { accessToken } = auth;
       const github = new Github({ token: accessToken });
@@ -79,6 +80,9 @@ export default {
       // const master = yield forkedRepo.getBranch('master');
       // const masterSHA = master.data.commit.sha;
       // createTree
+
+      // redirect to finish page
+      yield put(routerRedux.push('/contribute/finish'));
     },
   },
 
