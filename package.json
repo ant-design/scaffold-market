@@ -15,7 +15,6 @@
     "firebase": "^3.6.4",
     "github-api": "^3.0.0",
     "js-yaml": "^3.7.0",
-    "parse-github-repo-url": "^1.4.0",
     "parse-github-url": "^1.0.0",
     "react": "^15.4.0",
     "react-dom": "^15.4.0",

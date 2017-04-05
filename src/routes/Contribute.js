@@ -9,6 +9,9 @@ class Contribute extends React.Component {
       this.props.dispatch({ type: 'auth/login' });
     }
   }
+  componentWillUnmount() {
+    this.props.dispatch({ type: 'contribute/saveRepo', pyaload: null });
+  }
   render() {
     const { auth } = this.props;
     if (!auth) {
