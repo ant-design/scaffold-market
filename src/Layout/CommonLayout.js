@@ -50,10 +50,16 @@ class CommonLayout extends React.Component {
                     )}
                   </span>
                 ) : (
-                  <a onClick={() => dispatch({ type: 'auth/login' })}>
-                    <Icon type="github" />
-                    <FormattedMessage id="login" />
-                  </a>
+                  <span>
+                    <Link className={styles.link} to="contribute">
+                      <Icon type="plus-circle-o" />
+                      <FormattedMessage id="submit" />
+                    </Link>
+                    <a onClick={() => dispatch({ type: 'auth/login' })}>
+                      <Icon type="github" />
+                      <FormattedMessage id="login" />
+                    </a>
+                  </span>
                 )}
                 <Button
                   className={styles.changeLocale}

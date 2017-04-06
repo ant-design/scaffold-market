@@ -12,9 +12,11 @@ function Start({ dispatch, form, loading }) {
       <FormItem>
         {getFieldDecorator('url', {
           initialValue: 'https://github.com/dvajs/dva-example-user-dashboard/',
-          rules: [
-            { type: 'string', required: true, pattern: /^https?:\/\/(www\.)?github\.com\/([\w-]+)\/([\w-]+)\/?/, message: 'url must be valid github url' },
-          ],
+          rules: [{ type: 'string',
+            required: true,
+            pattern: /^https?:\/\/(www\.)?github\.com\/([\w-]+)\/([\w-]+)\/?/,
+            message: 'url must be valid github url',
+          }],
         })(<Input className={styles.input} placeholder="请填写脚手架的 GitHub 地址" />)}
       </FormItem>
       <FormItem style={{ marginTop: 55 }}>

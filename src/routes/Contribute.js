@@ -16,12 +16,12 @@ class Contribute extends React.Component {
   }
   render() {
     const { auth, contribute: { repo }, dispatch, location, loading } = this.props;
-    if (!auth) {
-      return <div>you have not login</div>;
+    if (!auth || !auth.accessToken) {
+      return <div>You need to login before submitting.</div>;
     }
     let children;
     if (location.pathname.indexOf('contribute/finish') > 0) {
-      children = <Finish dispatch={dispatch} repo={repo} loading={loading} />;
+      children = <Finish dispatch={dispatch} loading={loading} url={location.query.pull} />;
     } else {
       children = repo
         ? <Submit dispatch={dispatch} repo={repo} loading={loading} />

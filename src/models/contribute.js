@@ -52,6 +52,7 @@ export default {
       const forkedRepo = yield github.getRepo(user, repo);
 
       const branchName = `scaffold-${payload.name}`;
+
       // create branch
       yield forkedRepo.createBranch('master', branchName);
 
@@ -82,7 +83,7 @@ export default {
       // createTree
 
       // redirect to finish page
-      yield put(routerRedux.push('/contribute/finish'));
+      yield put(routerRedux.push(`/contribute/finish?pull=${pullRequestResult.data.html_url}`));
     },
   },
 
