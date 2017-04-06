@@ -4,7 +4,7 @@ import styles from './Start.less';
 
 const FormItem = Form.Item;
 
-function Start({ dispatch, form }) {
+function Start({ dispatch, form, loading }) {
   const { getFieldDecorator, validateFields } = form;
   return (
     <Form className={styles.form}>
@@ -21,6 +21,7 @@ function Start({ dispatch, form }) {
         <Button
           type="primary"
           size="large"
+          loading={loading.models.contribute}
           onClick={() => validateFields(['url'], { force: true }, (err, values) => {
             if (!err) {
               dispatch({ type: 'contribute/validateRepo', payload: values.url });

@@ -1,4 +1,5 @@
 import dva from 'dva';
+import createLoading from 'dva-loading';
 import 'antd/dist/antd.less';
 import './index.html';
 import './index.css';
@@ -7,7 +8,7 @@ import './index.css';
 const app = dva();
 
 // 2. Plugins
-// app.use({});
+app.use(createLoading());
 
 // 3. Model
 app.model(require('./models/auth'));

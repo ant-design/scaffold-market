@@ -12,6 +12,7 @@
     "axios": "^0.15.3",
     "babel-runtime": "^6.9.2",
     "dva": "^1.2.1",
+    "dva-loading": "^0.2.1",
     "firebase": "^3.6.4",
     "github-api": "^3.0.0",
     "js-yaml": "^3.7.0",

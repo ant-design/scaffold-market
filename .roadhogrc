@@ -17,6 +17,7 @@
   },
   "theme": {
     "@primary-color": "#2DB7F5",
+    "@font-size-base": "14px",
     "@btn-border-radius-base": "100px",
     "@btn-border-radius-sm": "100px",
     "@body-background": "#FAFAFA",

@@ -4,7 +4,7 @@ import styles from './Submit.less';
 
 const FormItem = Form.Item;
 
-function Submit({ repo, dispatch, form }) {
+function Submit({ repo, dispatch, form, loading }) {
   if (!repo) {
     return null;
   }
@@ -46,6 +46,7 @@ function Submit({ repo, dispatch, form }) {
         <Button
           type="primary"
           style={{ marginTop: 48 }}
+          loading={loading.models.contribute}
           onClick={() => validateFields((err, values) => {
             if (!err) {
               dispatch({ type: 'contribute/submit', payload: values });
