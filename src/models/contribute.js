@@ -51,7 +51,7 @@ export default {
 
       const forkedRepo = yield github.getRepo(user, repo);
 
-      const branchName = `scaffold-${payload.name}`;
+      const branchName = `scaffold-${payload.name}-${Date.now()}`;
 
       // create branch
       yield forkedRepo.createBranch('master', branchName);
