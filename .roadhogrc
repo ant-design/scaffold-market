@@ -21,6 +21,7 @@
     "@btn-border-radius-base": "100px",
     "@btn-border-radius-sm": "100px",
     "@body-background": "#FAFAFA",
+    "@layout-body-background": "#FAFAFA",
     "@btn-padding-lg": "8px 32px"
   }
 }
