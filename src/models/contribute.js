@@ -28,10 +28,16 @@ export default {
         const packageJson = yield repos.getContents('master', 'package.json', true);
         // eslint-disable-next-line
         console.log('>> packageJson', packageJson);
+
+        const readme = yield repos.getContents('master', 'README.md', true);
+        // eslint-disable-next-line
+        console.log('>> readme', readme);
+
         yield put({
           type: 'saveRepo',
           payload: {
             ...data,
+            readme: readme.data,
             isValidScaffold: 'start' in packageJson.data.scripts,
             isReact: 'react' in packageJson.data.dependencies,
             isAngular: 'angular' in packageJson.data.dependencies,
@@ -40,7 +46,7 @@ export default {
       }
     },
     *submit({ payload }, { select, put }) {
-      const { auth } = yield select();
+      const { auth, contribute } = yield select();
       const { accessToken } = auth;
       const github = new Github({ token: accessToken });
       // fork scaffold-market repo
@@ -60,7 +66,10 @@ export default {
       yield forkedRepo.writeFile(
         branchName,
         `scaffolds/${payload.name}/index.yml`,
-        yaml.safeDump(payload),
+        yaml.safeDump({
+          ...payload,
+          readme: contribute.repo.readme,
+        }),
         'submit new scaffold',
         {
           encode: 'utf-8',
