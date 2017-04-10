@@ -6,29 +6,33 @@ const FormItem = Form.Item;
 
 function Start({ dispatch, form, loading }) {
   const { getFieldDecorator, validateFields } = form;
+  const onSubmit = () => {
+    validateFields(['url'], { force: true }, (err, values) => {
+      if (!err) {
+        dispatch({ type: 'contribute/validateRepo', payload: values.url });
+      }
+    });
+  };
   return (
     <Form className={styles.form}>
       <h3 className={styles.title}>在 Template 上添加一个项目</h3>
       <FormItem>
         {getFieldDecorator('url', {
           initialValue: 'https://github.com/dvajs/dva-example-user-dashboard/',
-          rules: [{ type: 'string',
+          rules: [{
+            type: 'string',
             required: true,
             pattern: /^https?:\/\/(www\.)?github\.com\/([\w-]+)\/([\w-]+)\/?/,
             message: 'url must be valid github url',
           }],
         })(<Input className={styles.input} placeholder="请填写脚手架的 GitHub 地址" />)}
       </FormItem>
-      <FormItem style={{ marginTop: 55 }}>
+      <FormItem style={{ marginTop: 60 }}>
         <Button
           type="primary"
           size="large"
           loading={loading.models.contribute}
-          onClick={() => validateFields(['url'], { force: true }, (err, values) => {
-            if (!err) {
-              dispatch({ type: 'contribute/validateRepo', payload: values.url });
-            }
-          })}
+          onClick={onSubmit}
         >
           添加项目
         </Button>
