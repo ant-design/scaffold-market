@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'dva';
+import { Link } from 'dva/router';
 import moment from 'moment';
 import { Card, Layout, Spin, Icon, Button, Tag } from 'antd';
 import ReactMarkdown from 'react-markdown';
@@ -66,7 +67,11 @@ const ScaffoldPage = ({ list, params }) => {
           <section>
             {
               (scaffold.tags && scaffold.tags.length > 0)
-                ? scaffold.tags.map(tag => <Tag key={tag}>{tag}</Tag>)
+                ? scaffold.tags.map(tag => (
+                  <Link to={`/?tag=${tag}`}>
+                    <Tag key={tag}>{tag}</Tag>
+                  </Link>
+                ))
                 : <div className={styles.notfound}>暂无标签</div>
             }
           </section>
