@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'dva';
-import { Card, Layout, Spin, Icon } from 'antd';
+import moment from 'moment';
+import { Card, Layout, Spin, Icon, Button } from 'antd';
 import ReactMarkdown from 'react-markdown';
 import styles from './ScaffoldPage.less';
 
@@ -18,24 +19,51 @@ const ScaffoldPage = ({ list, params }) => {
   return (
     <Layout>
       <Sider className={styles.sider} width={400}>
-        <div className={styles.header}>
+        <section className={styles.header}>
           <h2 title={scaffold.name}>{scaffold.name}</h2>
           <div className={styles.right}>
             <Icon type="star" className={styles.star} />{scaffold.stargazers_count}
           </div>
-        </div>
+        </section>
         <p>{scaffold.description}</p>
+        <section className={styles.links}>
+          <a href={`/${scaffold.name}`} target="_blank" rel="noopener noreferrer">
+            <Button type="primary" icon="eye-o">
+              预览
+            </Button>
+          </a>
+          <a href={`${scaffold.html_url}/archive/master.zip`} target="_blank" rel="noopener noreferrer">
+            <Button icon="download">
+              源码包
+            </Button>
+          </a>
+          <a href={scaffold.html_url} target="_blank" rel="noopener noreferrer">
+            <Button icon="github">
+              查看仓库
+            </Button>
+          </a>
+        </section>
         <hr />
-        <p>
+        <section>
           <h3>基本信息</h3>
-          <span>提交人：{scaffold.author}</span>
-          <span>提交时间：{scaffold.createdAt}</span>
-          <span>更新时间：{scaffold.updatedAt}</span>
-        </p>
+          <span
+            className={styles.meta}
+            title={moment(scaffold.created_at).format('YYYY-MM-DD HH:mm:ss')}
+          >
+            创建时间：{moment(scaffold.created_at).fromNow()}
+          </span>
+          <span
+            className={styles.meta}
+            title={moment(scaffold.created_at).format('YYYY-MM-DD HH:mm:ss')}
+          >
+            更新时间：{moment(scaffold.updated_at).fromNow()}
+          </span>
+          <span className={styles.meta}>提交人：{scaffold.author}</span>
+        </section>
         <hr />
-        <p>
+        <section>
           <h3>标签</h3>
-        </p>
+        </section>
       </Sider>
       <Content>
         <Card title="README" style={{ border: '1px solid #e9e9e9' }}>

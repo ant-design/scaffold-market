@@ -9,6 +9,8 @@
 .sider {
   background: transparent;
   padding-right: 80px;
+  font-size: 12px;
+
   .header {
     position: relative;
     padding-right: 60px;
@@ -16,11 +18,12 @@
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
+      font-size: 24px;
     }
     .right {
       position: absolute;
       right: 0;
-      top: 6px;
+      top: 10px;
     }
     .star {
       margin-right: 8px;
@@ -28,11 +31,18 @@
       font-size: 16px;
     }
   }
-  p {
-    margin: 8px 0;
-    font-size: 12px;
-    > span {
-      margin-right: 24px;
+  .links {
+    margin-top: 24px;
+  }
+  > section {
+    button {
+      margin-right: 12px;
+      font-size: 12px;
+    }
+    .meta {
+      width: 50%;
+      display: inline-block;
+      margin: 4px 0;
     }
   }
   h3 {
