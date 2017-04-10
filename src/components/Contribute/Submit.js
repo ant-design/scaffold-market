@@ -13,28 +13,30 @@ function Submit({ repo, dispatch, form, loading }) {
     <Form className={styles.form} layout="vertical">
       <h3 className={styles.title}>新建脚手架详情</h3>
       <div className={styles.description}>核对脚手架详情信息，确认无误后提交请求</div>
-      <FormItem label="name " hasFeedback>
+      <FormItem label="Name" hasFeedback>
         {getFieldDecorator('name', { initialValue: repo.name })(<Input readOnly />)}
       </FormItem>
-      <FormItem label="git url" hasFeedback>
+      <FormItem label="GitHub url" hasFeedback>
         {getFieldDecorator('git_url', { initialValue: repo.git_url })(<Input readOnly />)}
       </FormItem>
-      <FormItem label="chineseName " hasFeedback>
-        {getFieldDecorator('chineseName', { initialValue: repo.name })(<Input />)}
-      </FormItem>
-      <FormItem label="author " hasFeedback>
+      <FormItem label="Author" hasFeedback>
         {getFieldDecorator('author', { initialValue: repo.owner.login })(<Input readOnly />)}
       </FormItem>
-      <FormItem label="description " hasFeedback>
+      <FormItem label="Description" hasFeedback>
         {getFieldDecorator('description', { initialValue: repo.description })(<Input />)}
       </FormItem>
-      <FormItem label="version " hasFeedback>
+      <FormItem label="Version" hasFeedback>
         {getFieldDecorator('version', { initialValue: '0.0.1' })(<Input />)}
       </FormItem>
-      <FormItem label="industry " hasFeedback>
+      <FormItem label="Industry" hasFeedback>
         {getFieldDecorator('industry', { initialValue: repo.isReact ? 'react' : ' ' })(<Input />)}
       </FormItem>
-      <FormItem label="source " hasFeedback>
+      <FormItem label="Tags" hasFeedback>
+        {getFieldDecorator('tags', { initialValue: [] })(
+          <Select mode="tags" placeholder="please input tags" />,
+        )}
+      </FormItem>
+      <FormItem label="source" hasFeedback>
         {getFieldDecorator('source', { initialValue: 'npm' })(
           <Select>
             <Select.Option value="npm">npm</Select.Option>

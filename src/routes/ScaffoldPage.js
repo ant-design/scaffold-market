@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'dva';
 import moment from 'moment';
-import { Card, Layout, Spin, Icon, Button } from 'antd';
+import { Card, Layout, Spin, Icon, Button, Tag } from 'antd';
 import ReactMarkdown from 'react-markdown';
 import styles from './ScaffoldPage.less';
 
@@ -63,6 +63,13 @@ const ScaffoldPage = ({ list, params }) => {
         <hr />
         <section>
           <h3>标签</h3>
+          <section>
+            {
+              (scaffold.tags && scaffold.tags.length > 0)
+                ? scaffold.tags.map(tag => <Tag key={tag}>{tag}</Tag>)
+                : <div className={styles.notfound}>暂无标签</div>
+            }
+          </section>
         </section>
       </Sider>
       <Content>
