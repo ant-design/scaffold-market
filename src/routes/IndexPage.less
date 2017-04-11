@@ -1,22 +1,37 @@
 .normal {
   margin-top: 3em;
-  text-align: center;
   margin: 0 auto;
+  overflow: visible;
 }
 
 .list {
-  margin-top: 1.8em;
   list-style: none;
-  margin-left: -32px;
-  &:after {
-    content: '';
-    clear: both;
-    display: block;
-  }
 }
 
 .loading {
   height: 200px;
   line-height: 200px;
   text-align: center;
+}
+
+.sider {
+  background: transparent;
+  padding-right: 60px;
+  .tags {
+    border-top: 1px solid #e9e9e9;
+    padding-top: 16px;
+    :global(.ant-tag) {
+      font-size: 12px;
+      border-radius: 100px;
+    }
+    h3 {
+      font-size: 14px;
+      font-weight: normal;
+      margin-bottom: 16px;
+    }
+    .tagCount {
+      opacity: 0.5;
+      margin-left: 4px;
+    }
+  }
 }

@@ -68,8 +68,8 @@ const ScaffoldPage = ({ list, params }) => {
             {
               (scaffold.tags && scaffold.tags.length > 0)
                 ? scaffold.tags.map(tag => (
-                  <Link to={`/?tag=${tag}`}>
-                    <Tag key={tag}>{tag}</Tag>
+                  <Link to={`/?tags=${tag}`} key={tag}>
+                    <Tag>{tag}</Tag>
                   </Link>
                 ))
                 : <div className={styles.notfound}>暂无标签</div>
