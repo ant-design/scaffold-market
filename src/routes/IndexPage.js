@@ -18,11 +18,14 @@ const filterTag = (list, tags) => list.filter((item) => {
 
 const IndexPage = ({ list, groupedTags, location: { query } }) => {
   const tags = Object.keys(groupedTags);
-  return (
+  return (list && list.length > 0) ? (
     <Layout className={styles.normal}>
       <Sider className={styles.sider} width={300}>
         <section className={styles.tags}>
-          <h3>全部标签</h3>
+          <h3>
+            全部标签
+            {query.tags ? <Link to="/">清除选中</Link> : null}
+          </h3>
           <section>
             {
               (tags && tags.length > 0)
@@ -44,7 +47,9 @@ const IndexPage = ({ list, groupedTags, location: { query } }) => {
                       }}
                       key={tag}
                     >
-                      <Tag color={queryTags.indexOf(tag) >= 0 ? 'blue-inverse' : undefined}>
+                      <Tag
+                        className={queryTags.indexOf(tag) >= 0 ? `${styles.tag} selected` : styles.tag}
+                      >
                         {tag}
                         <span className={styles.tagCount}>
                           | {groupedTags[tag].length}
@@ -52,8 +57,7 @@ const IndexPage = ({ list, groupedTags, location: { query } }) => {
                       </Tag>
                     </Link>
                   );
-                })
-                : <div className={styles.notfound}>暂无标签</div>
+                }) : <div className={styles.notfound}>暂无标签</div>
             }
           </section>
         </section>
@@ -61,21 +65,19 @@ const IndexPage = ({ list, groupedTags, location: { query } }) => {
       <Content style={{ overflow: 'visible' }}>
         <Row className={styles.list} gutter={32}>
           {
-            (list && list.length > 0)
-              ? filterTag(list, query.tags).map(item => (
-                <Col key={item.name} span={8}>
-                  <ScaffoldItem {...item} />
-                </Col>
-              ))
-              : (
-                <div className={styles.loading}>
-                  <Spin size="large" />
-                </div>
-              )
+            filterTag(list, query.tags).map(item => (
+              <Col key={item.name} span={8}>
+                <ScaffoldItem {...item} />
+              </Col>
+            ))
           }
         </Row>
       </Content>
     </Layout>
+  ) : (
+    <div className={styles.loading}>
+      <Spin size="large" />
+    </div>
   );
 };
 

@@ -79,7 +79,10 @@ const ScaffoldPage = ({ list, params }) => {
       </Sider>
       <Content>
         <Card title="README" style={{ border: '1px solid #e9e9e9' }}>
-          <ReactMarkdown source={scaffold.readme} className={styles.markdown} />
+          {scaffold.readme
+            ? <ReactMarkdown source={scaffold.readme} className={styles.markdown} />
+            : 'Not Found'
+          }
         </Card>
       </Content>
     </Layout>
