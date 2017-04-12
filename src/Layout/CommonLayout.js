@@ -24,7 +24,7 @@ class CommonLayout extends React.Component {
     dispatch(routerRedux.push(e.target.value ? `/?search=${e.target.value}` : ''));
   }
   render() {
-    const { dispatch, user, children } = this.props;
+    const { dispatch, user, children, location: { pathname } } = this.props;
     const { locale } = this.state;
     const appLocale = locale === 'zh-CN' ? zhCN : enUS;
     return (
@@ -33,7 +33,7 @@ class CommonLayout extends React.Component {
           <header className={styles.header}>
             <div className={styles.headerContent}>
               <h1 className={styles.title}>
-                <Link to="/">LOGO</Link>
+                <Link to="/">Template</Link>
               </h1>
               <span className={styles.searchWrapper}>
                 <Input
@@ -83,6 +83,11 @@ class CommonLayout extends React.Component {
               </div>
             </div>
           </header>
+          {
+            pathname === '/' ? (
+              <div className={styles.banner} />
+            ) : null
+          }
           <div className={styles.container}>
             {children}
           </div>

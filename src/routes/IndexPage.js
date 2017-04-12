@@ -23,7 +23,7 @@ const filterTag = (list, tags, search) => list.filter((item) => {
 const IndexPage = ({ list, groupedTags, location: { query } }) => {
   const tags = Object.keys(groupedTags);
   const filteredItem = filterTag(list, query.tags, query.search);
-  return (list && list.length > 0) ? (
+  const scaffoldItems = (list && list.length > 0) ? (
     <Layout className={styles.normal}>
       <Sider className={styles.sider} width={300}>
         <section className={styles.tags}>
@@ -85,6 +85,7 @@ const IndexPage = ({ list, groupedTags, location: { query } }) => {
       <Spin size="large" />
     </div>
   );
+  return scaffoldItems;
 };
 
 IndexPage.propTypes = {

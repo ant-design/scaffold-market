@@ -3,7 +3,7 @@
 .header {
   height: 64px;
   line-height: 64px;
-  border-bottom: 1px solid @border-color-base;
+  box-shadow: 0 0 8px rgba(0, 0, 0, .08);
   overflow: hidden;
   font-size: 14px;
   background: #fff;
@@ -16,6 +16,9 @@
   .title {
     font-size: 24px;
     float: left;
+    a {
+      text-decoration: none;
+    }
   }
 
   .searchWrapper {
@@ -61,6 +64,13 @@
       margin-right: 8px;
     }
   }
+}
+
+.banner {
+  height: 280px;
+  text-align: center;
+  background: linear-gradient(128deg, @primary-color, rgb(237,51,186));
+  color: #fff;
 }
 
 .container {
