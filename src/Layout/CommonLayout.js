@@ -1,7 +1,7 @@
 import React from 'react';
-import { Button, Icon } from 'antd';
+import { Button, Icon, Input } from 'antd';
 import { connect } from 'dva';
-import { Link } from 'dva/router';
+import { Link, routerRedux } from 'dva/router';
 import { IntlProvider, addLocaleData, FormattedMessage } from 'react-intl';
 import styles from './CommonLayout.less';
 import { isLocaleZhCN } from '../utils';
@@ -19,6 +19,10 @@ class CommonLayout extends React.Component {
     localStorage.setItem('locale', locale);
     this.setState({ locale });
   }
+  handleSearch = (e) => {
+    const { dispatch } = this.props;
+    dispatch(routerRedux.push(e.target.value ? `/?search=${e.target.value}` : ''));
+  }
   render() {
     const { dispatch, user, children } = this.props;
     const { locale } = this.state;
@@ -31,6 +35,14 @@ class CommonLayout extends React.Component {
               <h1 className={styles.title}>
                 <Link to="/">LOGO</Link>
               </h1>
+              <span className={styles.searchWrapper}>
+                <Input
+                  className={styles.search}
+                  prefix={<Icon type="search" style={{ marginLeft: 10 }} />}
+                  placeholder="Search here"
+                  onChange={this.handleSearch}
+                />
+              </span>
               <div className={styles.right}>
                 {user ? (
                   <span>

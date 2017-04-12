@@ -8,16 +8,20 @@ import styles from './IndexPage.less';
 
 const { Sider, Content } = Layout;
 
-const filterTag = (list, tags) => list.filter((item) => {
-  if (!tags) {
+const filterTag = (list, tags, search) => list.filter((item) => {
+  if (!tags && !search) {
     return true;
   }
-  const queryTags = typeof tags === 'string' ? [tags] : [...tags];
+  if (item.name.indexOf(search) < 0 || item.description.indexOf(search) < 0) {
+    return false;
+  }
+  const queryTags = typeof tags === 'string' ? [tags] : [...(tags || [])];
   return queryTags.every(tag => (item.tags || []).indexOf(tag) >= 0);
 });
 
 const IndexPage = ({ list, groupedTags, location: { query } }) => {
   const tags = Object.keys(groupedTags);
+  const filteredItem = filterTag(list, query.tags, query.search);
   return (list && list.length > 0) ? (
     <Layout className={styles.normal}>
       <Sider className={styles.sider} width={300}>
@@ -65,11 +69,12 @@ const IndexPage = ({ list, groupedTags, location: { query } }) => {
       <Content style={{ overflow: 'visible' }}>
         <Row className={styles.list} gutter={32}>
           {
-            filterTag(list, query.tags).map(item => (
-              <Col key={item.name} span={8}>
-                <ScaffoldItem {...item} />
-              </Col>
-            ))
+            filteredItem.length > 0 ?
+              filteredItem.map(item => (
+                <Col key={item.name} span={8}>
+                  <ScaffoldItem {...item} />
+                </Col>
+              )) : <div className={styles.notfound}>没有找到</div>
           }
         </Row>
       </Content>
