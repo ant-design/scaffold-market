@@ -3,11 +3,11 @@ import { Icon } from 'antd';
 import { Link } from 'dva/router';
 import styles from './ScaffoldItem.less';
 
-export default function ScaffoldItem({ name, description, stargazers_count }) {
+export default function ScaffoldItem({ name, description, stargazers_count, coverPicture }) {
   return (
     <li className={styles.card}>
       <Link to={`/templates/${name}`}>
-        <img className={styles.picture} src="" alt="" />
+        <img className={styles.picture} src={coverPicture} alt="" />
         <div className={styles.detail}>
           <h2 className={styles.title}>
             {name}

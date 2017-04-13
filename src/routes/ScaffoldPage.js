@@ -78,7 +78,14 @@ const ScaffoldPage = ({ list, params }) => {
         </section>
       </Sider>
       <Content>
-        <Card title="README" style={{ border: '1px solid #e9e9e9' }}>
+        {
+          scaffold.coverPicture ? (
+            <Card className={styles.card} title="截图展示">
+              <img src={scaffold.coverPicture} alt="" />
+            </Card>
+          ) : null
+        }
+        <Card className={styles.card} title="README">
           {scaffold.readme
             ? <ReactMarkdown source={scaffold.readme} className={styles.markdown} />
             : 'Not Found'

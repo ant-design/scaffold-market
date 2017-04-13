@@ -78,10 +78,13 @@ export default {
 
       // pr
       const pullRequestResult = yield scaffoldRepo.createPullRequest({
-        title: `add scaffold ${payload.name} to antd scaffold`,
+        title: `Add template ${payload.name} to the market`,
         head: `${user}:${branchName}`,
         base: 'master',
-        body: yaml.safeDump(payload),
+        body: `
+- Name: \`${payload.name}\`
+- Url: \`${payload.git_url}\`
+        `,
       });
 
       // eslint-disable-next-line
