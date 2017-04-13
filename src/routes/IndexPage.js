@@ -13,7 +13,7 @@ const filterTag = (list, tags, search) => list.filter((item) => {
   if (!tags && !search) {
     return true;
   }
-  if (item.name.indexOf(search) < 0 || item.description.indexOf(search) < 0) {
+  if (item.name.indexOf(search) < 0 && item.description.indexOf(search) < 0) {
     return false;
   }
   const queryTags = typeof tags === 'string' ? [tags] : [...(tags || [])];
