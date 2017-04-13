@@ -1,8 +1,9 @@
 import React from 'react';
-import { Select, Button, Input, Form } from 'antd';
+import { Select, Button, Input, Form, Upload, Icon } from 'antd';
 import styles from './Submit.less';
 
 const FormItem = Form.Item;
+const { Dragger } = Upload;
 
 function Submit({ repo, dispatch, form, loading }) {
   if (!repo) {
@@ -16,7 +17,7 @@ function Submit({ repo, dispatch, form, loading }) {
       <FormItem label="Name" hasFeedback>
         {getFieldDecorator('name', { initialValue: repo.name })(<Input readOnly />)}
       </FormItem>
-      <FormItem label="GitHub url" hasFeedback>
+      <FormItem label="GitHub Url" hasFeedback>
         {getFieldDecorator('git_url', { initialValue: repo.git_url })(<Input readOnly />)}
       </FormItem>
       <FormItem label="Author" hasFeedback>
@@ -26,22 +27,21 @@ function Submit({ repo, dispatch, form, loading }) {
         {getFieldDecorator('description', { initialValue: repo.description })(<Input />)}
       </FormItem>
       <FormItem label="Version" hasFeedback>
-        {getFieldDecorator('version', { initialValue: '0.0.1' })(<Input />)}
-      </FormItem>
-      <FormItem label="Industry" hasFeedback>
-        {getFieldDecorator('industry', { initialValue: repo.isReact ? 'react' : ' ' })(<Input />)}
+        {getFieldDecorator('version')(<Input />)}
       </FormItem>
       <FormItem label="Tags" hasFeedback>
         {getFieldDecorator('tags', { initialValue: [] })(
           <Select mode="tags" placeholder="please input tags" />,
         )}
       </FormItem>
-      <FormItem label="source" hasFeedback>
-        {getFieldDecorator('source', { initialValue: 'npm' })(
-          <Select>
-            <Select.Option value="npm">npm</Select.Option>
-            <Select.Option value="tnpm">tnpm</Select.Option>
-          </Select>,
+      <FormItem label="Screen Shot" hasFeedback>
+        {getFieldDecorator('screenshot')(
+          <Dragger className={styles.upload} beforeUpload={() => false}>
+            <p className="ant-upload-drag-icon">
+              <Icon type="inbox" />
+            </p>
+            <p className="ant-upload-text">Click or drag file to this area to upload</p>
+          </Dragger>,
         )}
       </FormItem>
       <FormItem>
