@@ -8,8 +8,19 @@ export default {
   state: [],
 
   subscriptions: {
-    setup({ dispatch }) {
-      dispatch({ type: 'fetch' });
+    setup({ dispatch, history }) {
+      history.listen(({ pathname }) => {
+        if (pathname === '/') {
+          dispatch({ type: 'fetch' });
+        }
+        const match = pathname.match(/\/templates\/(.*)/);
+        if (match) {
+          dispatch({
+            type: 'fetch',
+            payload: match[1],
+          });
+        }
+      });
     },
   },
 
@@ -18,18 +29,20 @@ export default {
       const { data: { list } } = yield call(fetch);
 
       for (let i = 0; i < list.length; i += 1) {
-        const { git_url } = list[i];
-        const { user, repo } = parseGithubUrl(git_url);
-        const { auth } = yield select();
-        const { accessToken } = auth;
-        const github = new Github({ token: accessToken });
-        // read basic information of repo
-        const repos = yield github.getRepo(user, repo);
-        const response = yield repos.getDetails();
-        list[i] = {
-          ...list[i],
-          ...response.data,
-        };
+        if (!payload || list[i].name === payload) {
+          const { git_url } = list[i];
+          const { user, repo } = parseGithubUrl(git_url);
+          const { auth } = yield select();
+          const { accessToken } = auth;
+          const github = new Github({ token: accessToken });
+          // read basic information of repo
+          const repos = yield github.getRepo(user, repo);
+          const response = yield repos.getDetails();
+          list[i] = {
+            ...list[i],
+            ...response.data,
+          };
+        }
       }
 
       yield put({
