@@ -15,7 +15,9 @@ function Start({ dispatch, form, loading }) {
   };
   return (
     <Form className={styles.form}>
-      <h3 className={styles.title}>在 Template 上添加一个项目</h3>
+      <h3 className={styles.title}>
+        提交一个脚手架
+      </h3>
       <FormItem>
         {getFieldDecorator('url', {
           initialValue: 'https://github.com/dvajs/dva-example-user-dashboard/',
