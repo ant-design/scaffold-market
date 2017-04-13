@@ -1,5 +1,5 @@
 import React from 'react';
-import { Select, Button, Input, Form, Upload, Icon } from 'antd';
+import { Select, Button, Input, Form, Upload, Icon, Progress } from 'antd';
 import styles from './Submit.less';
 
 const FormItem = Form.Item;
@@ -9,7 +9,10 @@ function Submit({ repo, dispatch, form, loading }) {
   if (!repo) {
     return null;
   }
-  const { getFieldDecorator, validateFields } = form;
+  const { getFieldDecorator, validateFields, getFieldValue } = form;
+  const coverPicture = getFieldValue('coverPicture');
+  const coverPictureUploading = (coverPicture && !coverPicture.response);
+  const coverPictureUploaded = (coverPicture && coverPicture.response);
   return (
     <Form className={styles.form} layout="vertical">
       <h3 className={styles.title}>新建脚手架详情</h3>
@@ -27,20 +30,55 @@ function Submit({ repo, dispatch, form, loading }) {
         {getFieldDecorator('description', { initialValue: repo.description })(<Input />)}
       </FormItem>
       <FormItem label="Version" hasFeedback>
-        {getFieldDecorator('version')(<Input />)}
+        {getFieldDecorator('version', {
+          initialValue: '',
+        })(<Input />)}
       </FormItem>
       <FormItem label="Tags" hasFeedback>
         {getFieldDecorator('tags', { initialValue: [] })(
           <Select mode="tags" placeholder="please input tags" />,
         )}
       </FormItem>
-      <FormItem label="Screen Shot" hasFeedback>
-        {getFieldDecorator('screenshot')(
-          <Dragger className={styles.upload} beforeUpload={() => false}>
+      <FormItem label="Cover Picture">
+        {
+          coverPictureUploaded && (
+            <div className={styles.cover}>
+              <img
+                src={`https://ucarecdn.com/${coverPicture.response.file}/`}
+                className={styles.cover}
+                alt=""
+              />
+            </div>
+          )
+        }
+        {getFieldDecorator('coverPicture', {
+          getValueFromEvent: ({ file }) => file,
+        })(
+          <Dragger
+            className={`${styles.upload} ${coverPictureUploaded ? styles.hidden : ''}`}
+            action="https://upload.uploadcare.com/base/"
+            data={{
+              UPLOADCARE_PUB_KEY: '7a0444cf0307d71d796b',
+              UPLOADCARE_STORE: 1,
+            }}
+            multiple
+            headers={{ 'X-Requested-With': null }}
+            showUploadList={false}
+          >
             <p className="ant-upload-drag-icon">
               <Icon type="inbox" />
             </p>
-            <p className="ant-upload-text">Click or drag file to this area to upload</p>
+            {
+              coverPictureUploading ? (
+                <Progress
+                  style={{ width: '80%' }}
+                  strokeWidth={6}
+                  showInfo={false}
+                  percent={coverPicture.percent}
+                  status="active"
+                />
+              ) : <p className="ant-upload-text">Click or drag file to this area to upload</p>
+            }
           </Dragger>,
         )}
       </FormItem>
@@ -51,7 +89,13 @@ function Submit({ repo, dispatch, form, loading }) {
           loading={loading.models.contribute}
           onClick={() => validateFields((err, values) => {
             if (!err) {
-              dispatch({ type: 'contribute/submit', payload: values });
+              dispatch({
+                type: 'contribute/submit',
+                payload: {
+                  ...values,
+                  coverPicture: `https://ucarecdn.com/${coverPicture.response.file}/`,
+                },
+              });
             }
           })}
         >
