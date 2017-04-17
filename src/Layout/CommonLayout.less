@@ -71,6 +71,31 @@
   text-align: center;
   background: linear-gradient(128deg, @primary-color, rgb(237,51,186));
   color: #fff;
+  overflow: hidden;
+  .bannerText {
+    font-size: 28px;
+    color: #fff;
+    text-shadow: 0 5px 10px #6E55B5;
+    font-family: LucidaGrande;
+    margin: 80px 0 24px 0;
+    line-height: 1;
+    font-weight: lighter;
+  }
+  .submit {
+    border-radius: 100px;
+    background: #fff;
+    padding: 0 40px;
+    height: 40px;
+    color: #876FD2;
+    border: 0;
+    box-shadow: 0 0 16px #6E55B5;
+    transition: all .3s;
+    margin-top: 12px;
+    cursor: pointer;
+    &:hover {
+      box-shadow: 0 0 32px #6E55B5;
+    }
+  }
 }
 
 .container {

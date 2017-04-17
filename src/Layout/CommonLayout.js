@@ -85,7 +85,16 @@ class CommonLayout extends React.Component {
           </header>
           {
             pathname === '/' ? (
-              <div className={styles.banner} />
+              <div className={styles.banner}>
+                <div className={styles.bannerText}>
+                  丰富实用的业务脚手架集合
+                </div>
+                <Link to="contribute">
+                  <button className={styles.submit}>
+                    提交你的脚手架
+                  </button>
+                </Link>
+              </div>
             ) : null
           }
           <div className={styles.container}>
