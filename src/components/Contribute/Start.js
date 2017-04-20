@@ -5,7 +5,7 @@ import styles from './Start.less';
 
 const FormItem = Form.Item;
 
-function Start({ dispatch, form, loading }) {
+function Start({ dispatch, form, loading, intl }) {
   const { getFieldDecorator, validateFields } = form;
   const onSubmit = () => {
     validateFields(['url'], { force: true }, (err, values) => {
@@ -26,9 +26,15 @@ function Start({ dispatch, form, loading }) {
             type: 'string',
             required: true,
             pattern: /^https?:\/\/(www\.)?github\.com\/([\w-]+)\/([\w-]+)\/?/,
-            message: <FormattedMessage id="submit.repo.error" />,
+            message: intl.formatMessage({ id: 'submit.repo.error' }),
           }],
-        })(<Input className={styles.input} autoComplete="off" placeholder={<FormattedMessage id="submit.repo.placeholder" />} />)}
+        })(
+          <Input
+            className={styles.input}
+            autoComplete="off"
+            placeholder={intl.formatMessage({ id: 'submit.repo.placeholder' })}
+          />,
+        )}
       </FormItem>
       <FormItem style={{ marginTop: 60 }}>
         <Button

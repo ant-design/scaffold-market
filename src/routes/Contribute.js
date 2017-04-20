@@ -16,7 +16,7 @@ class Contribute extends React.Component {
     this.props.dispatch({ type: 'contribute/saveRepo', pyaload: null });
   }
   render() {
-    const { auth, contribute: { repo }, dispatch, location, loading } = this.props;
+    const { auth, contribute: { repo }, dispatch, location, loading, intl } = this.props;
     if (!auth || !auth.accessToken) {
       return <div>You need to login before submitting.</div>;
     }
@@ -25,8 +25,8 @@ class Contribute extends React.Component {
       children = <Finish dispatch={dispatch} loading={loading} url={location.query.pull} />;
     } else {
       children = repo
-        ? <Submit dispatch={dispatch} repo={repo} loading={loading} />
-        : <Start dispatch={dispatch} loading={loading} />;
+        ? <Submit dispatch={dispatch} repo={repo} loading={loading} intl={intl} />
+        : <Start dispatch={dispatch} loading={loading} intl={intl} />;
     }
     return (
       <div className={styles.contribute}>

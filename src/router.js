@@ -1,6 +1,6 @@
 import React from 'react';
 import { Router, Route, IndexRoute } from 'dva/router';
-import CommonLayout from './Layout/CommonLayout';
+import IntlCommonLayout from './Layout/IntlCommonLayout';
 import IndexPage from './routes/IndexPage';
 import Contribute from './routes/Contribute';
 import ScaffoldPage from './routes/ScaffoldPage';
@@ -8,7 +8,7 @@ import ScaffoldPage from './routes/ScaffoldPage';
 function RouterConfig({ history }) {
   return (
     <Router history={history}>
-      <Route path="/" component={CommonLayout}>
+      <Route path="/" component={IntlCommonLayout}>
         <IndexRoute component={IndexPage} />
         <Route path="contribute" component={Contribute}>
           <Route path="finish" component={Contribute} />
