@@ -26,28 +26,32 @@ export default {
 
   effects: {
     *fetch({ payload }, { call, put, select }) {
-      const { data: { list } } = yield call(fetch);
+      const { auth, list } = yield select();
+      const { data } = yield call(fetch);
+      const newList = [...data.list];
 
-      for (let i = 0; i < list.length; i += 1) {
-        if (!payload || list[i].name === payload) {
-          const { git_url } = list[i];
+      for (let i = 0; i < newList.length; i += 1) {
+        let newData;
+        if (!payload || newList[i].name === payload) {
+          const { git_url } = newList[i];
           const { user, repo } = parseGithubUrl(git_url);
-          const { auth } = yield select();
           const { accessToken } = auth;
           const github = new Github({ token: accessToken });
           // read basic information of repo
           const repos = yield github.getRepo(user, repo);
           const response = yield repos.getDetails();
-          list[i] = {
-            ...list[i],
-            ...response.data,
-          };
+          newData = response.data;
         }
+        newList[i] = {
+          ...list.filter(item => item.name === newList[i].name)[0],
+          ...newList[i],
+          ...newData,
+        };
       }
 
       yield put({
         type: 'save',
-        payload: list.sort((a, b) => b.stargazers_count - a.stargazers_count),
+        payload: newList,
       });
     },
   },

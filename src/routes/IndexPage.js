@@ -13,7 +13,7 @@ const filterTag = (list, tags, search) => list.filter((item) => {
   if (!tags && !search) {
     return true;
   }
-  if (item.name.indexOf(search) < 0 && item.description.indexOf(search) < 0) {
+  if (search && item.name.indexOf(search) < 0 && item.description.indexOf(search) < 0) {
     return false;
   }
   const queryTags = typeof tags === 'string' ? [tags] : [...(tags || [])];
@@ -104,7 +104,7 @@ export default connect(({ list = [] }) => {
     }
   });
   return {
-    list,
+    list: list.sort((a, b) => b.stargazers_count - a.stargazers_count),
     groupedTags: groupBy(tags),
   };
 })(IndexPage);

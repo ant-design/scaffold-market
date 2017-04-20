@@ -1,5 +1,5 @@
 .card {
-  width: 282px;
+  width: 100%;
   height: 330px;
   box-shadow: 0 1px 4px rgba(191, 200, 209, .04);
   border: 1px solid rgba(0, 0, 0, .09);
@@ -28,6 +28,9 @@
   font-size: 17px;
   color: #505666;
   margin-bottom: 8px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
   &:after {
     content: '';
     display: block;

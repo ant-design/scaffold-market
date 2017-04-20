@@ -27,7 +27,7 @@ function Start({ dispatch, form, loading }) {
             pattern: /^https?:\/\/(www\.)?github\.com\/([\w-]+)\/([\w-]+)\/?/,
             message: 'url must be valid github url',
           }],
-        })(<Input className={styles.input} placeholder="请填写脚手架的 GitHub 地址" />)}
+        })(<Input className={styles.input} autoComplete="off" placeholder="请填写脚手架的 GitHub 地址" />)}
       </FormItem>
       <FormItem style={{ marginTop: 60 }}>
         <Button
