@@ -4,6 +4,7 @@ import { connect } from 'dva';
 import { Link } from 'dva/router';
 import { Spin, Layout, Row, Col, Tag } from 'antd';
 import groupBy from 'lodash.groupby';
+import { FormattedMessage, injectIntl } from 'react-intl';
 import ScaffoldItem from '../components/ScaffoldItem';
 import styles from './IndexPage.less';
 
@@ -28,8 +29,8 @@ const IndexPage = ({ list, groupedTags, location: { query } }) => {
       <Sider className={styles.sider} width={300}>
         <section className={styles.tags}>
           <h3>
-            全部标签
-            {query.tags ? <Link to="/">清除选中</Link> : null}
+            <FormattedMessage id="home.alltags" />
+            {query.tags ? <Link to="/"><FormattedMessage id="home.cleartags" /></Link> : null}
           </h3>
           <section>
             {
@@ -62,7 +63,7 @@ const IndexPage = ({ list, groupedTags, location: { query } }) => {
                       </Tag>
                     </Link>
                   );
-                }) : <div className={styles.notfound}>暂无标签</div>
+                }) : <div className={styles.notfound}><FormattedMessage id="notags" /></div>
             }
           </section>
         </section>
@@ -75,7 +76,7 @@ const IndexPage = ({ list, groupedTags, location: { query } }) => {
                 <Col key={item.name} span={8}>
                   <ScaffoldItem {...item} />
                 </Col>
-              )) : <div className={styles.notfound}>没有找到</div>
+              )) : <div className={styles.notfound}><FormattedMessage id="notfound" /></div>
           }
         </Row>
       </Content>
@@ -96,7 +97,7 @@ IndexPage.defaultProps = {
   list: [],
 };
 
-export default connect(({ list = [] }) => {
+export default injectIntl(connect(({ list = [] }) => {
   let tags = [];
   list.forEach((item) => {
     if (item && item.tags) {
@@ -107,4 +108,4 @@ export default connect(({ list = [] }) => {
     list: list.sort((a, b) => b.stargazers_count - a.stargazers_count),
     groupedTags: groupBy(tags),
   };
-})(IndexPage);
+})(IndexPage));

@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'dva';
+import { injectIntl } from 'react-intl';
 import Start from '../components/Contribute/Start';
 import Submit from '../components/Contribute/Submit';
 import Finish from '../components/Contribute/Finish';
@@ -35,8 +36,8 @@ class Contribute extends React.Component {
   }
 }
 
-export default connect(state => ({
+export default injectIntl(connect(state => ({
   auth: state.auth,
   contribute: state.contribute,
   loading: state.loading,
-}))(Contribute);
+}))(Contribute));

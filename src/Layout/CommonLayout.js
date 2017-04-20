@@ -39,7 +39,7 @@ class CommonLayout extends React.Component {
                 <Input
                   className={styles.search}
                   prefix={<Icon type="search" style={{ marginLeft: 10 }} />}
-                  placeholder="Search here"
+                  placeholder={<FormattedMessage id="header.search" />}
                   onChange={this.handleSearch}
                 />
               </span>
@@ -48,11 +48,11 @@ class CommonLayout extends React.Component {
                   <span>
                     <Link className={styles.link} to="contribute">
                       <Icon type="plus-circle-o" />
-                      <FormattedMessage id="submit" />
+                      <FormattedMessage id="header.submit" />
                     </Link>
                     <Link className={styles.link} to="help">
                       <Icon type="question-circle-o" />
-                      <FormattedMessage id="help" />
+                      <FormattedMessage id="header.help" />
                     </Link>
                     {!user.logining && (
                       <span>
@@ -87,11 +87,11 @@ class CommonLayout extends React.Component {
             pathname === '/' ? (
               <div className={styles.banner}>
                 <div className={styles.bannerText}>
-                  丰富实用的业务脚手架集合
+                  <FormattedMessage id="home.slogan" />
                 </div>
                 <Link to="contribute">
                   <button className={styles.submit}>
-                    提交你的脚手架
+                    <FormattedMessage id="home.submit" />
                   </button>
                 </Link>
               </div>
