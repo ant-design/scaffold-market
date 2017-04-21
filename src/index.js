@@ -11,6 +11,8 @@ import './index.less';
 const app = dva({
   history: useRouterHistory(createHashHistory)({ queryKey: false }),
   onError(e) {
+    // eslint-disable-next-line
+    console.error(e);
     notification.error({
       description: e.message,
     });

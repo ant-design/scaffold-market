@@ -1,5 +1,5 @@
 import React from 'react';
-import { Select, Button, Input, Form, Upload, Icon, Progress } from 'antd';
+import { Select, Button, Input, Form, Upload, Icon, Progress, Tooltip } from 'antd';
 import styles from './Submit.less';
 
 const FormItem = Form.Item;
@@ -9,7 +9,7 @@ function Submit({ repo, dispatch, form, loading }) {
   if (!repo) {
     return null;
   }
-  const { getFieldDecorator, validateFields, getFieldValue } = form;
+  const { getFieldDecorator, validateFields, getFieldValue, setFieldsValue } = form;
   const coverPicture = getFieldValue('coverPicture');
   const coverPictureUploading = (coverPicture && !coverPicture.response);
   const coverPictureUploaded = (coverPicture && coverPicture.response);
@@ -45,9 +45,15 @@ function Submit({ repo, dispatch, form, loading }) {
             <div className={styles.cover}>
               <img
                 src={`https://ucarecdn.com/${coverPicture.response.file}/`}
-                className={styles.cover}
-                alt=""
+                alt="loading..."
               />
+              <Tooltip title="Remove">
+                <Icon
+                  className={styles.deletePicture}
+                  type="cross"
+                  onClick={() => setFieldsValue({ coverPicture: undefined })}
+                />
+              </Tooltip>
             </div>
           )
         }
