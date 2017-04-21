@@ -7,6 +7,11 @@
   overflow: hidden;
   font-size: 14px;
   background: #fff;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
 
   .headerContent {
     max-width: 1206px;
@@ -72,6 +77,8 @@
   background: linear-gradient(128deg, @primary-color, rgb(237,51,186));
   color: #fff;
   overflow: hidden;
+  margin-top: 64px;
+  margin-bottom: -64px;
   .bannerText {
     font-size: 28px;
     color: #fff;
@@ -100,7 +107,7 @@
 
 .container {
   max-width: 1206px;
-  margin: 40px auto 120px;
+  margin: 104px auto 120px;
   &:after {
     content: '';
     clear: both;

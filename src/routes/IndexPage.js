@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'dva';
 import { Link } from 'dva/router';
-import { Spin, Layout, Row, Col, Tag } from 'antd';
+import { Spin, Layout, Row, Col, Tag, Affix } from 'antd';
 import groupBy from 'lodash.groupby';
 import { FormattedMessage, injectIntl } from 'react-intl';
 import ScaffoldItem from '../components/ScaffoldItem';
@@ -27,46 +27,48 @@ const IndexPage = ({ list, groupedTags, location: { query } }) => {
   const scaffoldItems = (list && list.length > 0) ? (
     <Layout className={styles.normal}>
       <Sider className={styles.sider} width={300}>
-        <section className={styles.tags}>
-          <h3>
-            <FormattedMessage id="home.alltags" />
-            {query.tags ? <Link to="/"><FormattedMessage id="home.cleartags" /></Link> : null}
-          </h3>
-          <section>
-            {
-              (tags && tags.length > 0)
-                ? tags.map((tag) => {
-                  const queryTags = typeof query.tags === 'string'
-                    ? [query.tags]
-                    : [...(query.tags || [])];
-                  const newTags = [...queryTags];
-                  if (newTags.indexOf(tag) >= 0) {
-                    newTags.splice(newTags.indexOf(tag), 1);
-                  } else {
-                    newTags.push(tag);
-                  }
-                  return (
-                    <Link
-                      to={{
-                        pathname: '/',
-                        query: { tags: newTags },
-                      }}
-                      key={tag}
-                    >
-                      <Tag
-                        className={queryTags.indexOf(tag) >= 0 ? `${styles.tag} selected` : styles.tag}
+        <Affix offsetTop={63}>
+          <section className={styles.tags}>
+            <h3>
+              <FormattedMessage id="home.alltags" />
+              {query.tags ? <Link to="/"><FormattedMessage id="home.cleartags" /></Link> : null}
+            </h3>
+            <section>
+              {
+                (tags && tags.length > 0)
+                  ? tags.map((tag) => {
+                    const queryTags = typeof query.tags === 'string'
+                      ? [query.tags]
+                      : [...(query.tags || [])];
+                    const newTags = [...queryTags];
+                    if (newTags.indexOf(tag) >= 0) {
+                      newTags.splice(newTags.indexOf(tag), 1);
+                    } else {
+                      newTags.push(tag);
+                    }
+                    return (
+                      <Link
+                        to={{
+                          pathname: '/',
+                          query: { tags: newTags },
+                        }}
+                        key={tag}
                       >
-                        {tag}
-                        <span className={styles.tagCount}>
-                          | {groupedTags[tag].length}
-                        </span>
-                      </Tag>
-                    </Link>
-                  );
-                }) : <div className={styles.notfound}><FormattedMessage id="notags" /></div>
-            }
+                        <Tag
+                          className={queryTags.indexOf(tag) >= 0 ? `${styles.tag} selected` : styles.tag}
+                        >
+                          {tag}
+                          <span className={styles.tagCount}>
+                            | {groupedTags[tag].length}
+                          </span>
+                        </Tag>
+                      </Link>
+                    );
+                  }) : <div className={styles.notfound}><FormattedMessage id="notags" /></div>
+              }
+            </section>
           </section>
-        </section>
+        </Affix>
       </Sider>
       <Content style={{ overflow: 'visible' }}>
         <Row className={styles.list} gutter={32}>
