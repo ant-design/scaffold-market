@@ -24,11 +24,21 @@ for D in *; do
 
         eval $(parse_yaml index.yml "config_")
         REPO=$(echo ${config_git_url} | sed "s/'//g")
+        LAST_HASH=$(echo ${config_git_hash} | sed "s/'//g")
 
         git clone $REPO _temp --depth=1
 
         echo "try to build scaffold ${D} at ${REPO}"
         cd _temp
+        CURRENT_HASH=$(git rev-parse --short HEAD)
+        echo "current git hash: ${CURRENT_HASH}"
+        echo "last git hash: ${LAST_HASH}"
+        # cd $D
+        if [ CURRENT_HASH = LAST_HASH ]; then
+            echo "No changes to scaffold ${D}"
+            continue
+        fi
+        cd $D
         npm install
         npm run build
         cp -r dist/* ../
