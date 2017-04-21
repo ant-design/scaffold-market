@@ -38,6 +38,8 @@ for D in *; do
             echo "No changes to scaffold ${D}"
             continue
         fi
+        # Add current hash into index.yml
+        echo "git_hash: ${CURRENT_HASH}" >> foo
         cd $D
         npm install
         npm run build
