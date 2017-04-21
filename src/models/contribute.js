@@ -84,6 +84,7 @@ export default {
         body: `
 - Name: \`${payload.name}\`
 - Url: \`${payload.git_url}\`
+${payload.coverPicture ? `- Cover Picture:\n![](${payload.coverPicture})` : ''}
         `,
       });
 

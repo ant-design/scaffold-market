@@ -9,7 +9,7 @@ function checkStatus(response) {
     return response;
   }
 
-  const error = new Error(response.statusText);
+  const error = new Error(response ? response.statusText : 'unknown error');
   error.response = response;
   throw error;
 }

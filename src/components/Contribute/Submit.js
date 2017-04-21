@@ -1,45 +1,47 @@
 import React from 'react';
-import { Select, Button, Input, Form, Upload, Icon, Progress, Tooltip } from 'antd';
+import { Select, Button, Input, Form, Upload, Icon, Progress, Tooltip, message } from 'antd';
+import { FormattedMessage } from 'react-intl';
 import styles from './Submit.less';
 
 const FormItem = Form.Item;
 const { Dragger } = Upload;
 
-function Submit({ repo, dispatch, form, loading }) {
+function Submit({ repo, dispatch, form, loading, intl }) {
   if (!repo) {
     return null;
   }
   const { getFieldDecorator, validateFields, getFieldValue, setFieldsValue } = form;
   const coverPicture = getFieldValue('coverPicture');
   const coverPictureUploading = (coverPicture && !coverPicture.response);
-  const coverPictureUploaded = (coverPicture && coverPicture.response);
+  const coverPictureUploaded = (
+    coverPicture && coverPicture.response && coverPicture.response.file
+  );
   return (
     <Form className={styles.form} layout="vertical">
-      <h3 className={styles.title}>新建脚手架详情</h3>
-      <div className={styles.description}>核对脚手架详情信息，确认无误后提交请求</div>
-      <FormItem label="Name" hasFeedback>
+      <h3 className={styles.title}>
+        <FormattedMessage id="submit.title" />
+      </h3>
+      <div className={styles.description}>
+        <FormattedMessage id="submit.detail.title.description" />
+      </div>
+      <FormItem label={<FormattedMessage id="submit.detail.name" />} hasFeedback>
         {getFieldDecorator('name', { initialValue: repo.name })(<Input readOnly />)}
       </FormItem>
-      <FormItem label="GitHub Url" hasFeedback>
+      <FormItem label={<FormattedMessage id="submit.detail.url" />} hasFeedback>
         {getFieldDecorator('git_url', { initialValue: repo.git_url })(<Input readOnly />)}
       </FormItem>
-      <FormItem label="Author" hasFeedback>
+      <FormItem label={<FormattedMessage id="submit.detail.author" />} hasFeedback>
         {getFieldDecorator('author', { initialValue: repo.owner.login })(<Input readOnly />)}
       </FormItem>
-      <FormItem label="Description" hasFeedback>
+      <FormItem label={<FormattedMessage id="submit.detail.description" />} hasFeedback>
         {getFieldDecorator('description', { initialValue: repo.description })(<Input />)}
       </FormItem>
-      <FormItem label="Version" hasFeedback>
-        {getFieldDecorator('version', {
-          initialValue: '',
-        })(<Input />)}
-      </FormItem>
-      <FormItem label="Tags" hasFeedback>
+      <FormItem label={<FormattedMessage id="submit.detail.tag" />} hasFeedback>
         {getFieldDecorator('tags', { initialValue: [] })(
-          <Select mode="tags" placeholder="please input tags" />,
+          <Select mode="tags" placeholder={intl.formatMessage({ id: 'submit.detail.tag.placeholder' })} />,
         )}
       </FormItem>
-      <FormItem label="Cover Picture">
+      <FormItem label={<FormattedMessage id="submit.detail.cover" />}>
         {
           coverPictureUploaded && (
             <div className={styles.cover}>
@@ -70,6 +72,11 @@ function Submit({ repo, dispatch, form, loading }) {
             multiple
             headers={{ 'X-Requested-With': null }}
             showUploadList={false}
+            onChange={({ file }) => {
+              if (file.status === 'done') {
+                message.success('上传成功！');
+              }
+            }}
           >
             <p className="ant-upload-drag-icon">
               <Icon type="inbox" />
@@ -83,7 +90,11 @@ function Submit({ repo, dispatch, form, loading }) {
                   percent={coverPicture.percent}
                   status="active"
                 />
-              ) : <p className="ant-upload-text">Click or drag file to this area to upload</p>
+            ) : (
+              <p className="ant-upload-text">
+                <FormattedMessage id="submit.detail.cover.upload" />
+              </p>
+            )
             }
           </Dragger>,
         )}
@@ -99,13 +110,13 @@ function Submit({ repo, dispatch, form, loading }) {
                 type: 'contribute/submit',
                 payload: {
                   ...values,
-                  coverPicture: `https://ucarecdn.com/${coverPicture.response.file}/`,
+                  coverPicture: coverPicture ? `https://ucarecdn.com/${coverPicture.response.file}/` : null,
                 },
               });
             }
           })}
         >
-          Submit
+          <FormattedMessage id="submit.detail.submit" />
         </Button>
       </FormItem>
     </Form>
