@@ -39,7 +39,8 @@ for D in *; do
             continue
         fi
         # Add current hash into index.yml
-        echo "git_hash: ${CURRENT_HASH}" >> foo
+        echo "git_hash: ${CURRENT_HASH}" >> index.yml
+        echo "writen current git hash to index.yml"
         cd $D
         npm install
         npm run build
