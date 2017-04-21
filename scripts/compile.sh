@@ -33,8 +33,8 @@ for D in *; do
         CURRENT_HASH=$(git rev-parse --short HEAD)
         echo "current git hash: ${CURRENT_HASH}"
         echo "last git hash: ${LAST_HASH}"
-        # cd $D
-        if [ CURRENT_HASH = LAST_HASH ]; then
+        # compare to the last hash
+        if [ "${CURRENT_HASH}" = "${LAST_HASH}" ]; then
             echo "No changes to scaffold ${D}"
             continue
         fi
