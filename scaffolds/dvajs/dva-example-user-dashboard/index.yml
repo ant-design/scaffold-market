@@ -1,13 +1,9 @@
-name: dva-example-user-dashboard
+name: dvajs/dva-example-user-dashboard
 git_url: 'git://github.com/dvajs/dva-example-user-dashboard.git'
 author: dvajs
 description: "\uD83D\uDC72 \uD83D\uDC6C \uD83D\uDC68‍\uD83D\uDC69‍\uD83D\uDC67 \uD83D\uDC68‍\uD83D\uDC69‍\uD83D\uDC66‍\uD83D\uDC66"
-version: ''
-tags:
-  - dva
-  - react
-  - antd
-coverPicture: 'https://ucarecdn.com/f9569dff-f570-494d-a16a-11dfe8bbefd1/'
+tags: []
+coverPicture: null
 readme: >
   # dva-example-user-dashboard
 
