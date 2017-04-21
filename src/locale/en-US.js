@@ -6,6 +6,7 @@ export default {
   messages: {
     notags: 'No Tags',
     notfound: 'Not Found',
+    nologin: 'You need to login before submitting.',
     'header.login': 'Login In',
     'header.submit': 'Submit a scaffold',
     'header.help': 'Help',

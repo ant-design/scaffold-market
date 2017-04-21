@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'dva';
-import { injectIntl } from 'react-intl';
+import { injectIntl, FormattedMessage } from 'react-intl';
 import Start from '../components/Contribute/Start';
 import Submit from '../components/Contribute/Submit';
 import Finish from '../components/Contribute/Finish';
@@ -18,7 +18,11 @@ class Contribute extends React.Component {
   render() {
     const { auth, contribute: { repo }, dispatch, location, loading, intl } = this.props;
     if (!auth || !auth.accessToken) {
-      return <div>You need to login before submitting.</div>;
+      return (
+        <div className={styles.nologin}>
+          <FormattedMessage id="nologin" />
+        </div>
+      );
     }
     let children;
     if (location.pathname.indexOf('contribute/finish') > 0) {

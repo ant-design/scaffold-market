@@ -6,6 +6,7 @@ export default {
   messages: {
     notags: '暂无标签',
     notfound: '没有找到',
+    nologin: '你需要先登录',
     'header.login': '使用 GitHub 登录',
     'header.submit': '提交脚手架',
     'header.help': '帮助',
