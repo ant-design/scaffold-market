@@ -44,8 +44,8 @@ export default {
         }
         newList[i] = {
           ...list.filter(item => item.name === newList[i].name)[0],
-          ...newList[i],
           ...newData,
+          ...newList[i],
         };
       }
 
