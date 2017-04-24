@@ -6,10 +6,11 @@
 npm run build
 gulp
 
-tree
-
+ls
+ls scaffolds
 cp -r scaffolds/* out/
 cd out
+ls
 git add .
 for D in *; do
     if [ -d "${D}" ]; then
