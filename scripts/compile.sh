@@ -15,6 +15,9 @@ for D in *; do
             echo "scaped static folder."
             continue
         fi
+        git status --porcelain
+        git status --porcelain | grep $D
+        git status --porcelain | grep "$D"
         # cd $D
         if [ $(git status --porcelain | grep $D | wc -l) -lt 1 ]; then
             echo "No changes to the output on scaffold ${D}; exiting."
@@ -27,22 +30,7 @@ for D in *; do
         LAST_HASH=$(echo ${config_git_hash} | sed "s/'//g")
 
         git clone $REPO _temp --depth=1
-
         echo "try to build scaffold ${D} at ${REPO}"
-        cd _temp
-        CURRENT_HASH=$(git rev-parse --short HEAD)
-        echo "current git hash: ${CURRENT_HASH}"
-        echo "last git hash: ${LAST_HASH}"
-        # compare to the last hash
-        if [ "${CURRENT_HASH}" = "${LAST_HASH}" ]; then
-            echo "No changes to scaffold ${D}"
-            continue
-        fi
-
-        # Add current hash into index.yml
-        cd ../
-        echo "git_hash: ${CURRENT_HASH}" >> index.yml
-        echo "writen current git hash to index.yml"
         cd _temp
 
         npm install
