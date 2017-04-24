@@ -69,6 +69,7 @@ export default {
         yaml.safeDump({
           ...payload,
           readme: contribute.repo.readme,
+          deployedAt: new Date(),
         }),
         'submit new scaffold',
         {

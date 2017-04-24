@@ -22,6 +22,7 @@
     "@btn-border-radius-sm": "100px",
     "@body-background": "#FAFAFA",
     "@layout-body-background": "#FAFAFA",
-    "@btn-padding-lg": "8px 32px"
+    "@btn-height-lg": "38px",
+    "@btn-padding-lg": "0 32px"
   }
 }
