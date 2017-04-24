@@ -6,8 +6,10 @@
 npm run build
 gulp
 
-cp -r scaffolds/* out/
-cd out
+tree
+
+cp -rf scaffolds out/
+cd out/scaffolds
 git add .
 for D in *; do
     if [ -d "${D}" ]; then
@@ -15,12 +17,11 @@ for D in *; do
             echo "scaped static folder."
             continue
         fi
+        pwd
         echo "--------- ${D} ---------"
         git status --porcelain
         echo "--------- ${D} ---------"
         git status --porcelain | grep $D
-        echo "--------- ${D} ---------"
-        git status --porcelain | grep "${D}"
         echo "--------- ${D} ---------"
         # cd $D
         if [ $(git status --porcelain | grep $D | wc -l) -lt 1 ]; then
