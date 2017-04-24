@@ -8,8 +8,8 @@ gulp
 
 tree
 
-cp -rf scaffolds out/
-cd out/scaffolds
+cp -r scaffolds/* out/
+cd out
 git add .
 for D in *; do
     if [ -d "${D}" ]; then
@@ -17,13 +17,8 @@ for D in *; do
             echo "scaped static folder."
             continue
         fi
-        pwd
-        echo "--------- ${D} ---------"
+        echo "start to check ${D}"
         git status --porcelain
-        echo "--------- ${D} ---------"
-        git status --porcelain | grep $D
-        echo "--------- ${D} ---------"
-        # cd $D
         if [ $(git status --porcelain | grep $D | wc -l) -lt 1 ]; then
             echo "No changes to the output on scaffold ${D}; exiting."
             continue
@@ -32,12 +27,11 @@ for D in *; do
 
         eval $(parse_yaml index.yml "config_")
         REPO=$(echo ${config_git_url} | sed "s/'//g")
-        LAST_HASH=$(echo ${config_git_hash} | sed "s/'//g")
 
         git clone $REPO _temp --depth=1
+
         echo "try to build scaffold ${D} at ${REPO}"
         cd _temp
-
         npm install
         npm run build
         cp -r dist/* ../
