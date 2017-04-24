@@ -11,7 +11,7 @@ ls scaffolds
 cp -r scaffolds/* out/
 cd out
 ls
-git add . --all
+git add --all .
 for D in *; do
     if [ -d "${D}" ]; then
         if [ "$D" = "static" ]; then
