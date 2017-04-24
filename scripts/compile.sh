@@ -15,9 +15,13 @@ for D in *; do
             echo "scaped static folder."
             continue
         fi
+        echo "---------"
         git status --porcelain
+        echo "---------"
         git status --porcelain | grep $D
+        echo "---------"
         git status --porcelain | grep "$D"
+        echo "---------"
         # cd $D
         if [ $(git status --porcelain | grep $D | wc -l) -lt 1 ]; then
             echo "No changes to the output on scaffold ${D}; exiting."
