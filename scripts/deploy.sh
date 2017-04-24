@@ -18,6 +18,8 @@ SHA=`git rev-parse --verify HEAD`
 git clone $REPO out
 cd out
 git checkout $TARGET_BRANCH || git checkout --orphan $TARGET_BRANCH
+echo "clean out non scaffolds files from gh-pages"
+rm -rf scaffolds scripts data src
 cd ..
 
 # Clean out existing contents

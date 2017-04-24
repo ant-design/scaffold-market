@@ -15,7 +15,7 @@ git add .
 for D in *; do
     if [ -d "${D}" ]; then
         if [ "$D" = "static" ]; then
-            echo "scaped static folder."
+            echo "escaped static folder."
             continue
         fi
         echo "start to check ${D}"
