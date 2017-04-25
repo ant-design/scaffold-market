@@ -6,16 +6,20 @@
 npm run build
 gulp
 
+ls
+ls scaffolds
 cp -r scaffolds/* out/
 cd out
-git add .
+ls
+git add --all .
 for D in *; do
     if [ -d "${D}" ]; then
         if [ "$D" = "static" ]; then
-            echo "scaped static folder."
+            echo "escaped static folder."
             continue
         fi
-        # cd $D
+        echo "start to check ${D}"
+        git status --porcelain
         if [ $(git status --porcelain | grep $D | wc -l) -lt 1 ]; then
             echo "No changes to the output on scaffold ${D}; exiting."
             continue
@@ -32,8 +36,9 @@ for D in *; do
         npm install
         npm run build
         cp -r dist/* ../
+        cd ..
         rm -rf _temp
-        cd ../../
+        cd ..
     fi
 done
 
