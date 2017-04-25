@@ -20,7 +20,7 @@ for D in *; do
         fi
         echo "start to check ${D}"
         git status --porcelain
-        if [ $(git status --porcelain | grep $D | wc -l) -lt 1 ]; then
+        if [ $(git status --porcelain | grep "${D}/index.yml" | wc -l) -lt 1 ]; then
             echo "No changes to the output on scaffold ${D}; exiting."
             continue
         fi
