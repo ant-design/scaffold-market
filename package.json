@@ -22,6 +22,7 @@
     "react-dom": "~15.4.0",
     "react-intl": "^2.2.3",
     "react-markdown": "^2.4.6",
+    "react-overdrive": "^0.0.5",
     "store": "^2.0.4"
   },
   "devDependencies": {

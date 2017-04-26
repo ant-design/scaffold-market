@@ -2,6 +2,7 @@ import React, { PureComponent } from 'react';
 import { connect } from 'dva';
 import { Link } from 'dva/router';
 import moment from 'moment';
+import Overdrive from 'react-overdrive';
 import { Card, Layout, Spin, Icon, Button, Tag, Popover } from 'antd';
 import ReactMarkdown from 'react-markdown';
 import styles from './ScaffoldPage.less';
@@ -12,6 +13,16 @@ class ScaffoldPage extends PureComponent {
   state = {
     popupVisible: false,
   };
+  componentDidMount() {
+    const { list, params } = this.props;
+    const scaffold = list.filter(item => item.name === params.templateId)[0];
+    if (!scaffold || !('stargazers_count' in scaffold)) {
+      this.props.dispatch({
+        type: 'list/fetch',
+        payload: name,
+      });
+    }
+  }
   onVisibleChange = (popupVisible) => {
     this.setState({ popupVisible });
   }
@@ -125,7 +136,9 @@ class ScaffoldPage extends PureComponent {
           {
             scaffold.coverPicture ? (
               <Card className={styles.card} title="截图展示">
-                <img src={scaffold.coverPicture} alt="" />
+                <Overdrive id={`cover-${scaffold.name}`}>
+                  <img src={scaffold.coverPicture} alt="" />
+                </Overdrive>
               </Card>
             ) : null
           }

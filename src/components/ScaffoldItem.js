@@ -1,13 +1,16 @@
 import React from 'react';
 import { Icon } from 'antd';
 import { Link } from 'dva/router';
+import Overdrive from 'react-overdrive';
 import styles from './ScaffoldItem.less';
 
 export default function ScaffoldItem({ name, description, stargazers_count, coverPicture }) {
   return (
     <li className={styles.card}>
       <Link to={`/templates/${name}`}>
-        <img className={styles.picture} src={coverPicture} alt="" />
+        <Overdrive id={`cover-${name}`}>
+          <img className={styles.picture} src={coverPicture} alt="" />
+        </Overdrive>
         <div className={styles.detail}>
           <h2 className={styles.title}>
             {name}

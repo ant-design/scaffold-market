@@ -7,23 +7,6 @@ export default {
 
   state: [],
 
-  subscriptions: {
-    setup({ dispatch, history }) {
-      history.listen(({ pathname }) => {
-        if (pathname === '/') {
-          dispatch({ type: 'fetch' });
-        }
-        const match = pathname.match(/\/templates\/(.*)/);
-        if (match) {
-          dispatch({
-            type: 'fetch',
-            payload: match[1],
-          });
-        }
-      });
-    },
-  },
-
   effects: {
     *fetch({ payload }, { call, put, select }) {
       const { auth, list } = yield select();
