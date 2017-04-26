@@ -8,7 +8,7 @@ export default function ScaffoldItem({ name, description, stargazers_count, cove
   return (
     <li className={styles.card}>
       <Link to={`/templates/${name}`}>
-        <Overdrive id={`cover-${name}`} duration={300}>
+        <Overdrive id={`cover-${name}`} duration={400}>
           <img className={styles.picture} src={coverPicture} alt="" />
         </Overdrive>
         <div className={styles.detail}>
