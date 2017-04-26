@@ -5,6 +5,7 @@ import moment from 'moment';
 import Overdrive from 'react-overdrive';
 import { Card, Layout, Spin, Icon, Button, Tag, Popover } from 'antd';
 import ReactMarkdown from 'react-markdown';
+import { FormattedMessage, injectIntl } from 'react-intl';
 import styles from './ScaffoldPage.less';
 
 const { Sider, Content } = Layout;
@@ -57,40 +58,42 @@ class ScaffoldPage extends PureComponent {
           <section className={styles.links}>
             <a href={`/${scaffold.name}`} target="_blank" rel="noopener noreferrer">
               <Button type="primary" icon="eye-o">
-                预览
+                <FormattedMessage id="scaffold.preview" />
               </Button>
             </a>
             <a href={`${scaffold.html_url}/archive/master.zip`} target="_blank" rel="noopener noreferrer">
               <Button icon="download">
-                源码包
+                <FormattedMessage id="scaffold.download" />
               </Button>
             </a>
             <a href={scaffold.html_url} target="_blank" rel="noopener noreferrer">
               <Button icon="github">
-                查看仓库
+                <FormattedMessage id="scaffold.repo" />
               </Button>
             </a>
           </section>
           <hr />
           <section>
-            <h3>基本信息</h3>
+            <h3>
+              <FormattedMessage id="scaffold.information" />
+            </h3>
             <span
               className={styles.meta}
               title={moment(scaffold.created_at).format('YYYY-MM-DD HH:mm:ss')}
             >
-              创建于：{moment(scaffold.created_at).fromNow()}
+              <FormattedMessage id="scaffold.createdAt" />:&nbsp;{moment(scaffold.created_at).fromNow()}
             </span>
             <span
               className={styles.meta}
               title={moment(scaffold.updated_at).format('YYYY-MM-DD HH:mm:ss')}
             >
-              更新于：{moment(scaffold.updated_at).fromNow()}
+              <FormattedMessage id="scaffold.updatedAt" />:&nbsp;{moment(scaffold.updated_at).fromNow()}
             </span>
             <span
               className={styles.meta}
               title={moment(scaffold.deployedAt).format('YYYY-MM-DD HH:mm:ss')}
             >
-              部署于：
+              <FormattedMessage id="scaffold.deployedAt" />:&nbsp;
               <Popover
                 visible={this.state.popupVisible}
                 onVisibleChange={this.onVisibleChange}
@@ -101,7 +104,7 @@ class ScaffoldPage extends PureComponent {
                     className={styles.redeploy}
                   >
                     <Icon type="rocket" />
-                    重新部署
+                    <FormattedMessage id="scaffold.redeploy" />
                   </a>
                 }
               >
@@ -109,16 +112,20 @@ class ScaffoldPage extends PureComponent {
               </Popover>
             </span>
             <span className={styles.meta}>
-              作者：
+              <FormattedMessage id="scaffold.author" />:&nbsp;
               <a href={`https://github.com/${scaffold.author}`} target="_blank" rel="noopener noreferrer">
                 {scaffold.author}
               </a>
             </span>
-            <span className={styles.meta}>语言：{scaffold.language}</span>
+            <span className={styles.meta}>
+              <FormattedMessage id="scaffold.language" />:&nbsp;{scaffold.language}
+            </span>
           </section>
           <hr />
           <section>
-            <h3>标签</h3>
+            <h3>
+              <FormattedMessage id="scaffold.tags" />
+            </h3>
             <section>
               {
                 (scaffold.tags && scaffold.tags.length > 0)
@@ -127,7 +134,7 @@ class ScaffoldPage extends PureComponent {
                       <Tag>{tag}</Tag>
                     </Link>
                   ))
-                  : <div className={styles.notfound}>暂无标签</div>
+                  : <div className={styles.notfound}><FormattedMessage id="notags" /></div>
               }
             </section>
           </section>
@@ -135,7 +142,7 @@ class ScaffoldPage extends PureComponent {
         <Content>
           {
             scaffold.coverPicture ? (
-              <Card className={styles.card} title="截图展示">
+              <Card className={styles.card} title={<FormattedMessage id="scaffold.screenshot" />}>
                 <Overdrive id={`cover-${scaffold.name}`}>
                   <img src={scaffold.coverPicture} alt="" />
                 </Overdrive>
@@ -154,6 +161,6 @@ class ScaffoldPage extends PureComponent {
   }
 }
 
-export default connect(props => ({
+export default injectIntl(connect(props => ({
   list: props.list,
-}))(ScaffoldPage);
+}))(ScaffoldPage));
