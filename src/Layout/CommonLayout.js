@@ -21,7 +21,7 @@ class CommonLayout extends React.Component {
         <header className={styles.header}>
           <div className={styles.headerContent}>
             <h1 className={styles.title}>
-              <Link to="/">Template</Link>
+              <Link to="/">LOGO</Link>
             </h1>
             <span className={styles.searchWrapper}>
               <Input
