@@ -53,11 +53,11 @@ class CommonLayout extends React.Component {
                 <span>
                   <Link className={styles.link} to="contribute">
                     <Icon type="plus-circle-o" />
-                    <FormattedMessage id="submit" />
+                    <FormattedMessage id="header.submit" />
                   </Link>
                   <a onClick={() => dispatch({ type: 'auth/login' })}>
                     <Icon type="github" />
-                    <FormattedMessage id="login" />
+                    <FormattedMessage id="header.login" />
                   </a>
                 </span>
               )}
