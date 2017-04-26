@@ -35,9 +35,12 @@
     margin-top: 24px;
   }
   > section {
+    > a > :global(.ant-btn),
+    > a > :global(.ant-dropdown-button) {
+      margin-right: 8px;
+    }
     button {
-      margin-right: 12px;
-      font-size: 12px;
+      font-size: 12px!important;
     }
     .meta {
       width: 50%;
@@ -211,5 +214,13 @@
 
   blockquote p {
     margin: 0;
+  }
+}
+
+.redeploy {
+  font-size: 12px;
+  > i {
+    color: #666;
+    margin-right: 8px;
   }
 }

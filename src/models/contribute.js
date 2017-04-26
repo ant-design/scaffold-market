@@ -1,6 +1,7 @@
 import Github from 'github-api';
 import { routerRedux } from 'dva/router';
 import yaml from 'js-yaml';
+import { message } from 'antd';
 import { parseGithubUrl } from '../utils/github';
 
 export default {
@@ -79,7 +80,7 @@ export default {
 
       // pr
       const pullRequestResult = yield scaffoldRepo.createPullRequest({
-        title: `Add template ${payload.name} to the market`,
+        title: `Add ${payload.name} to the market`,
         head: `${user}:${branchName}`,
         base: 'master',
         body: `
@@ -98,6 +99,47 @@ ${payload.coverPicture ? `- Cover Picture:\n![](${payload.coverPicture})` : ''}
 
       // redirect to finish page
       yield put(routerRedux.push(`/contribute/finish?pull=${pullRequestResult.data.html_url}`));
+    },
+    *deploy({ payload }, { select }) {
+      const { auth } = yield select();
+      const { accessToken } = auth;
+      const github = new Github({ token: accessToken });
+      // fork scaffold-market repo
+      const scaffoldRepo = yield github.getRepo('ant-design', 'scaffold-market');
+      const fork = yield scaffoldRepo.fork();
+      const user = fork.data.owner.login;
+      const repo = fork.data.name;
+
+      const forkedRepo = yield github.getRepo(user, repo);
+
+      const branchName = `scaffold-${payload.name}-${Date.now()}`;
+
+      // create branch
+      yield forkedRepo.createBranch('master', branchName);
+
+      const indexYml = yield scaffoldRepo.getContents('master', `scaffolds/${payload.name}/index.yml`, true);
+      const deployedAt = new Date().toISOString();
+
+      // update list
+      yield forkedRepo.writeFile(
+        branchName,
+        `scaffolds/${payload.name}/index.yml`,
+        indexYml.data.replace(/deployedAt:.*$/gm, `deployedAt: ${deployedAt}`),
+        `Update scaffold ${payload.name} deployedAt`,
+        {
+          encode: 'utf-8',
+        },
+      );
+
+      // pr
+      yield scaffoldRepo.createPullRequest({
+        title: `Re-deploy ${payload.name}`,
+        head: `${user}:${branchName}`,
+        base: 'master',
+        body: deployedAt,
+      });
+
+      message.success('提交成功');
     },
   },
 
