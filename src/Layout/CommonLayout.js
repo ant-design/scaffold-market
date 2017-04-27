@@ -38,10 +38,15 @@ class CommonLayout extends React.Component {
                     <Icon type="plus-circle-o" />
                     <FormattedMessage id="header.submit" />
                   </Link>
-                  <Link className={styles.link} to="help">
+                  <a
+                    className={styles.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href="https://github.com/ant-design/scaffold-market/wiki/Help"
+                  >
                     <Icon type="question-circle-o" />
                     <FormattedMessage id="header.help" />
-                  </Link>
+                  </a>
                   {!user.logining && (
                     <span>
                       <img alt="avatar" className={styles.avatar} src={user.avatar_url} />

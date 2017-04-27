@@ -7,7 +7,7 @@ import styles from './ScaffoldItem.less';
 export default function ScaffoldItem({ name, description, stargazers_count, coverPicture }) {
   return (
     <li className={styles.card}>
-      <Link to={`/templates/${name}`}>
+      <Link to={`/scaffolds/${name}`}>
         <Overdrive id={`cover-${name}`} duration={400}>
           <img className={styles.picture} src={coverPicture} alt="" />
         </Overdrive>

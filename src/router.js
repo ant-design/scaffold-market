@@ -13,7 +13,7 @@ function RouterConfig({ history }) {
         <Route path="contribute" component={Contribute}>
           <Route path="finish" component={Contribute} />
         </Route>
-        <Route path="templates/:templateId" component={ScaffoldPage} />
+        <Route path="scaffolds/:templateId" component={ScaffoldPage} />
       </Route>
     </Router>
   );
