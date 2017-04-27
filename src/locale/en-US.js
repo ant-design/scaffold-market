@@ -19,6 +19,7 @@ export default {
     'submit.next': 'Next Step',
     'submit.repo.placeholder': 'Please input a GitHub repo url',
     'submit.repo.error': 'Must be a valid GitHub url',
+    'submit.repo.duplicate': 'This url is existed',
     'submit.detail.title.description': 'Click submit after confirming the scaffold information.',
     'submit.detail.name': 'Name',
     'submit.detail.url': 'GitHub Url',

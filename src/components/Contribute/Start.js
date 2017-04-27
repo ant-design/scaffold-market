@@ -5,7 +5,7 @@ import styles from './Start.less';
 
 const FormItem = Form.Item;
 
-function Start({ dispatch, form, loading, intl }) {
+function Start({ dispatch, form, loading, intl, list }) {
   const { getFieldDecorator, validateFields } = form;
   const onSubmit = () => {
     validateFields(['url'], { force: true }, (err, values) => {
@@ -21,12 +21,22 @@ function Start({ dispatch, form, loading, intl }) {
       </h3>
       <FormItem>
         {getFieldDecorator('url', {
-          initialValue: 'https://github.com/dvajs/dva-example-user-dashboard/',
+          initialValue: 'https://github.com/dvajs/dva-example-user-dashboard',
           rules: [{
             type: 'string',
             required: true,
             pattern: /^https?:\/\/(www\.)?github\.com\/([\w-]+)\/([\w-]+)\/?/,
             message: intl.formatMessage({ id: 'submit.repo.error' }),
+          }, {
+            type: 'string',
+            required: true,
+            validator: (rule, value, callback) => {
+              let error;
+              if (list.some(item => item.html_url === value)) {
+                error = new Error(intl.formatMessage({ id: 'submit.repo.duplicate' }));
+              }
+              callback(error);
+            },
           }],
         })(
           <Input

@@ -19,6 +19,7 @@ export default {
     'submit.next': '下一步',
     'submit.repo.placeholder': '请填写脚手架的 GitHub 地址',
     'submit.repo.error': 'Url 必须为 GitHub 项目路径',
+    'submit.repo.duplicate': '此脚手架已存在',
     'submit.detail.title.description': '核对脚手架详情信息，确认无误后提交请求',
     'submit.detail.name': '项目名',
     'submit.detail.url': 'GitHub 地址',
