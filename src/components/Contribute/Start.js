@@ -21,7 +21,6 @@ function Start({ dispatch, form, loading, intl, list }) {
       </h3>
       <FormItem>
         {getFieldDecorator('url', {
-          initialValue: 'https://github.com/dvajs/dva-example-user-dashboard',
           rules: [{
             type: 'string',
             required: true,
