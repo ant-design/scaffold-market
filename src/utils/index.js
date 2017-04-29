@@ -8,5 +8,8 @@ export function getParameterByName(name, url) {
 }
 
 export function isLocaleZhCN() {
-  return localStorage.getItem('locale') === 'zh-CN';
+  if (localStorage.getItem('locale')) {
+    return localStorage.getItem('locale') === 'zh-CN';
+  }
+  return navigator.language === 'zh-CN';
 }
