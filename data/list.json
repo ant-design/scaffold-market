@@ -1,9 +1,0 @@
-{
-  "list": [{
-    "name": "chat",
-    "description": "A Chat Scaffold based on antd and dva",
-    "author": "surgesoft@gmail.com",
-    "chineseName": "聊天脚手架",
-    "source": "https://github.com/RaoHai/chat.git"
-  }]
-}
