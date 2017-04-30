@@ -16,7 +16,7 @@ class Contribute extends React.Component {
     this.props.dispatch({ type: 'contribute/saveRepo', pyaload: null });
   }
   render() {
-    const { auth, contribute: { repo }, dispatch, location, loading, intl, list } = this.props;
+    const { auth, contribute: { repo }, dispatch, location, loading, intl } = this.props;
     if (!auth || !auth.accessToken) {
       return (
         <div className={styles.nologin}>
@@ -30,7 +30,7 @@ class Contribute extends React.Component {
     } else {
       children = repo
         ? <Submit dispatch={dispatch} repo={repo} loading={loading} intl={intl} />
-      : <Start dispatch={dispatch} loading={loading} intl={intl} list={list} />;
+      : <Start dispatch={dispatch} loading={loading} intl={intl} />;
     }
     return (
       <div className={styles.contribute}>
@@ -44,5 +44,4 @@ export default injectIntl(connect(state => ({
   auth: state.auth,
   contribute: state.contribute,
   loading: state.loading,
-  list: state.list,
 }))(Contribute));

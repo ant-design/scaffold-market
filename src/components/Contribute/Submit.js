@@ -112,6 +112,7 @@ function Submit({ repo, dispatch, form, loading, intl }) {
                   ...values,
                   coverPicture: coverPicture ? `https://ucarecdn.com/${coverPicture.response.file}/` : null,
                 },
+                intl,
               });
             }
           })}

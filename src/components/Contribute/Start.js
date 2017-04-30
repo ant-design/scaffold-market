@@ -5,12 +5,16 @@ import styles from './Start.less';
 
 const FormItem = Form.Item;
 
-function Start({ dispatch, form, loading, intl, list }) {
+function Start({ dispatch, form, loading, intl }) {
   const { getFieldDecorator, validateFields } = form;
   const onSubmit = () => {
     validateFields(['url'], { force: true }, (err, values) => {
       if (!err) {
-        dispatch({ type: 'contribute/validateRepo', payload: values.url });
+        dispatch({
+          type: 'contribute/validateRepo',
+          payload: values.url,
+          intl,
+        });
       }
     });
   };
@@ -26,16 +30,6 @@ function Start({ dispatch, form, loading, intl, list }) {
             required: true,
             pattern: /^https?:\/\/(www\.)?github\.com\/([\w-]+)\/([\w-]+)\/?/,
             message: intl.formatMessage({ id: 'submit.repo.error' }),
-          }, {
-            type: 'string',
-            required: true,
-            validator: (rule, value, callback) => {
-              let error;
-              if (list.some(item => item.html_url === value)) {
-                error = new Error(intl.formatMessage({ id: 'submit.repo.duplicate' }));
-              }
-              callback(error);
-            },
           }],
         })(
           <Input

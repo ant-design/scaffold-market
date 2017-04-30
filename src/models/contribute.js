@@ -2,6 +2,7 @@ import Github from 'github-api';
 import { routerRedux } from 'dva/router';
 import yaml from 'js-yaml';
 import { message } from 'antd';
+import { fetch } from '../services/list';
 import { parseGithubUrl } from '../utils/github';
 
 export default {
@@ -13,9 +14,20 @@ export default {
   },
 
   effects: {
-    *validateRepo({ payload }, { put, select }) {
-      // https://github.com/dvajs/dva-example-user-dashboard/
+    *validateRepo({ payload, intl }, { put, select, call }) {
+      const scaffoldsData = yield call(fetch);
       const { user, repo } = parseGithubUrl(payload);
+      if (scaffoldsData.data && scaffoldsData.data.list) {
+        const existed = scaffoldsData.data.list.some((item) => {
+          const result = parseGithubUrl(item.git_url);
+          return user === result.user && repo === result.repo;
+        });
+        if (existed) {
+          message.error(intl.formatMessage({ id: 'existed' }));
+          return;
+        }
+      }
+
       if (user && repo) {
         const { auth } = yield select();
         const { accessToken } = auth;
@@ -100,7 +112,7 @@ ${payload.coverPicture ? `- Cover Picture:\n![](${payload.coverPicture})` : ''}
       // redirect to finish page
       yield put(routerRedux.push(`/contribute/finish?pull=${pullRequestResult.data.html_url}`));
     },
-    *deploy({ payload }, { select }) {
+    *deploy({ payload, intl }, { select }) {
       const { auth } = yield select();
       const { accessToken } = auth;
       const github = new Github({ token: accessToken });
@@ -139,7 +151,7 @@ ${payload.coverPicture ? `- Cover Picture:\n![](${payload.coverPicture})` : ''}
         body: deployedAt,
       });
 
-      message.success('提交成功');
+      message.success(intl.formatMessage({ id: 'successed' }));
     },
   },
 

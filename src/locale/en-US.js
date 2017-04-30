@@ -7,6 +7,8 @@ export default {
     notags: 'No Tags',
     notfound: 'Not Found',
     nologin: 'You need to login before submitting.',
+    existed: 'Sorry, the url you sumbit is existed.',
+    successed: 'Submit successfully!',
     'header.login': 'Login In',
     'header.submit': 'Submit a scaffold',
     'header.help': 'Help',
