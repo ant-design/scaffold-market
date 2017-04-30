@@ -19,7 +19,7 @@ export default {
     'home.cleartags': 'Clear',
     'submit.title': 'Submit new scaffold',
     'submit.next': 'Next Step',
-    'submit.repo.placeholder': 'Please input a GitHub repo url',
+    'submit.repo.placeholder': 'Please input a GitHub repo url, started with http',
     'submit.repo.error': 'Must be a valid GitHub url',
     'submit.repo.duplicate': 'This url is existed',
     'submit.detail.title.description': 'Click submit after confirming the scaffold information.',

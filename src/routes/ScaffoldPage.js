@@ -33,6 +33,7 @@ class ScaffoldPage extends PureComponent {
     this.props.dispatch({
       type: 'contribute/deploy',
       payload: { name },
+      intl: this.props.intl,
     });
   }
   render() {
