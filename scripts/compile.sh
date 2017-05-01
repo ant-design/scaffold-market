@@ -23,6 +23,7 @@ for D in *; do
         if [ $(git status --porcelain | grep "${D}/index.yml" | wc -l) -lt 1 ]; then
             echo "No changes to the output on scaffold ${D}; exiting."
             git checkout $D
+            git status --porcelain
             continue
         fi
         cd $D
