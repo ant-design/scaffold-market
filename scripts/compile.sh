@@ -40,6 +40,10 @@ for D in *; do
         cp -r dist/* ../
         cd ..
         rm -rf _temp
+        # replace index.html absolute static paths
+        # like https://github.com/zuiidea/antd-admin
+        sed -i -- 's/src="\//src="/g' index.html
+        sed -i -- 's/href="\//href="/g' index.html
         cd ..
     fi
 done
