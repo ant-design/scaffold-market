@@ -46,6 +46,7 @@ class ScaffoldPage extends PureComponent {
         </div>
       );
     }
+    const scaffoldPreviewUrl = scaffold.homepage || `/${scaffold.name}`;
     return (
       <Layout>
         <Sider className={styles.sider} width={400}>
@@ -57,7 +58,7 @@ class ScaffoldPage extends PureComponent {
           </section>
           <p>{scaffold.description}</p>
           <section className={styles.links}>
-            <a href={`/${scaffold.name}`} target="_blank" rel="noopener noreferrer">
+            <a href={scaffoldPreviewUrl} target="_blank" rel="noopener noreferrer">
               <Button type="primary" icon="eye-o">
                 <FormattedMessage id="scaffold.preview" />
               </Button>
