@@ -31,7 +31,7 @@ class Contribute extends React.Component {
     } else {
       children = repo
         ? <Submit dispatch={dispatch} repo={repo} loading={loading} intl={intl} />
-      : <Start dispatch={dispatch} loading={loading} intl={intl} />;
+        : <Start dispatch={dispatch} loading={loading} intl={intl} />;
     }
     return (
       <div className={styles.contribute}>

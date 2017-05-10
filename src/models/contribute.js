@@ -109,6 +109,12 @@ ${payload.coverPicture ? `- Cover Picture:\n![](${payload.coverPicture})` : ''}
       // const masterSHA = master.data.commit.sha;
       // createTree
 
+      // clear saved repo
+      yield put({
+        type: 'saveRepo',
+        payload: null,
+      });
+
       // redirect to finish page
       yield put(routerRedux.push(`/contribute/finish?pull=${pullRequestResult.data.html_url}`));
     },
