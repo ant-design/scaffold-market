@@ -84,7 +84,7 @@ export default {
           readme: contribute.repo.readme,
           deployedAt: new Date(),
         }),
-        'submit new scaffold',
+        `submit new scaffold: ${payload.name}`,
         {
           encode: 'utf-8',
         },
