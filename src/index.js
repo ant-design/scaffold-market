@@ -14,7 +14,7 @@ const app = dva({
     // eslint-disable-next-line
     console.error(e);
     notification.error({
-      description: e.message,
+      message: e.message,
     });
   },
 });

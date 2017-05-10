@@ -28,7 +28,6 @@ export default {
       //  ...authResult, accessToken: authResult.credential.accessToken
       // }});
       yield put({ type: 'contribute/showModal' });
-      store.set('accessToken', authResult.credential.accessToken);
       yield put({ type: 'github', payload: authResult.credential.accessToken });
     },
     *github({ payload }, { put }) {
@@ -39,7 +38,13 @@ export default {
       const user = yield github.getUser();
       const profile = yield user.getProfile();
       if (profile && profile.data) {
-        yield put({ type: 'save', payload: { user: profile.data } });
+        yield put({
+          type: 'save',
+          payload: {
+            user: profile.data,
+            accessToken: payload,
+          },
+        });
       }
     },
   },
