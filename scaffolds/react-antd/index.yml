@@ -1,0 +1,13 @@
+name: react-antd
+git_url: 'git://github.com/sosout/react-antd.git'
+author: sosout
+description: >-
+  基于react + redux + immutable + less + ES6/7 + webpack + fetch + react-router +
+  antd(1.x)实现的SPA后台管理系统模板
+tags:
+  - react
+  - antd
+  - redux
+coverPicture: null
+readme: "# react-antd(新版后台很快就与大家见面了)\n[![React Native](https://img.shields.io/badge/react-^15.3.2-brightgreen.svg?style=flat-square)](https://github.com/facebook/react)\n[![Redux](https://img.shields.io/badge/redux-^4.4.5-yellowgreen.svg?style=flat-square)](https://github.com/reactjs/redux)\n[![Redux Immutablejs](https://img.shields.io/badge/immutablejs-^0.0.8-orange.svg?style=flat-square)](https://github.com/indexiatech/redux-immutablejs)\n[![Ant Design](https://img.shields.io/badge/ant--design-^2.7.2-yellowgreen.svg?style=flat-square)](https://github.com/ant-design/ant-design)\n\n[![MIT](https://img.shields.io/dub/l/vibe-d.svg?style=flat-square)](http://opensource.org/licenses/MIT)\n## 前言\n>  本工程主要基于react + redux + immutable + less + ES6/7 + webpack + fetch + react-router + antd(1.x)实现的SPA后台管理系统模板。\n\n>  如果觉得不错的话，请star一下吧 \uD83D\uDE0A\n\n>  编码时间：8:00——9:30, 下班时间——24:00，其他时间要工作。代码未优化，处女座代码必须要优化。由于代码延后，先向大家说声抱歉。您有什么问题可以私信我segmentfault。\n\n[线上demo](http://antd.sosout.com/)\n\n## 关于我自己\n>  使用技术： react + redux + immutable + less + ES6/7 + webpack + fetch + react-router + antd(1.x)\n\n>  项目说明： 此项目是本人空余时间搭建的。希望大家提供宝贵的意见和建议，谢谢。\n\n>  邮&emsp;&emsp;箱： sosout@yeah.net\n\n>  个人网站： http://www.sosout.com/\n\n>  个人博客： http://blog.sosout.com/\n\n>  个人简书： http://www.jianshu.com/users/23b9a23b8849/latest_articles\n\n>  segmentfault：https://segmentfault.com/u/sosout\n\n### 下载\n\n```\n# git clone\n\ngit clone https://github.com/sosout/react-antd.git\n\ncd react-antd\n```\n\n### 安装\n```bush\n// 安装前请先确保已安装node和npm\n// 需要提前在全局安装webpack和webpack-dev-server,如果已安装请忽略\nnpm install webpack -g\nnpm install webpack-dev-server -g\n\n// 安装成功后,再安装依赖\nnpm install\n```\n### 运行\n```bush\nnpm run dev （正常编译模式，注意：index.html里必须手动引用app.css，<link href=\"/antd/dist/app.css\" rel=\"stylesheet\" />，否则没有样式）\n\nnpm run hot （热替换编译模式，注意：热替换模式下index.html里去掉引用app.css）\n  \nnpm run dist （发布生产版本，对代码进行混淆压缩，提取公共代码，分离css文件）\n```\n\n### 访问\n在浏览器地址栏输入[http://127.0.0.1:8888](http://127.0.0.1:8888)\n\n### 目标功能\n- [x] 登录页面\n- [x] 全站布局\n- [x] 全站路由\n- [ ] 对接接口，优化代码(冗余代码，不规则写法，界面样式)\n- [ ] 后台系统常用场景会逐个完善\n\n####历史更新\n  *2017.02.20*\n\n  \t1. 初始化项目目录;\n\n  \t2. webpack配置完成; \n\n  \t3. 登录退出;\n\n  \t4. 整体布局;\n\n  \t5. 菜单映射路由;\n"
+deployedAt: 2017-05-10T10:23:09.622Z
