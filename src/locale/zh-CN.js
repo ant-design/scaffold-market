@@ -4,8 +4,8 @@ export default {
   locale: 'zh-CN',
   data: appLocaleData,
   messages: {
-    'title.home': '脚手架市场',
-    'title.submit': '提交 - 脚手架市场',
+    'title.home': '脚手架',
+    'title.submit': '提交 - 脚手架',
     notags: '暂无标签',
     notfound: '没有找到',
     nologin: '你需要先登录',
@@ -49,5 +49,9 @@ export default {
     'scaffold.language': '语言',
     'scaffold.tags': '标签',
     'scaffold.screenshot': '截图展示',
+    'footer.created': '蚂蚁金服体验技术部出品',
+    'banner.feature1': '快速上手',
+    'banner.feature2': '业务模板',
+    'banner.feature3': '最佳实践',
   },
 };

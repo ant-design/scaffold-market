@@ -49,5 +49,9 @@ export default {
     'scaffold.language': 'Language',
     'scaffold.tags': 'Tags',
     'scaffold.screenshot': 'Screen Shot',
+    'footer.created': 'Created by AIUX',
+    'banner.feature1': 'Quick Start',
+    'banner.feature2': 'For bussiness',
+    'banner.feature3': 'Best Prictice',
   },
 };

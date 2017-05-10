@@ -21,7 +21,9 @@ class CommonLayout extends React.Component {
         <header className={styles.header}>
           <div className={styles.headerContent}>
             <h1 className={styles.title}>
-              <Link to="/">LOGO</Link>
+              <Link to="/">
+                <FormattedMessage id="title.home" />
+              </Link>
             </h1>
             <span className={styles.searchWrapper}>
               <Input
@@ -82,6 +84,13 @@ class CommonLayout extends React.Component {
               <div className={styles.bannerText}>
                 <FormattedMessage id="home.slogan" />
               </div>
+              <div className={styles.bannerFeatures}>
+                <FormattedMessage id="banner.feature1" />
+                <span className={styles.bannerDot}>∙</span>
+                <FormattedMessage id="banner.feature2" />
+                <span className={styles.bannerDot}>∙</span>
+                <FormattedMessage id="banner.feature3" />
+              </div>
               <Link to="contribute">
                 <button className={styles.submit}>
                   <FormattedMessage id="home.submit" />
@@ -93,6 +102,12 @@ class CommonLayout extends React.Component {
         <div className={styles.container}>
           {children}
         </div>
+        <footer className={styles.footer}>
+          <div>Copyright © 2017</div>
+          <div>
+            <FormattedMessage id="title.home" /> ❤ <FormattedMessage id="footer.created" />
+          </div>
+        </footer>
       </div>
     );
   }

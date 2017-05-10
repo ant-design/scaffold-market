@@ -19,8 +19,9 @@
   }
 
   .title {
-    font-size: 24px;
+    font-size: 16px;
     float: left;
+    font-family: "Lucida Grande","Lucida Sans Unicode","Lucida Sans",Geneva,Arial,sans-serif;
     a {
       text-decoration: none;
     }
@@ -84,9 +85,22 @@
     color: #fff;
     text-shadow: 0 5px 10px #6E55B5;
     font-family: "Lucida Grande";
-    margin: 80px 0 24px 0;
+    margin: 60px 0 30px 0;
     line-height: 1;
-    font-weight: lighter;
+    text-rendering: optimizeLegibility;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  .bannerFeatures {
+    font-size: 13px;
+    text-rendering: optimizeLegibility;
+    -moz-osx-font-smoothing: grayscale;
+    margin-bottom: 24px;
+    opacity: 0.8;
+    letter-spacing: .1em;
+  }
+  .bannerDot {
+    margin: 0 12px;
+    font-family: Helvetica;
   }
   .submit {
     border-radius: 100px;
@@ -112,5 +126,15 @@
     content: '';
     clear: both;
     display: block;
+  }
+}
+
+.footer {
+  padding: 48px 0;
+  text-align: center;
+  opacity: 0.5;
+  font-size: 13px;
+  > div {
+    margin-bottom: 12px;
   }
 }
