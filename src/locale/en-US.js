@@ -4,6 +4,8 @@ export default {
   locale: 'en-US',
   data: appLocaleData,
   messages: {
+    'title.home': 'Scaffold Market',
+    'title.submit': 'Submit - Scaffold Market',
     notags: 'No Tags',
     notfound: 'Not Found',
     nologin: 'You need to login before submitting.',

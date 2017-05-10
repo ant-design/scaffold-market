@@ -6,6 +6,7 @@ import Overdrive from 'react-overdrive';
 import { Card, Layout, Spin, Icon, Button, Tag, Popover } from 'antd';
 import ReactMarkdown from 'react-markdown';
 import { FormattedMessage, injectIntl } from 'react-intl';
+import { Helmet } from 'react-helmet';
 import styles from './ScaffoldPage.less';
 
 const { Sider, Content } = Layout;
@@ -37,17 +38,18 @@ class ScaffoldPage extends PureComponent {
     });
   }
   render() {
-    const { list, params } = this.props;
+    const { list, params, intl } = this.props;
     const scaffold = list.filter(item => item.name === params.templateId)[0];
+    let content;
     if (!scaffold) {
-      return (
+      content = (
         <div className={styles.loading}>
           <Spin size="large" />
         </div>
       );
     }
     const scaffoldPreviewUrl = scaffold.homepage || `/${scaffold.name}`;
-    return (
+    content = (
       <Layout>
         <Sider className={styles.sider} width={400}>
           <section className={styles.header}>
@@ -159,6 +161,16 @@ class ScaffoldPage extends PureComponent {
           </Card>
         </Content>
       </Layout>
+    );
+    return (
+      <div>
+        <Helmet>
+          <title>
+            {`${scaffold.name} - ${intl.formatMessage({ id: 'title.home' })}`}
+          </title>
+        </Helmet>
+        {content}
+      </div>
     );
   }
 }

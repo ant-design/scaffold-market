@@ -5,6 +5,7 @@ import { Link } from 'dva/router';
 import { Spin, Layout, Row, Col, Tag, Affix } from 'antd';
 import groupBy from 'lodash.groupby';
 import { FormattedMessage, injectIntl } from 'react-intl';
+import { Helmet } from 'react-helmet';
 import ScaffoldItem from '../components/ScaffoldItem';
 import styles from './IndexPage.less';
 
@@ -37,7 +38,7 @@ class IndexPage extends PureComponent {
     }
   }
   render() {
-    const { list, groupedTags, location: { query } } = this.props;
+    const { list, groupedTags, location: { query }, intl } = this.props;
     const tags = Object.keys(groupedTags);
     const filteredItem = filterTag(list, query.tags, query.search);
     const scaffoldItems = (list && list.length > 0) ? (
@@ -104,7 +105,16 @@ class IndexPage extends PureComponent {
         <Spin size="large" />
       </div>
     );
-    return scaffoldItems;
+    return (
+      <div>
+        <Helmet>
+          <title>
+            {intl.formatMessage({ id: 'title.home' })}
+          </title>
+        </Helmet>
+        {scaffoldItems}
+      </div>
+    );
   }
 }
 

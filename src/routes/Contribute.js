@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'dva';
 import { injectIntl, FormattedMessage } from 'react-intl';
+import { Helmet } from 'react-helmet';
 import Start from '../components/Contribute/Start';
 import Submit from '../components/Contribute/Submit';
 import Finish from '../components/Contribute/Finish';
@@ -34,6 +35,11 @@ class Contribute extends React.Component {
     }
     return (
       <div className={styles.contribute}>
+        <Helmet>
+          <title>
+            {intl.formatMessage({ id: 'title.submit' })}
+          </title>
+        </Helmet>
         {children}
       </div>
     );

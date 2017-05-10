@@ -4,6 +4,8 @@ export default {
   locale: 'zh-CN',
   data: appLocaleData,
   messages: {
+    'title.home': '脚手架市场',
+    'title.submit': '提交 - 脚手架市场',
     notags: '暂无标签',
     notfound: '没有找到',
     nologin: '你需要先登录',
