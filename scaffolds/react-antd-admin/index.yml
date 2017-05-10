@@ -1,0 +1,64 @@
+name: react-antd-admin
+git_url: 'git://github.com/fireyy/react-antd-admin.git'
+author: fireyy
+description: React Ant.design Admin UI
+tags:
+  - react
+  - antd
+coverPicture: 'https://ucarecdn.com/7c2b3bca-5824-4601-b5c1-8add07d03ae4/'
+readme: |
+  ## React Ant.Design Admin UI
+
+  <p align="center">
+    <a href="https://react-antd-admin.now.sh" target="_blank">
+      <img src="demo.png" width="700px">
+      <br>
+      Live Demo
+    </a>
+  </p>
+
+  ## Features
+
+  - [React](https://facebook.github.io/react/)
+  - [Redux](https://github.com/reactjs/redux)
+  - [Ant.Design](http://ant.design/)
+  - [Babel](https://babeljs.io/)
+  - [webpack](https://webpack.github.io/)
+  - [mocha](https://mochajs.org/)
+  - [enzyme](https://github.com/airbnb/enzyme)
+
+  ## Getting Started
+
+  Just clone the repo and install the necessary node modules:
+
+  ```shell
+  $ git clone https://github.com/fireyy/react-antd-admin
+  $ cd react-antd-admin
+  $ npm install
+  ```
+
+  ## Run Dev
+
+  ```shell
+  $ npm run dev
+  ```
+
+  ## Run test spec
+
+  ```shell
+  $ npm run test
+  ```
+
+  ## Build
+
+  ```shell
+  $ npm run build
+  ```
+
+  ## Changelog
+
+  ### 0.1.2
+
+  * 更新依赖组件到最新版本
+  * 增加 page2 demo
+deployedAt: 2017-05-10T09:39:08.923Z
