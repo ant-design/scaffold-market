@@ -25,7 +25,7 @@ function Submit({ repo, dispatch, form, loading, intl }) {
         <FormattedMessage id="submit.detail.title.description" />
       </div>
       <FormItem label={<FormattedMessage id="submit.detail.name" />} hasFeedback>
-        {getFieldDecorator('name', { initialValue: repo.name })(<Input readOnly />)}
+        {getFieldDecorator('name', { initialValue: repo.name })(<Input />)}
       </FormItem>
       <FormItem label={<FormattedMessage id="submit.detail.url" />} hasFeedback>
         {getFieldDecorator('git_url', { initialValue: repo.git_url })(<Input readOnly />)}
