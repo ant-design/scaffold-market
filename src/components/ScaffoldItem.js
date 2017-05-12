@@ -2,10 +2,25 @@ import React from 'react';
 import { Icon } from 'antd';
 import { Link } from 'dva/router';
 import Overdrive from 'react-overdrive';
+import hash from 'string-hash';
 import styles from './ScaffoldItem.less';
 
-export default function ScaffoldItem({ name, description, stargazers_count, coverPicture }) {
-  const picture = coverPicture || `https://placeholdit.imgix.net/~text?txtsize=60&bg=ed33ba&txtclr=ffffff&txt=${name}&w=560&h=360&txttrack=0`;
+function getBackgroundColor(url) {
+  // preset colors for default cover picture
+  const colors = [
+    '#f46e65',
+    '#f78e3d',
+    '#ffce3d',
+    '#3dbd7d',
+    '#3db8c1',
+    '#2db7f5',
+    '#f7629e',
+  ];
+  return colors[hash(url) % 7].replace('#', '');
+}
+
+export default function ScaffoldItem({ name, description, stargazers_count, coverPicture, url }) {
+  const picture = coverPicture || `https://placeholdit.imgix.net/~text?txtsize=60&bg=${getBackgroundColor(url)}&txtclr=ffffff&txt=${name}&w=560&h=360&txttrack=0`;
   return (
     <li className={styles.card}>
       <Link to={`/scaffolds/${name}`}>

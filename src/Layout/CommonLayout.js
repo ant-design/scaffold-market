@@ -22,7 +22,7 @@ class CommonLayout extends React.Component {
           <div className={styles.headerContent}>
             <h1 className={styles.title}>
               <Link to="/">
-                <img alt="logo" src="https://zos.alipayobjects.com/rmsportal/uIILasZxSrHOsnhjDWGM.svg" />
+                <img alt="logo" src="https://zos.alipayobjects.com/rmsportal/HXZvKsbcQljpFToWbjPj.svg" />
                 <FormattedMessage id="title.home" />
               </Link>
             </h1>
@@ -98,7 +98,7 @@ class CommonLayout extends React.Component {
           <div>Copyright © 2017</div>
           <div>
             <FormattedMessage id="title.home" />
-            <img alt="logo" src="https://zos.alipayobjects.com/rmsportal/uIILasZxSrHOsnhjDWGM.svg" />
+            <img alt="logo" src="https://zos.alipayobjects.com/rmsportal/HXZvKsbcQljpFToWbjPj.svg" />
             <FormattedMessage id="footer.created" />
           </div>
         </footer>
