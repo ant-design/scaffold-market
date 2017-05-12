@@ -3,13 +3,16 @@ import { fetch } from '../services/list';
 import { parseGithubUrl } from '../utils/github';
 
 export default {
-  namespace: 'list',
+  namespace: 'scaffold',
 
-  state: [],
+  state: {
+    list: [],
+    sortWay: 'starCount',
+  },
 
   effects: {
     *fetch({ payload }, { call, put, select }) {
-      const { auth, list } = yield select();
+      const { auth, scaffold: { list } } = yield select();
       const { data } = yield call(fetch);
       const newList = [...data.list];
 
@@ -41,7 +44,16 @@ export default {
 
   reducers: {
     save(state, { payload }) {
-      return [...payload];
+      return {
+        ...state,
+        list: [...payload],
+      };
+    },
+    changeSortWay(state, { payload }) {
+      return {
+        ...state,
+        sortWay: payload,
+      };
     },
   },
 };

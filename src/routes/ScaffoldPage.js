@@ -20,7 +20,7 @@ class ScaffoldPage extends PureComponent {
     const scaffold = list.filter(item => item.name === params.templateId)[0];
     if (!scaffold || !('stargazers_count' in scaffold)) {
       this.props.dispatch({
-        type: 'list/fetch',
+        type: 'scaffold/fetch',
         payload: name,
       });
     }
@@ -177,5 +177,5 @@ class ScaffoldPage extends PureComponent {
 }
 
 export default injectIntl(connect(props => ({
-  list: props.list,
+  list: props.scaffold.list,
 }))(ScaffoldPage));

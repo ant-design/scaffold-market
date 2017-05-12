@@ -2,10 +2,11 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'dva';
 import { Link } from 'dva/router';
-import { Spin, Layout, Row, Col, Tag, Affix } from 'antd';
+import { Spin, Layout, Row, Col, Tag, Affix, Icon } from 'antd';
 import groupBy from 'lodash.groupby';
 import { FormattedMessage, injectIntl } from 'react-intl';
 import { Helmet } from 'react-helmet';
+import classNames from 'classnames';
 import ScaffoldItem from '../components/ScaffoldItem';
 import styles from './IndexPage.less';
 
@@ -33,12 +34,19 @@ class IndexPage extends PureComponent {
     const { list, dispatch } = this.props;
     if (list.length === 0) {
       dispatch({
-        type: 'list/fetch',
+        type: 'scaffold/fetch',
       });
     }
   }
+  handleClickSort(way) {
+    const { dispatch } = this.props;
+    dispatch({
+      type: 'scaffold/changeSortWay',
+      payload: way,
+    });
+  }
   render() {
-    const { list, groupedTags, location: { query }, intl } = this.props;
+    const { list, groupedTags, location: { query }, intl, sortWay } = this.props;
     const tags = Object.keys(groupedTags);
     const filteredItem = filterTag(list, query.tags, query.search);
     const scaffoldItems = (list && list.length > 0) ? (
@@ -88,6 +96,21 @@ class IndexPage extends PureComponent {
           </Affix>
         </Sider>
         <Content style={{ overflow: 'visible' }}>
+          <div className={styles.toolbar}>
+            <Icon type="swap" />
+            <span
+              className={classNames(styles.type, sortWay === 'starCount' ? styles.current : '')}
+              onClick={() => this.handleClickSort('starCount')}
+            >
+              按 Star 数排序
+            </span>
+            <span
+              className={classNames(styles.type, sortWay === 'updatedAt' ? styles.current : '')}
+              onClick={() => this.handleClickSort('updatedAt')}
+            >
+              按更新时间排序
+            </span>
+          </div>
           <Row className={styles.list} gutter={32}>
             {
               filteredItem.length > 0 ?
@@ -118,7 +141,7 @@ class IndexPage extends PureComponent {
   }
 }
 
-export default injectIntl(connect(({ list = [] }) => {
+export default injectIntl(connect(({ scaffold: { list = [], sortWay } }) => {
   let tags = [];
   list.forEach((item) => {
     if (item && item.tags) {
@@ -126,7 +149,13 @@ export default injectIntl(connect(({ list = [] }) => {
     }
   });
   return {
-    list: list.sort((a, b) => b.stargazers_count - a.stargazers_count),
+    list: list.sort((a, b) => {
+      if (sortWay === 'updatedAt') {
+        return new Date(b.pushed_at) - new Date(a.pushed_at);
+      }
+      return b.stargazers_count - a.stargazers_count;
+    }),
     groupedTags: groupBy(tags),
+    sortWay,
   };
 })(IndexPage));

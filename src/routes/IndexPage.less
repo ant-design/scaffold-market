@@ -35,3 +35,25 @@
     }
   }
 }
+
+.toolbar {
+  text-align: right;
+  margin-bottom: 24px;
+  font-size: 14px;
+  i {
+    transform: rotate(90deg);
+  }
+  .type {
+    margin-left: 12px;
+    cursor: pointer;
+    opacity: 0.8;
+    transition: all .3s;
+    &:hover {
+      opacity: 1;
+    }
+    &.current {
+      font-weight: 500;
+      opacity: 1;
+    }
+  }
+}
