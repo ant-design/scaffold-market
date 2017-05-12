@@ -4,7 +4,7 @@ export default {
   locale: 'en-US',
   data: appLocaleData,
   messages: {
-    'title.home': 'Scaffold Market',
+    'title.home': 'Scaffolds',
     'title.submit': 'Submit - Scaffold Market',
     notags: 'No Tags',
     notfound: 'Not Found',
