@@ -97,19 +97,24 @@ class IndexPage extends PureComponent {
         </Sider>
         <Content style={{ overflow: 'visible' }}>
           <div className={styles.toolbar}>
-            <Icon type="swap" />
-            <span
-              className={classNames(styles.type, sortWay === 'starCount' ? styles.current : '')}
-              onClick={() => this.handleClickSort('starCount')}
-            >
-              <FormattedMessage id="toolbar.sortByStarCount" />
-            </span>
-            <span
-              className={classNames(styles.type, sortWay === 'updatedAt' ? styles.current : '')}
-              onClick={() => this.handleClickSort('updatedAt')}
-            >
-              <FormattedMessage id="toolbar.sortByUpdatedAt" />
-            </span>
+            <div className={styles.left}>
+              {filteredItem.length} <FormattedMessage id="item.unit" />
+            </div>
+            <div className={styles.right}>
+              <Icon type="swap" />
+              <span
+                className={classNames(styles.type, sortWay === 'starCount' ? styles.current : '')}
+                onClick={() => this.handleClickSort('starCount')}
+              >
+                <FormattedMessage id="toolbar.sortByStarCount" />
+              </span>
+              <span
+                className={classNames(styles.type, sortWay === 'updatedAt' ? styles.current : '')}
+                onClick={() => this.handleClickSort('updatedAt')}
+              >
+                <FormattedMessage id="toolbar.sortByUpdatedAt" />
+              </span>
+            </div>
           </div>
           <Row className={styles.list} gutter={32}>
             {

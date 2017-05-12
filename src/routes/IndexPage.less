@@ -37,23 +37,30 @@
 }
 
 .toolbar {
-  text-align: right;
   margin-bottom: 24px;
-  font-size: 14px;
-  i {
-    transform: rotate(90deg);
+  font-size: 13px;
+  overflow: hidden;
+  .left {
+    float: left;
   }
-  .type {
-    margin-left: 16px;
-    cursor: pointer;
-    opacity: 0.8;
-    transition: all .3s;
-    &:hover {
-      opacity: 1;
+  .right {
+    float: right;
+    i {
+      transform: rotate(90deg);
+      color: #ed33ba;
     }
-    &.current {
-      color: #444;
-      opacity: 1;
+    .type {
+      margin-left: 16px;
+      cursor: pointer;
+      opacity: 0.8;
+      transition: all .3s;
+      &:hover {
+        opacity: 1;
+      }
+      &.current {
+        color: #444;
+        opacity: 1;
+      }
     }
   }
 }

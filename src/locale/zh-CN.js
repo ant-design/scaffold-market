@@ -53,7 +53,8 @@ export default {
     'banner.feature1': '快速上手',
     'banner.feature2': '业务模板',
     'banner.feature3': '最佳实践',
-    'toolbar.sortByStarCount': 'Star 数',
-    'toolbar.sortByUpdatedAt': '更新日期',
+    'toolbar.sortByStarCount': '最多 Star 数',
+    'toolbar.sortByUpdatedAt': '最近更新',
+    'item.unit': '个脚手架',
   },
 };
