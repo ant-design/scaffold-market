@@ -53,5 +53,7 @@ export default {
     'banner.feature1': 'Quick Start',
     'banner.feature2': 'For bussiness',
     'banner.feature3': 'Best Prictice',
+    'toolbar.sortByStarCount': 'Most Stars',
+    'toolbar.sortByUpdatedAt': 'Recently Updated',
   },
 };

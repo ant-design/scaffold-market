@@ -102,13 +102,13 @@ class IndexPage extends PureComponent {
               className={classNames(styles.type, sortWay === 'starCount' ? styles.current : '')}
               onClick={() => this.handleClickSort('starCount')}
             >
-              按 Star 数排序
+              <FormattedMessage id="toolbar.sortByStarCount" />
             </span>
             <span
               className={classNames(styles.type, sortWay === 'updatedAt' ? styles.current : '')}
               onClick={() => this.handleClickSort('updatedAt')}
             >
-              按更新时间排序
+              <FormattedMessage id="toolbar.sortByUpdatedAt" />
             </span>
           </div>
           <Row className={styles.list} gutter={32}>
