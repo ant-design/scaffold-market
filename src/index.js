@@ -1,13 +1,26 @@
 import dva from 'dva';
+import { useRouterHistory } from 'dva/router';
+import { createHashHistory } from 'history';
+import createLoading from 'dva-loading';
+import { notification } from 'antd';
 import 'antd/dist/antd.less';
 import './index.html';
-import './index.css';
+import './index.less';
 
 // 1. Initialize
-const app = dva();
+const app = dva({
+  history: useRouterHistory(createHashHistory)({ queryKey: false }),
+  onError(e) {
+    // eslint-disable-next-line
+    console.error(e);
+    notification.error({
+      message: e.message,
+    });
+  },
+});
 
 // 2. Plugins
-// app.use({});
+app.use(createLoading());
 
 // 3. Model
 app.model(require('./models/auth'));

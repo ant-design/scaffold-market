@@ -3,45 +3,57 @@ import { fetch } from '../services/list';
 import { parseGithubUrl } from '../utils/github';
 
 export default {
-  namespace: 'list',
+  namespace: 'scaffold',
 
-  state: [],
-
-  subscriptions: {
-    setup({ dispatch }) {
-      dispatch({ type: 'fetch' });
-    },
+  state: {
+    list: [],
+    sortWay: 'starCount',
   },
 
   effects: {
     *fetch({ payload }, { call, put, select }) {
-      const { data: { list } } = yield call(fetch);
+      const { auth, scaffold: { list } } = yield select();
+      const { data } = yield call(fetch);
+      const newList = [...data.list];
 
-      for (let i = 0; i < list.length; i += 1) {
-        const { git_url } = list[i];
-        const { user, repo } = parseGithubUrl(git_url);
-        const { auth } = yield select();
-        const { accessToken } = auth;
-        const github = new Github({ token: accessToken });
-        // read basic information of repo
-        const repos = yield github.getRepo(user, repo);
-        const response = yield repos.getDetails();
-        list[i] = {
-          ...list[i],
-          ...response.data,
+      for (let i = 0; i < newList.length; i += 1) {
+        let newData;
+        if (!payload || newList[i].name === payload) {
+          const { git_url } = newList[i];
+          const { user, repo } = parseGithubUrl(git_url);
+          const { accessToken } = auth;
+          const github = new Github({ token: accessToken });
+          // read basic information of repo
+          const repos = yield github.getRepo(user, repo);
+          const response = yield repos.getDetails();
+          newData = response.data;
+        }
+        newList[i] = {
+          ...list.filter(item => item.name === newList[i].name)[0],
+          ...newData,
+          ...newList[i],
         };
       }
 
       yield put({
         type: 'save',
-        payload: list.sort((a, b) => b.stargazers_count - a.stargazers_count),
+        payload: newList,
       });
     },
   },
 
   reducers: {
     save(state, { payload }) {
-      return [...payload];
+      return {
+        ...state,
+        list: [...payload],
+      };
+    },
+    changeSortWay(state, { payload }) {
+      return {
+        ...state,
+        sortWay: payload,
+      };
     },
   },
 };

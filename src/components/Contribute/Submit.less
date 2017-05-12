@@ -1,0 +1,53 @@
+.form {
+  width: 500px;
+  padding: 36px 48px;
+  font-size: 14px;
+  text-align: left;
+  .title {
+    color: #505666;
+    font-weight: 500;
+    font-size: 24px;
+    margin-bottom: 16px;
+  }
+  .description {
+    margin-bottom: 48px;
+    font-size: 14px;
+  }
+  .upload {
+    height: 160px;
+    display: block;
+    p {
+      font-size: 12px !important;
+    }
+    &.hidden {
+      display: none;
+    }
+  }
+  .cover {
+    position: relative;
+    padding: 16px;
+    border: 1px solid #e9e9e9;
+    border-radius: 4px;
+    img {
+      width: 100%;
+      min-height: 60px;
+      border-radius: 4px;
+      overflow: hidden;
+      display: block;
+      border: 0;
+      background: #f9f9f9;
+    }
+    .deletePicture {
+      font-size: 12px;
+      position: absolute;
+      right: 5px;
+      top: 5px;
+      cursor: pointer;
+      transition: all .3s;
+      color: #888;
+      &:hover {
+        color: #000;
+      }
+    }
+  }
+}

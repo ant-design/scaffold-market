@@ -3,14 +3,50 @@
 .header {
   height: 64px;
   line-height: 64px;
-  border-bottom: 1px solid @border-color-base;
+  box-shadow: 0 0 8px rgba(0, 0, 0, .08);
   overflow: hidden;
-  padding: 0 40px;
   font-size: 14px;
+  background: #fff;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+
+  .headerContent {
+    max-width: 1206px;
+    margin: 0 auto;
+  }
 
   .title {
-    font-size: 24px;
     float: left;
+    font-family: "Andale Mono","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Geneva,Arial,sans-serif;
+    font-size: 21px;
+    color: rgba(0,0,0,0.65);
+    letter-spacing: -1px;
+    font-weight: lighter;
+    text-transform: uppercase;
+    a {
+      text-decoration: none;
+    }
+    img {
+      width: 24px;
+      margin-right: 10px;
+      position: relative;
+      top: 3px;
+    }
+  }
+
+  .searchWrapper {
+    margin-left: 32px;
+    width: 600px;
+    display: inline-block;
+  }
+
+  .search {
+    border-radius: 100px;
+    height: 32px;
+    padding: 0 40px!important;
   }
 
   .changeLocale {
@@ -46,6 +82,76 @@
   }
 }
 
+.banner {
+  height: 280px;
+  text-align: center;
+  background: linear-gradient(128deg, @primary-color, rgb(237,51,186));
+  color: #fff;
+  overflow: hidden;
+  margin-top: 64px;
+  margin-bottom: -64px;
+  .bannerText {
+    font-size: 28px;
+    color: #fff;
+    text-shadow: 0 5px 10px #6E55B5;
+    font-family: "Lucida Grande";
+    margin: 60px 0 30px 0;
+    line-height: 1;
+    text-rendering: optimizeLegibility;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  .bannerFeatures {
+    font-size: 13px;
+    text-rendering: optimizeLegibility;
+    -moz-osx-font-smoothing: grayscale;
+    margin-bottom: 24px;
+    opacity: 0.8;
+    letter-spacing: .1em;
+  }
+  .bannerDot {
+    margin: 0 12px;
+    font-family: Helvetica;
+  }
+  .submit {
+    border-radius: 100px;
+    background: #fff;
+    padding: 0 40px;
+    height: 40px;
+    color: #876FD2;
+    border: 0;
+    box-shadow: 0 0 16px #6E55B5;
+    transition: all .3s;
+    margin-top: 12px;
+    cursor: pointer;
+    &:hover {
+      box-shadow: 0 0 32px rgba(0,0,0,0.5);
+    }
+  }
+}
+
 .container {
-  padding: 40px;
+  max-width: 1206px;
+  margin: 104px auto 0;
+  &:after {
+    content: '';
+    clear: both;
+    display: block;
+  }
+}
+
+.footer {
+  padding: 48px 0;
+  text-align: center;
+  color: rgba(0,0,0,0.5);
+  font-size: 13px;
+  > div {
+    margin-bottom: 12px;
+  }
+  img {
+    width: 14px;
+    margin: 0 6px;
+    position: relative;
+    top: -1px;
+    vertical-align: middle;
+  }
 }

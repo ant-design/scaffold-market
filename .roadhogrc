@@ -16,7 +16,13 @@
     }
   },
   "theme": {
+    "@primary-color": "#2DB7F5",
+    "@font-size-base": "14px",
     "@btn-border-radius-base": "100px",
-    "@btn-border-radius-sm": "100px"
+    "@btn-border-radius-sm": "100px",
+    "@body-background": "#FAFAFA",
+    "@layout-body-background": "#FAFAFA",
+    "@btn-height-lg": "38px",
+    "@btn-padding-lg": "0 32px"
   }
 }

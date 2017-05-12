@@ -5,11 +5,11 @@ function parseJSON(response) {
 }
 
 function checkStatus(response) {
-  if (response.status >= 200 && response.status < 300) {
+  if (response && response.status >= 200 && response.status < 300) {
     return response;
   }
 
-  const error = new Error(response.statusText);
+  const error = new Error(response ? response.statusText : 'unknown error');
   error.response = response;
   throw error;
 }

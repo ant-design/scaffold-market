@@ -1,0 +1,66 @@
+.normal {
+  margin-top: 3em;
+  margin: 0 auto;
+  overflow: visible;
+}
+
+.list {
+  list-style: none;
+}
+
+.loading {
+  height: 200px;
+  line-height: 200px;
+  text-align: center;
+}
+
+.sider {
+  background: transparent;
+  padding-right: 60px;
+  .tags {
+    border-top: 1px solid #e9e9e9;
+    padding-top: 16px;
+    h3 {
+      font-size: 14px;
+      font-weight: normal;
+      margin-bottom: 16px;
+      a {
+        font-size: 12px;
+        margin-left: 16px;
+      }
+    }
+    .tagCount {
+      opacity: 0.5;
+      margin-left: 4px;
+    }
+  }
+}
+
+.toolbar {
+  margin-bottom: 24px;
+  font-size: 13px;
+  overflow: hidden;
+  .left {
+    float: left;
+  }
+  .right {
+    float: right;
+    i {
+      transform: rotate(90deg);
+      color: #ed33ba;
+    }
+    .type {
+      margin-left: 16px;
+      cursor: pointer;
+      opacity: 0.8;
+      transition: all .3s;
+      &:hover {
+        opacity: 1;
+      }
+      &.current {
+        color: #444;
+        opacity: 1;
+      }
+    }
+  }
+}
