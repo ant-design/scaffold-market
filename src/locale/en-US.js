@@ -11,7 +11,7 @@ export default {
     nologin: 'You need to login before submitting.',
     existed: 'Sorry, the url you sumbit is existed.',
     successed: 'Submit successfully!',
-    'header.login': 'Login In',
+    'header.login': 'Login',
     'header.submit': 'Submit a scaffold',
     'header.help': 'Help',
     'header.search': 'Search in scaffolds',
