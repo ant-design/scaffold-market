@@ -95,11 +95,22 @@ class CommonLayout extends React.Component {
           {children}
         </div>
         <footer className={styles.footer}>
-          <div>Copyright © 2017</div>
           <div>
-            <FormattedMessage id="title.home" />
+            <span>Copyright © 2017</span>
             <img alt="logo" src="https://zos.alipayobjects.com/rmsportal/HXZvKsbcQljpFToWbjPj.svg" />
             <FormattedMessage id="footer.created" />
+          </div>
+          <div>
+            <a href="http://github.com/ant-design/scaffold-market/" target="_blank" rel="noopener noreferrer">
+              <Icon style={{ marginRight: '0.3em' }} type="github" />
+              GitHub
+            </a>
+            <a href="http://ant.design" target="_blank" rel="noopener noreferrer">
+              Ant Design
+            </a>
+            <a href="http://mobile.ant.design" target="_blank" rel="noopener noreferrer">
+              Ant Design Mobile
+            </a>
           </div>
         </footer>
       </div>
