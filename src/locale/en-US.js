@@ -55,6 +55,6 @@ export default {
     'banner.feature3': 'Best Prictice',
     'toolbar.sortByStarCount': 'Most Stars',
     'toolbar.sortByUpdatedAt': 'Recently Updated',
-    'item.unit': 'scaffolds',
+    'home.count': '{count} items',
   },
 };

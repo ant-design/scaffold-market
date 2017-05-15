@@ -98,7 +98,7 @@ class IndexPage extends PureComponent {
         <Content style={{ overflow: 'visible' }}>
           <div className={styles.toolbar}>
             <div className={styles.left}>
-              {filteredItem.length} <FormattedMessage id="item.unit" />
+              <FormattedMessage id="home.count" values={{ count: filteredItem.length }} />
             </div>
             <div className={styles.right}>
               <Icon type="swap" />

@@ -55,6 +55,6 @@ export default {
     'banner.feature3': '最佳实践',
     'toolbar.sortByStarCount': '最多 Star 数',
     'toolbar.sortByUpdatedAt': '最近更新',
-    'item.unit': '个脚手架',
+    'home.count': '共 {count} 个脚手架',
   },
 };
