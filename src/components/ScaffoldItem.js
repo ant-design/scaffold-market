@@ -3,6 +3,7 @@ import { Icon } from 'antd';
 import { Link } from 'dva/router';
 import Overdrive from 'react-overdrive';
 import hash from 'string-hash';
+import moment from 'moment';
 import styles from './ScaffoldItem.less';
 
 function getBackgroundColor(url) {
@@ -19,7 +20,9 @@ function getBackgroundColor(url) {
   return colors[hash(url) % 7].replace('#', '');
 }
 
-export default function ScaffoldItem({ name, description, stargazers_count, coverPicture, url }) {
+export default function ScaffoldItem({
+  name, description, stargazers_count, coverPicture, url, pushed_at,
+}) {
   let picture;
   if (coverPicture) {
     picture = `${coverPicture}-/resize/600x/`;
@@ -41,6 +44,7 @@ export default function ScaffoldItem({ name, description, stargazers_count, cove
           </div>
           <div>
             <Icon type="star" className={styles.star} />{stargazers_count}
+            <span className={styles.pushedAt} title={pushed_at}>{moment(pushed_at).fromNow()}</span>
           </div>
         </div>
       </Link>
