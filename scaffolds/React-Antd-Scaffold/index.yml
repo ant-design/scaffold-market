@@ -1,0 +1,9 @@
+name: React-Antd-Scaffold
+git_url: 'git://github.com/yaeljiao/React-Antd-Scaffold.git'
+author: yaeljiao
+description: 'A React-Antd scaffold for SPA design:art:'
+tags: []
+coverPicture: null
+readme: |
+  # React+react-router+Antd的SPA脚手架工具
+deployedAt: 2017-05-15T05:32:12.970Z
