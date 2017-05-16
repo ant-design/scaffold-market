@@ -1,0 +1,12 @@
+name: react-redux-antd-okoala
+git_url: 'git://github.com/okoala/react-redux-antd.git'
+author: okoala
+description: React & Redux  & Ant.Design
+tags:
+  - react
+  - redux
+  - antd
+coverPicture: null
+readme: |
+  ## React Redux 脚手架
+deployedAt: 2017-05-16T04:00:00.678Z
