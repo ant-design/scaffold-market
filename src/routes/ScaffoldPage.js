@@ -24,6 +24,7 @@ class ScaffoldPage extends PureComponent {
         payload: name,
       });
     }
+    window.scrollTo(0, 0);
   }
   onVisibleChange = (popupVisible) => {
     this.setState({ popupVisible });
