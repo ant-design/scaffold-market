@@ -1,0 +1,18 @@
+name: dva-antd-starter
+git_url: 'git://github.com/xlsdg/dva-antd-starter.git'
+author: xlsdg
+description: Get started with Dva.js and Ant Design.
+tags:
+  - dva
+  - antd
+coverPicture: 'https://ucarecdn.com/8602e133-b80f-4616-bbc8-f8cba40b6254/'
+readme: >
+  # dva-antd-starter [![Build
+  Status](https://travis-ci.org/xlsdg/dva-antd-starter.svg?branch=master)](https://travis-ci.org/xlsdg/dva-antd-starter)
+
+
+  > Get started with Dva.js and Ant Design.
+
+
+  ![Screen Shot](screenshot.png)
+deployedAt: 2017-05-24T12:15:35.432Z
