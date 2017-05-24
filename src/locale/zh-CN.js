@@ -50,6 +50,7 @@ export default {
     'scaffold.tags': '标签',
     'scaffold.screenshot': '截图展示',
     'footer.created': '蚂蚁金服体验技术部出品',
+    'footer.source': '源码',
     'banner.feature1': '快速上手',
     'banner.feature2': '业务模板',
     'banner.feature3': '最佳实践',

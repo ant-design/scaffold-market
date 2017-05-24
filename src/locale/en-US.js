@@ -50,6 +50,7 @@ export default {
     'scaffold.tags': 'Tags',
     'scaffold.screenshot': 'Screen Shot',
     'footer.created': 'Created by AIUX',
+    'footer.source': 'Source Code',
     'banner.feature1': 'Quick Start',
     'banner.feature2': 'For bussiness',
     'banner.feature3': 'Best Prictice',
