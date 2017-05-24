@@ -53,7 +53,7 @@ export default {
     'footer.source': 'Source Code',
     'banner.feature1': 'Quick Start',
     'banner.feature2': 'For bussiness',
-    'banner.feature3': 'Best Prictice',
+    'banner.feature3': 'Best Practive',
     'toolbar.sortByStarCount': 'Most Stars',
     'toolbar.sortByUpdatedAt': 'Recently Updated',
     'home.count': '{count} items',
