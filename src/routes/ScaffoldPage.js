@@ -7,6 +7,7 @@ import { Card, Layout, Spin, Icon, Button, Tag, Popover } from 'antd';
 import ReactMarkdown from 'react-markdown';
 import { FormattedMessage, injectIntl } from 'react-intl';
 import { Helmet } from 'react-helmet';
+import ReactDisqusComments from 'react-disqus-comments';
 import styles from './ScaffoldPage.less';
 
 const { Sider, Content } = Layout;
@@ -160,6 +161,11 @@ class ScaffoldPage extends PureComponent {
                 : 'Not Found'
               }
             </Card>
+            <ReactDisqusComments
+              shortname="scaffolds-1"
+              identifier={scaffold.name}
+              title={scaffold.name}
+            />
           </Content>
         </Layout>
       );
