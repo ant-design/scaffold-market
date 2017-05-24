@@ -2,7 +2,9 @@ name: blogVue
 git_url: 'git://github.com/xumjs8623/blogVue.git'
 author: xumjs8623
 description: null
-tags: []
+tags:
+  - vue
+  - blog
 coverPicture: null
 readme: >
   # blog-vue
