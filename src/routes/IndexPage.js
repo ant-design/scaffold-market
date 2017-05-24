@@ -131,6 +131,9 @@ class IndexPage extends PureComponent {
     ) : (
       <div className={styles.loading}>
         <Spin size="large" />
+        <div className={styles.tip}>
+          <FormattedMessage id="home.loading" />
+        </div>
       </div>
     );
     return (

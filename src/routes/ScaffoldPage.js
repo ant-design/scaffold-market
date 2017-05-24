@@ -22,7 +22,7 @@ class ScaffoldPage extends PureComponent {
     if (!scaffold || !('stargazers_count' in scaffold)) {
       this.props.dispatch({
         type: 'scaffold/fetch',
-        payload: name,
+        payload: params.templateId,
       });
     }
     window.scrollTo(0, 0);

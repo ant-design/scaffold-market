@@ -19,6 +19,7 @@ export default {
     'home.submit': 'Submit your scaffold',
     'home.alltags': 'All Tags',
     'home.cleartags': 'Clear',
+    'home.loading': 'Loading scaffolds positively...',
     'submit.title': 'Submit new scaffold',
     'submit.next': 'Next Step',
     'submit.repo.placeholder': 'Please input a GitHub repo url, started with http',

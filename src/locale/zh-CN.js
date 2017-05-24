@@ -19,6 +19,7 @@ export default {
     'home.submit': '提交你的脚手架',
     'home.alltags': '全部标签',
     'home.cleartags': '清除选中',
+    'home.loading': '玩命加载中...',
     'submit.title': '提交一个脚手架',
     'submit.next': '下一步',
     'submit.repo.placeholder': '请填写脚手架的 GitHub 地址，以 http 开头',
