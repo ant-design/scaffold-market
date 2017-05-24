@@ -95,7 +95,7 @@ class IndexPage extends PureComponent {
             </section>
           </Affix>
         </Sider>
-        <Content style={{ overflow: 'visible' }}>
+        <Content className={styles.content}>
           <div className={styles.toolbar}>
             <div className={styles.left}>
               <FormattedMessage id="home.count" values={{ count: filteredItem.length }} />
