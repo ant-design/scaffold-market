@@ -10,6 +10,7 @@
   "dependencies": {
     "antd": "^2.6.1",
     "axios": "^0.15.3",
+    "babel-plugin-import": "^1.1.1",
     "babel-runtime": "^6.9.2",
     "dva": "^1.2.1",
     "dva-loading": "^0.2.1",
