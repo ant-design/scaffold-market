@@ -3,8 +3,8 @@ git_url: 'git://github.com/subenksaha/react-redux-universal.git'
 author: subenksaha
 description: React Redux Isomorphic Webpack 2 Boilerplate based on ant.design
 tags:
-  - Universal
-  - Redux
+  - react
+  - redux
 coverPicture: null
 readme: "# React Redux Isomorphic Webpack 2 Boilerplate based on [ant.design](https://ant.design)\n----------\n----------\n\n### About\n----------\nThis boilerplate has following feature:\n\n * Universal React rendering\n * Webpack 2 for client side transformation and bundling\n * Babel js for server side transformation\n * import using absolute path in client and server for make code reuse easier\n * development hot reloading\n * Sequelize Js for backend api(for RDBMS)\n * using ui framework ant.design\n * latest webpack 2 (2.5+)\n * latest React Router 4\n * express-handlebars for server side templating\n * custom console logger for better log visibility & trace\n * nested route on react router 4 supported in server and client\n\n### Technologies\n----------\nImportant technologies used\n* [Node Js](https://nodejs.org/en/)\n* [Express Js](https://expressjs.com/)\n* [React Js](https://github.com/reactjs) version 15.1\n* [React Router](https://github.com/ReactTraining/react-router) version 4+\n* [React Redux](https://github.com/reactjs/react-redux) version 5+\n* [Ant Design](https://ant.design) version 2.5+\n* [Babel Js](https://babeljs.io/) core version 6.24\n* [Webpack](https://webpack.js.org/) version 2.5+\n\n### Installation\n----------\n* Clone the repo\n* cd project folder\n* npm install (in cmd/ terminal)\n\n### Commands\n----------\n* To run development server \n\t>npm start\n* To clean previous asset and build new and then run production server\n \t>npm run build\n* To run production using previuosly built asset\n \t>npm run serve\n* To clean previously built assets\n \t>npm run clean\n\nNow create your awesome project :)\n"
 deployedAt: 2017-05-22T02:57:48.122Z
