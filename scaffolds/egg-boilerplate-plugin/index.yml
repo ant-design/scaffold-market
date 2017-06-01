@@ -1,0 +1,11 @@
+name: egg-boilerplate-plugin
+git_url: 'git://github.com/eggjs/egg-boilerplate-plugin.git'
+author: eggjs
+description: Boilerplate for egg plugin
+tags: []
+coverPicture: null
+readme: |
+  # egg-boilerplate-plugin
+
+  Boilerplate for egg plugin. See [egg-init](https://github.com/eggjs/egg-init).
+deployedAt: 2017-05-23T09:28:45.921Z
