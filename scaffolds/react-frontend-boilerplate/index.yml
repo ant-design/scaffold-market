@@ -1,0 +1,29 @@
+name: react-frontend-boilerplate
+git_url: 'git://github.com/huhulab/react-frontend-boilerplate.git'
+author: huhulab
+description: React admin frontend project boilerplate (Based on ant.design)
+tags:
+  - react
+  - antd
+coverPicture: null
+readme: >
+  ## What's this
+
+  React([ant-design](https://github.com/ant-design/ant-design)) based frontend
+  boilerplate project.
+
+
+  ## How to run it
+
+  ``` bash
+
+  npm install
+
+  # More commands see: package.json
+
+  npm start
+
+  # Open http://localhost:3000/#/demo/test_forms
+
+  ```
+deployedAt: 2017-05-24T12:16:08.998Z

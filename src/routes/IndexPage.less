@@ -10,8 +10,13 @@
 
 .loading {
   height: 200px;
-  line-height: 200px;
+  padding: 70px 0 90px;
   text-align: center;
+  .tip {
+    margin-top: 24px;
+    font-size: 13px;
+    color: rgba(0, 0, 0, 0.5);
+  }
 }
 
 .sider {
@@ -33,6 +38,19 @@
       opacity: 0.5;
       margin-left: 4px;
     }
+  }
+}
+
+.content {
+  overflow: visible;
+}
+
+@media only screen and (max-width: 1024px) {
+  .sider {
+    display: none;
+  }
+  .content {
+    padding: 0 24px;
   }
 }
 

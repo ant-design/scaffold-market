@@ -3,7 +3,6 @@ import { useRouterHistory } from 'dva/router';
 import { createHashHistory } from 'history';
 import createLoading from 'dva-loading';
 import { notification } from 'antd';
-import 'antd/dist/antd.less';
 import './index.html';
 import './index.less';
 

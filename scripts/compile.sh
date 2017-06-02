@@ -37,7 +37,12 @@ for D in *; do
         cd _temp
         npm install
         npm run build
-        cp -r dist/* ../
+        if [ -d dist ]; then
+          cp -r dist/* ../
+        fi
+        if [ -d build ]; then
+          cp -r build/* ../
+        fi
         cd ..
         rm -rf _temp
         # replace index.html absolute static paths

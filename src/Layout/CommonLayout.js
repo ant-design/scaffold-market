@@ -103,7 +103,7 @@ class CommonLayout extends React.Component {
           <div>
             <a href="http://github.com/ant-design/scaffold-market/" target="_blank" rel="noopener noreferrer">
               <Icon style={{ marginRight: '0.3em' }} type="github" />
-              GitHub
+              <FormattedMessage id="footer.source" />
             </a>
             <a href="http://ant.design" target="_blank" rel="noopener noreferrer">
               Ant Design
