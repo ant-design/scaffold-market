@@ -13,8 +13,13 @@ export default {
   effects: {
     *fetch({ payload }, { call, put, select }) {
       const { auth, scaffold: { list } } = yield select();
-      const { data } = yield call(fetch);
-      const newList = [...data.list];
+      let newList;
+      if (payload && list.length > 0) {
+        newList = [...list];
+      } else {
+        const { data } = yield call(fetch);
+        newList = [...data.list];
+      }
       const results = [];
 
       for (let i = 0; i < newList.length; i += 1) {
@@ -30,12 +35,15 @@ export default {
       }
 
       const newDatas = yield Promise.all(results);
+
       for (let i = 0; i < newDatas.length; i += 1) {
-        newList[i] = {
-          ...list.filter(item => item.name === newList[i].name)[0],
-          ...newDatas[i].data,
-          ...newList[i],
-        };
+        const target = newList.filter(item => item.git_url === newDatas[i].data.git_url)[0];
+        if (target) {
+          newList[i] = {
+            ...newDatas[i].data,
+            ...target,
+          };
+        }
       }
 
       yield put({

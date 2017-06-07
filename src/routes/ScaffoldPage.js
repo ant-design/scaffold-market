@@ -67,16 +67,20 @@ class ScaffoldPage extends PureComponent {
                   <FormattedMessage id="scaffold.preview" />
                 </Button>
               </a>
-              <a href={`${scaffold.html_url}/archive/master.zip`} target="_blank" rel="noopener noreferrer">
-                <Button icon="download">
-                  <FormattedMessage id="scaffold.download" />
-                </Button>
-              </a>
-              <a href={scaffold.html_url} target="_blank" rel="noopener noreferrer">
-                <Button icon="github">
-                  <FormattedMessage id="scaffold.repo" />
-                </Button>
-              </a>
+              {scaffold.html_url && (
+                <a href={`${scaffold.html_url}/archive/master.zip`} target="_blank" rel="noopener noreferrer">
+                  <Button icon="download">
+                    <FormattedMessage id="scaffold.download" />
+                  </Button>
+                </a>
+              )}
+              {scaffold.html_url && (
+                <a href={scaffold.html_url} target="_blank" rel="noopener noreferrer">
+                  <Button icon="github">
+                    <FormattedMessage id="scaffold.repo" />
+                  </Button>
+                </a>
+              )}
             </section>
             <hr />
             <section>
