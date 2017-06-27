@@ -1,0 +1,26 @@
+name: scaffold-market
+git_url: 'git://github.com/ant-design/scaffold-market.git'
+author: ant-design
+description: scaffold market of single page application
+tags:
+  - 'scaffold '
+  - ' react'
+coverPicture: 'https://ucarecdn.com/f7ea59de-e886-47d5-ac28-f47f2d08eecf/'
+readme: >
+  # Scaffold Market
+
+
+  [![](https://img.shields.io/travis/ant-design/scaffold-market.svg?style=flat-square)](https://travis-ci.org/ant-design/scaffold-market)
+
+
+  ## Development
+
+
+  ```bash
+
+  $ npm install
+
+  $ npm start
+
+  ```
+deployedAt: 2017-06-27T13:11:37.352Z
