@@ -52,7 +52,7 @@ class IndexPage extends PureComponent {
     const scaffoldItems = (list && list.length > 0) ? (
       <Layout className={styles.normal}>
         <Sider className={styles.sider} width={300}>
-          <Affix offsetTop={63}>
+          <Affix offsetTop={80}>
             <section className={styles.tags}>
               <h3>
                 <FormattedMessage id="home.alltags" />

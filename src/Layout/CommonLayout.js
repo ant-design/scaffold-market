@@ -29,7 +29,7 @@ class CommonLayout extends React.Component {
             <span className={styles.searchWrapper}>
               <Input
                 className={styles.search}
-                prefix={<Icon type="search" style={{ marginLeft: 10 }} />}
+                prefix={<Icon type="search" />}
                 placeholder={intl.formatMessage({ id: 'header.search' })}
                 onChange={this.handleSearch}
               />
@@ -54,7 +54,7 @@ class CommonLayout extends React.Component {
                     <Icon type="plus-circle-o" />
                     <FormattedMessage id="header.submit" />
                   </Link>
-                  <a onClick={() => dispatch({ type: 'auth/login' })}>
+                  <a className={styles.link} onClick={() => dispatch({ type: 'auth/login' })}>
                     <Icon type="github" />
                     <FormattedMessage id="header.login" />
                   </a>
