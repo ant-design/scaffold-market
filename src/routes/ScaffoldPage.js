@@ -7,6 +7,7 @@ import { Card, Layout, Spin, Icon, Button, Tag, Popover } from 'antd';
 import ReactMarkdown from 'react-markdown';
 import { FormattedMessage, injectIntl } from 'react-intl';
 import { Helmet } from 'react-helmet';
+import ReactDisqusComments from 'react-disqus-comments';
 import styles from './ScaffoldPage.less';
 
 const { Sider, Content } = Layout;
@@ -21,7 +22,7 @@ class ScaffoldPage extends PureComponent {
     if (!scaffold || !('stargazers_count' in scaffold)) {
       this.props.dispatch({
         type: 'scaffold/fetch',
-        payload: name,
+        payload: params.templateId,
       });
     }
     window.scrollTo(0, 0);
@@ -66,16 +67,20 @@ class ScaffoldPage extends PureComponent {
                   <FormattedMessage id="scaffold.preview" />
                 </Button>
               </a>
-              <a href={`${scaffold.html_url}/archive/master.zip`} target="_blank" rel="noopener noreferrer">
-                <Button icon="download">
-                  <FormattedMessage id="scaffold.download" />
-                </Button>
-              </a>
-              <a href={scaffold.html_url} target="_blank" rel="noopener noreferrer">
-                <Button icon="github">
-                  <FormattedMessage id="scaffold.repo" />
-                </Button>
-              </a>
+              {scaffold.html_url && (
+                <a href={`${scaffold.html_url}/archive/master.zip`} target="_blank" rel="noopener noreferrer">
+                  <Button icon="download">
+                    <FormattedMessage id="scaffold.download" />
+                  </Button>
+                </a>
+              )}
+              {scaffold.html_url && (
+                <a href={scaffold.html_url} target="_blank" rel="noopener noreferrer">
+                  <Button icon="github">
+                    <FormattedMessage id="scaffold.repo" />
+                  </Button>
+                </a>
+              )}
             </section>
             <hr />
             <section>
@@ -160,6 +165,11 @@ class ScaffoldPage extends PureComponent {
                 : 'Not Found'
               }
             </Card>
+            <ReactDisqusComments
+              shortname="scaffolds-1"
+              identifier={scaffold.name}
+              title={scaffold.name}
+            />
           </Content>
         </Layout>
       );

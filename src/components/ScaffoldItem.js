@@ -21,13 +21,13 @@ function getBackgroundColor(url) {
 }
 
 export default function ScaffoldItem({
-  name, description, stargazers_count, coverPicture, url, pushed_at,
+  name, description, stargazers_count, coverPicture, git_url, pushed_at,
 }) {
   let picture;
   if (coverPicture) {
     picture = `${coverPicture}-/resize/600x/`;
   } else {
-    picture = `https://placeholdit.imgix.net/~text?txtsize=60&bg=${getBackgroundColor(url)}&txtclr=ffffff&txt=${name}&w=560&h=360&txttrack=0`;
+    picture = `https://placeholdit.imgix.net/~text?txtsize=60&bg=${getBackgroundColor(git_url)}&txtclr=ffffff&txt=${name}&w=560&h=360&txttrack=0`;
   }
   return (
     <li className={styles.card}>

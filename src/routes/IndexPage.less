@@ -10,16 +10,19 @@
 
 .loading {
   height: 200px;
-  line-height: 200px;
+  padding: 70px 0 90px;
   text-align: center;
+  .tip {
+    margin-top: 24px;
+    font-size: 13px;
+    color: rgba(0, 0, 0, 0.5);
+  }
 }
 
 .sider {
   background: transparent;
   padding-right: 60px;
   .tags {
-    border-top: 1px solid #e9e9e9;
-    padding-top: 16px;
     h3 {
       font-size: 14px;
       font-weight: normal;
@@ -36,9 +39,22 @@
   }
 }
 
+.content {
+  overflow: visible;
+}
+
+@media only screen and (max-width: 1024px) {
+  .sider {
+    display: none;
+  }
+  .content {
+    padding: 0 24px;
+  }
+}
+
 .toolbar {
   margin-bottom: 24px;
-  font-size: 13px;
+  font-size: 14px;
   overflow: hidden;
   .left {
     float: left;
@@ -47,7 +63,7 @@
     float: right;
     i {
       transform: rotate(90deg);
-      color: #ed33ba;
+      color: rgba(0, 0, 0, .85);
     }
     .type {
       margin-left: 16px;

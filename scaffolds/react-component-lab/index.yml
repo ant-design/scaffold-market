@@ -1,0 +1,21 @@
+name: react-component-lab
+git_url: 'git://github.com/leesx/react-component-lab.git'
+author: leesx
+description: >-
+  This is a lab component lab platform, which integrates React, ES2015, Babel,
+  Ant.design. You can write your own free code on the platform, without having
+  to worry about the environment configuration problems.
+tags:
+  - react
+  - es2015
+  - antd
+coverPicture: 'https://ucarecdn.com/307a7801-f7ad-477f-b37f-f95ba09e9eca/'
+readme: >
+  This is a lab component lab platform, which integrates React, ES2015, Babel,
+  Ant.design. You can write your own free code on the platform, without having
+  to worry about the environment configuration problems.
+
+  ### 先睹为快 :tada:
+
+  ![readme](https://github.com/leesx/react-component-lab/blob/master/README.png)
+deployedAt: 2017-06-17T16:10:57.742Z

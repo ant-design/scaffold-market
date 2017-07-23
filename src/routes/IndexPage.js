@@ -52,7 +52,7 @@ class IndexPage extends PureComponent {
     const scaffoldItems = (list && list.length > 0) ? (
       <Layout className={styles.normal}>
         <Sider className={styles.sider} width={300}>
-          <Affix offsetTop={63}>
+          <Affix offsetTop={80}>
             <section className={styles.tags}>
               <h3>
                 <FormattedMessage id="home.alltags" />
@@ -95,7 +95,7 @@ class IndexPage extends PureComponent {
             </section>
           </Affix>
         </Sider>
-        <Content style={{ overflow: 'visible' }}>
+        <Content className={styles.content}>
           <div className={styles.toolbar}>
             <div className={styles.left}>
               <FormattedMessage id="home.count" values={{ count: filteredItem.length }} />
@@ -131,6 +131,9 @@ class IndexPage extends PureComponent {
     ) : (
       <div className={styles.loading}>
         <Spin size="large" />
+        <div className={styles.tip}>
+          <FormattedMessage id="home.loading" />
+        </div>
       </div>
     );
     return (
