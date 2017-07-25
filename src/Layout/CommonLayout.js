@@ -42,7 +42,7 @@ class CommonLayout extends React.Component {
                     <FormattedMessage id="header.submit" />
                   </Link>
                   {!user.logining && (
-                    <span>
+                    <span style={{ marginRight: 24 }}>
                       <img alt="avatar" className={styles.avatar} src={user.avatar_url} />
                       {user.name}
                     </span>
