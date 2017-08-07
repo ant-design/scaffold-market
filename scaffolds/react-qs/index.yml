@@ -1,0 +1,13 @@
+name: react-qs
+git_url: 'git://github.com/leesx/react-qs.git'
+author: leesx
+description: >-
+  该架构旨在简化react开发环境的配置与优化工作。构建单页面多页签的react应用。架构中已经设置了最新的API。可以开包即用。详情请看配置文件。谢谢!!!
+  稍后做详细说明，有不明白的地方可以 call me 1058315063@qq.com
+tags:
+  - 'react  '
+  - react-router
+  - antd
+coverPicture: 'https://ucarecdn.com/6d464513-57cd-4cb7-855f-aad2a1710f21/'
+readme: "####  开包即用的React应用架构配置\r\n\r\n> 该架构旨在简化react开发环境的配置与优化工作。架构中已经设置了最新的API。可以`开包即用`。详情请看配置文件。谢谢!!!\r\n稍后做详细说明，有不明白的地方可以 call me `1058315063@qq.com`\r\n\r\n1. 安装 :100:\r\n```\r\nnpm install\r\nnpm install cross-env -g\r\n\r\n```\r\n\r\n2. 开发环境运行 :tada:\r\n```\r\nnpm run dll  // 打包第三方库文件\r\nnpm run debug // 启动在3031端口\r\n```\r\n\r\n3. 生产环境 :rocket:\r\n\r\n```\r\nnpm run build //打包编译，编译后的文件在dist目录。\r\n```\r\n\r\n4. 线上预览 :art:\r\n\r\n[线上DEMO](http://zoo.lishangxi.cn)\r\n"
+deployedAt: 2017-08-07T10:38:01.386Z
