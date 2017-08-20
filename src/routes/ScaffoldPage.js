@@ -1,10 +1,10 @@
+/* eslint react/no-danger: 0 */
 import React, { PureComponent } from 'react';
 import { connect } from 'dva';
 import { Link } from 'dva/router';
 import moment from 'moment';
 import Overdrive from 'react-overdrive';
 import { Card, Layout, Spin, Icon, Button, Tag, Popover } from 'antd';
-import ReactMarkdown from 'react-markdown';
 import { FormattedMessage, injectIntl } from 'react-intl';
 import { Helmet } from 'react-helmet';
 import ReactDisqusComments from 'react-disqus-comments';
@@ -161,8 +161,12 @@ class ScaffoldPage extends PureComponent {
             }
             <Card className={styles.card} title="README">
               {scaffold.readme
-                ? <ReactMarkdown source={scaffold.readme} className={styles.markdown} />
-                : 'Not Found'
+                ? (
+                  <div
+                    className={styles.markdown}
+                    dangerouslySetInnerHTML={{ __html: scaffold.readme }}
+                  />
+               ) : 'Not Found'
               }
             </Card>
             <ReactDisqusComments
