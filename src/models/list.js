@@ -21,7 +21,6 @@ export default {
         newList = [...data.list];
       }
       const results = [];
-      const readmes = [];
       for (let i = 0; i < newList.length; i += 1) {
         if (!payload || newList[i].name === payload) {
           const { git_url } = newList[i];
@@ -31,14 +30,10 @@ export default {
           // read basic information of repo
           const repoData = yield github.getRepo(user, repo);
           results.push(repoData.getDetails());
-
-          if (payload) {
-            readmes.push(fetchReadme(user, repo));
-          }
         }
       }
 
-      const [newDatas, newReadmes] = yield [Promise.all(results), Promise.all(readmes)];
+      const newDatas = yield Promise.all(results);
 
       for (let i = 0; i < newDatas.length; i += 1) {
         const target = newList.filter(item => item.git_url === newDatas[i].data.git_url)[0];
@@ -46,8 +41,14 @@ export default {
           newList[i] = {
             ...newDatas[i].data,
             ...target,
-            readme: newReadmes[i].data,
+            readme: null,
           };
+
+          if (newList[i].name === payload) {
+            const { user, repo } = parseGithubUrl(target.git_url);
+            const readme = yield fetchReadme(user, repo);
+            newList[i].readme = readme.data;
+          }
         }
       }
 

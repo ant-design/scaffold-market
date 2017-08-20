@@ -19,7 +19,7 @@ class ScaffoldPage extends PureComponent {
   componentDidMount() {
     const { list, params } = this.props;
     const scaffold = list.filter(item => item.name === params.templateId)[0];
-    if (!scaffold || !('stargazers_count' in scaffold)) {
+    if (!scaffold || !('stargazers_count' in scaffold) || !scaffold.readme) {
       this.props.dispatch({
         type: 'scaffold/fetch',
         payload: params.templateId,
@@ -166,7 +166,7 @@ class ScaffoldPage extends PureComponent {
                     className={styles.markdown}
                     dangerouslySetInnerHTML={{ __html: scaffold.readme }}
                   />
-               ) : 'Not Found'
+              ) : <Spin />
               }
             </Card>
             <ReactDisqusComments
