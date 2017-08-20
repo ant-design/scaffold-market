@@ -1,4 +1,5 @@
 import Github from 'github-api';
+import when from 'when';
 import { fetch, fetchReadme } from '../services/list';
 import { parseGithubUrl } from '../utils/github';
 
@@ -33,10 +34,16 @@ export default {
         }
       }
 
-      const newDatas = yield Promise.all(results);
+      let newDatas = yield when.settle(results);
+      newDatas = newDatas.map((item) => {
+        if (item.state === 'fulfilled' && item.value) {
+          return item.value;
+        }
+        return {};
+      });
 
       for (let i = 0; i < newDatas.length; i += 1) {
-        const target = newList.filter(item => item.git_url === newDatas[i].data.git_url)[0];
+        const target = newList.filter(item => item.git_url === (newDatas[i].data || {}).git_url)[0];
         if (target) {
           newList[i] = {
             ...newDatas[i].data,
