@@ -119,5 +119,5 @@ class CommonLayout extends React.Component {
 }
 
 export default connect(props => ({
-  user: props.auth.user,
+  user: props.auth && props.auth.user,
 }))(injectIntl(CommonLayout));

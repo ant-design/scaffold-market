@@ -24,10 +24,6 @@ export default {
       const provider = new firebase.auth.GithubAuthProvider();
       provider.addScope('repo');
       const authResult = yield firebase.auth().signInWithPopup(provider);
-      // yield put({ type: 'save', payload: {
-      //  ...authResult, accessToken: authResult.credential.accessToken
-      // }});
-      yield put({ type: 'contribute/showModal' });
       yield put({ type: 'github', payload: authResult.credential.accessToken });
     },
     *github({ payload }, { put }) {
@@ -45,6 +41,7 @@ export default {
             accessToken: payload,
           },
         });
+        store.set('accessToken', payload);
       }
     },
   },
