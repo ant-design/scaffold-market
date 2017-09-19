@@ -1,0 +1,10 @@
+name: ReactAntd
+git_url: 'git://github.com/2425358736/ReactAntd.git'
+author: '2425358736'
+description: React + Antd（阿里组件库） 基于阿里dva官方脚本架
+tags: []
+coverPicture: 'https://ucarecdn.com/03a24e90-ff1a-4290-b110-982e1acaebf6/'
+readme: |
+  # ReactAntd
+  React+ Antd（阿里组件库）
+deployedAt: 2017-09-19T06:53:15.465Z
