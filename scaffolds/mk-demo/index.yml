@@ -1,0 +1,43 @@
+name: mk-demo
+git_url: 'git://github.com/ziaochina/mk-demo.git'
+author: ziaochina
+description: 'mk框架实现的demo网站,技术栈：react, redux, immutable,antd'
+tags: []
+coverPicture: 'https://ucarecdn.com/938a18e8-372f-45e3-b011-c037016c18c6/'
+readme: |+
+  # 右上角有个star,亲点点哈，您懂的
+
+  # mk-demo
+
+  该demo是使用mk框架创建的一个demo
+
+  [在线效果请点这里](https://ziaochina.github.io/mk-demo/)
+
+  ## 环境准备
+
+  - nodejs最新版
+  - npm最新版
+  - chrome
+
+  ## start
+
+  ```
+  $ npm install
+  $ npm start
+  http://127.0.0.1:8089
+  ```
+
+  ## 注意
+
+  - 如果npm start报错not found module
+  ```
+  $ npm cache clean
+  $ rm -rf node_modules
+  $ rm -rf package-lock.json
+  $ npm install
+  ```
+
+
+
+
+deployedAt: 2017-09-20T07:39:14.303Z
