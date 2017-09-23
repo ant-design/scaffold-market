@@ -44,17 +44,18 @@ export default {
 
       for (let i = 0; i < newDatas.length; i += 1) {
         const target = newList.filter(item => item.git_url === (newDatas[i].data || {}).git_url)[0];
+        const targetIndex = newList.indexOf(target);
         if (target) {
-          newList[i] = {
+          newList[targetIndex] = {
             ...newDatas[i].data,
             ...target,
             readme: null,
           };
 
-          if (newList[i].name === payload) {
+          if (newList[targetIndex].name === payload) {
             const { user, repo } = parseGithubUrl(target.git_url);
             const readme = yield fetchReadme(user, repo);
-            newList[i].readme = readme.data;
+            newList[targetIndex].readme = readme.data;
           }
         }
       }
