@@ -49,18 +49,26 @@ class IndexPage extends PureComponent {
   }
   render() {
     const { list, groupedTags, location: { query }, intl, sortWay } = this.props;
-    const tags = Object.keys(groupedTags);
+    const tags = Object.keys(groupedTags).sort((a, b) => {
+      const value = groupedTags[b].length - groupedTags[a].length;
+      if (value !== 0) {
+        return value;
+      }
+      if (a < b) return -1;
+      if (a > b) return 1;
+      return 0;
+    });
     const filteredItem = filterTag(list, query.tags, query.search);
     const scaffoldItems = (list && list.length > 0) ? (
       <Layout className={styles.normal}>
-        <Sider className={styles.sider} width={300}>
+        <Sider className={styles.sider} width={320}>
           <Affix offsetTop={80}>
             <section className={styles.tags}>
               <h3>
                 <FormattedMessage id="home.alltags" />
                 {query.tags ? <Link to="/"><FormattedMessage id="home.cleartags" /></Link> : null}
               </h3>
-              <section>
+              <section className={styles.tagsSection}>
                 {
                   (tags && tags.length > 0)
                     ? tags.map((tag) => {
