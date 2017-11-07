@@ -1,0 +1,19 @@
+name: dva-antd-mobile-starter
+git_url: 'git://github.com/xlsdg/dva-antd-mobile-starter.git'
+author: xlsdg
+description: Get started with Dva.js and Ant Design mobile.
+tags:
+  - antd
+  - dva
+  - mobile
+coverPicture: null
+readme: >
+  # dva-antd-mobile-starter [![Build
+  Status](https://travis-ci.org/xlsdg/dva-antd-mobile-starter.svg?branch=master)](https://travis-ci.org/xlsdg/dva-antd-mobile-starter)
+
+
+  > Get started with Dva.js and Ant Design mobile.
+
+
+  ![Screen Shot](screenshot.png)
+deployedAt: 2017-05-24T12:14:31.221Z

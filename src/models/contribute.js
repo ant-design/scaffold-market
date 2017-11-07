@@ -42,7 +42,19 @@ export default {
         // eslint-disable-next-line
         console.log('>> packageJson', packageJson);
 
-        const readme = yield repos.getContents('master', 'README.md', true);
+        let readme;
+        try {
+          readme = yield repos.getContents('master', 'README.md', true);
+        } catch (e) {
+          readme = { data: 'No README' };
+        }
+        if (readme.data === 'No README') {
+          try {
+            readme = yield repos.getContents('master', 'readme.md', true);
+          } catch (e) {
+            // do nothing
+          }
+        }
         // eslint-disable-next-line
         console.log('>> readme', readme);
 

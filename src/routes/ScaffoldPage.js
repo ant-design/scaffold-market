@@ -1,12 +1,13 @@
+/* eslint react/no-danger: 0 */
 import React, { PureComponent } from 'react';
 import { connect } from 'dva';
 import { Link } from 'dva/router';
 import moment from 'moment';
 import Overdrive from 'react-overdrive';
 import { Card, Layout, Spin, Icon, Button, Tag, Popover } from 'antd';
-import ReactMarkdown from 'react-markdown';
 import { FormattedMessage, injectIntl } from 'react-intl';
 import { Helmet } from 'react-helmet';
+import ReactDisqusComments from 'react-disqus-comments';
 import styles from './ScaffoldPage.less';
 
 const { Sider, Content } = Layout;
@@ -18,10 +19,10 @@ class ScaffoldPage extends PureComponent {
   componentDidMount() {
     const { list, params } = this.props;
     const scaffold = list.filter(item => item.name === params.templateId)[0];
-    if (!scaffold || !('stargazers_count' in scaffold)) {
+    if (!scaffold || !('stargazers_count' in scaffold) || !scaffold.readme) {
       this.props.dispatch({
         type: 'scaffold/fetch',
-        payload: name,
+        payload: params.templateId,
       });
     }
     window.scrollTo(0, 0);
@@ -66,16 +67,20 @@ class ScaffoldPage extends PureComponent {
                   <FormattedMessage id="scaffold.preview" />
                 </Button>
               </a>
-              <a href={`${scaffold.html_url}/archive/master.zip`} target="_blank" rel="noopener noreferrer">
-                <Button icon="download">
-                  <FormattedMessage id="scaffold.download" />
-                </Button>
-              </a>
-              <a href={scaffold.html_url} target="_blank" rel="noopener noreferrer">
-                <Button icon="github">
-                  <FormattedMessage id="scaffold.repo" />
-                </Button>
-              </a>
+              {scaffold.html_url && (
+                <a href={`${scaffold.html_url}/archive/master.zip`} target="_blank" rel="noopener noreferrer">
+                  <Button icon="download">
+                    <FormattedMessage id="scaffold.download" />
+                  </Button>
+                </a>
+              )}
+              {scaffold.html_url && (
+                <a href={scaffold.html_url} target="_blank" rel="noopener noreferrer">
+                  <Button icon="github">
+                    <FormattedMessage id="scaffold.repo" />
+                  </Button>
+                </a>
+              )}
             </section>
             <hr />
             <section>
@@ -156,10 +161,19 @@ class ScaffoldPage extends PureComponent {
             }
             <Card className={styles.card} title="README">
               {scaffold.readme
-                ? <ReactMarkdown source={scaffold.readme} className={styles.markdown} />
-                : 'Not Found'
+                ? (
+                  <div
+                    className={styles.markdown}
+                    dangerouslySetInnerHTML={{ __html: scaffold.readme }}
+                  />
+              ) : <Spin />
               }
             </Card>
+            <ReactDisqusComments
+              shortname="scaffolds-1"
+              identifier={scaffold.name}
+              title={scaffold.name}
+            />
           </Content>
         </Layout>
       );
