@@ -1,0 +1,14 @@
+name: create-react-app-antd-mobile-starter
+git_url: 'git://github.com/xlsdg/create-react-app-antd-mobile-starter.git'
+author: xlsdg
+description: Get started with create-react-app and antd-mobile.
+tags:
+  - 'create-react-app '
+  - antd
+  - mobile
+coverPicture: null
+readme: |
+  # create-react-app-antd-mobile-starter
+
+  > Get started with create-react-app and antd-mobile.
+deployedAt: 2018-01-09T02:40:35.127Z
