@@ -2,8 +2,16 @@ name: dva-boot
 git_url: 'git://github.com/LANIF-UI/dva-boot.git'
 author: LANIF-UI
 description: 使用CRA(create-react-app) 构建的 dva 2 脚手架 支持动态路由、按功能分层
-tags: []
-coverPicture: null
+tags:
+  - antd
+  - react
+  - dva
+  - react-router-v4
+  - mvc
+  - code-splitting
+  - fractal
+  - create-react-app
+coverPicture: 'https://camo.githubusercontent.com/51cfb0b2c49ae80e4b172fa36b79b780681ff8d6/687474703a2f2f696d67322e747568752e6f72672f61637469766974792f696d6167652f346564632f383134332f3635346466323236313633373633356232633233656561635f773535305f683330302e6a7067'
 readme: >-
   # DVA-BOOT
 
