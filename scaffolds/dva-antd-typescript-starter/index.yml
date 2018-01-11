@@ -1,0 +1,16 @@
+name: dva-antd-typescript-starter
+git_url: 'git://github.com/xlsdg/dva-antd-typescript-starter.git'
+author: xlsdg
+description: Get started with Dva.js and Ant Design.
+tags:
+  - dva
+  - antd
+  - typescript
+coverPicture: null
+readme: >
+  # dva-antd-typescript-starter [![Build
+  Status](https://travis-ci.org/xlsdg/dva-antd-typescript-starter.svg?branch=master)](https://travis-ci.org/xlsdg/dva-antd-typescript-starter)
+
+
+  > Get started with Dva.js and Ant Design.
+deployedAt: 2018-01-09T02:38:28.669Z
