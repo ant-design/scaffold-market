@@ -11,13 +11,13 @@ tags:
   - code-splitting
   - fractal
   - create-react-app
-coverPicture: 'https://camo.githubusercontent.com/51cfb0b2c49ae80e4b172fa36b79b780681ff8d6/687474703a2f2f696d67322e747568752e6f72672f61637469766974792f696d6167652f346564632f383134332f3635346466323236313633373633356232633233656561635f773535305f683330302e6a7067'
+coverPicture: 'https://ucarecdn.com/1383e52d-9888-4ddd-8044-8478c9c9aef7/'
 readme: >-
   # DVA-BOOT
 
 
   使用dva 2以及React
-  16，动态路由，目录按功能划分，开发时不用关心其它目录，只在自已的路由下写新功能即可，配置也都在自已的目录中，团队成员开发不会互相冲突。
+  16，动态路由，自已的module，service，component在自已的路由目录下，目录按功能划分，开发时不用关心其它目录，只在自已的路由下写新功能即可，团队成员开发不会互相冲突。
 
 
   ```
