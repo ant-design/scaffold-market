@@ -1,0 +1,11 @@
+name: fis3-parser-tpl-precompile
+git_url: 'git://github.com/feshu/fis3-parser-tpl-precompile.git'
+author: feshu
+description: fis3 plugin for pre-compiling javascript templates
+tags:
+  - fis3
+coverPicture: 'https://ucarecdn.com/df26154d-b88c-48f8-9a1f-26bf971c8817/'
+readme: |
+  # fis3-parser-tpl-precompile
+  fis3 plugin for pre-compiling javascript templates
+deployedAt: 2018-02-07T05:53:36.062Z
