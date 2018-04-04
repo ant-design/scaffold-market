@@ -4,9 +4,9 @@ author: GavinZhuLei
 description: vue移动web通用脚手架
 tags:
   - vue
-  - vue-cli
   - vue-router
   - mobile
+  - vue-cli
 coverPicture: null
 readme: |
   # vue-mobile
@@ -42,6 +42,7 @@ readme: |
   |   |   |   --- App.vue                   ---根组件
   |   |   |   --- main.js                   ---模块入口文件
   +-- template/             ---模块模板文件目录
+  --- index.html            ---html模板文件
   ```
 
   ## 安装运行
@@ -59,4 +60,4 @@ readme: |
   # 创建模块，自动在src/modules/下生成模板代码和入口文件
   npm run module
   ```
-deployedAt: 2018-04-04T05:27:47.634Z
+deployedAt: 2018-04-04T06:25:45.847Z
