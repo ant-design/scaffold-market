@@ -3,12 +3,12 @@ git_url: 'git://github.com/dreambo8563/ts_react_mobx.git'
 author: dreambo8563
 description: ts+react +mobx boilerplate
 tags:
-  - antd
-  - mobx
-  - react
   - webpack3
-  - typescript
-coverPicture: null
+  - antd
+  - ts
+  - mobx
+  - react16
+coverPicture: 'https://ucarecdn.com/6b1e5f7c-3422-4f46-8618-404d87ebf654/'
 readme: |
   ## Setup
 
@@ -79,4 +79,4 @@ readme: |
 
   * 请求相关
   * loadComponentXXX 异步加载组件
-deployedAt: 2018-04-08T07:28:17.226Z
+deployedAt: 2018-04-26T02:08:25.578Z
