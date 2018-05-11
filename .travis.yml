@@ -7,7 +7,7 @@ script:
     if [ "$TEST_TYPE" = lint ]; then
       npm run lint
     elif [ "$TEST_TYPE" = deploy ]; then
-      bash ./scripts/deploy.sh
+      travis_wait 3000 bash ./scripts/deploy.sh
     fi
 env:
   global:
