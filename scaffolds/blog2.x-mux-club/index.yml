@@ -1,0 +1,16 @@
+name: blog2.x-mux-club
+git_url: 'git://github.com/PhotoArtLife/blog2.x-mux-club.git'
+author: PhotoArtLife
+description: "\U0001F4372.x blog | use dvajs、react and others quickly build a response blog."
+tags:
+  - react
+  - redux
+  - dva
+  - roadhog
+  - webpack
+  - mobile
+  - sass
+  - antd
+  - blog
+coverPicture: 'https://ucarecdn.com/f73e4175-29c5-43cf-9338-69ab5d5f4582/'
+deployedAt: 2018-06-18T02:29:56.349Z
