@@ -1,0 +1,10 @@
+name: react-antd-bless
+git_url: 'git://github.com/happysuns/react-antd-bless.git'
+author: happysuns
+description: 脚手架工具
+tags:
+  - react
+  - antd
+  - typeScript
+coverPicture: null
+deployedAt: 2018-06-21T08:46:52.394Z
