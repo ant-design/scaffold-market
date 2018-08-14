@@ -1,0 +1,10 @@
+name: next-react-mobx-antd-boilerplate
+git_url: 'git://github.com/1degrees/next-react-mobx-antd-boilerplate.git'
+author: 1degrees
+description: '该项目采用React-SSR技术（服务端渲染），项目涉及到技术栈： react、next、mobx、antd、已经webpack基础知识 '
+tags:
+  - next
+  - react
+  - mobx
+coverPicture: null
+deployedAt: 2018-08-14T03:19:08.239Z
