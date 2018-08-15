@@ -20,7 +20,7 @@ export default {
   },
 
   effects: {
-    *login({ payload }, { put }) {
+    *login(_, { put }) {
       const provider = new firebase.auth.GithubAuthProvider();
       provider.addScope('repo');
       const authResult = yield firebase.auth().signInWithPopup(provider);

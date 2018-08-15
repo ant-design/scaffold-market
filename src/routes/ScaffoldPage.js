@@ -50,7 +50,7 @@ class ScaffoldPage extends PureComponent {
         </div>
       );
     } else {
-      const scaffoldPreviewUrl = scaffold.homepage || `/${scaffold.name}`;
+      const scaffoldPreviewUrl = scaffold.homepage;
       content = (
         <Layout>
           <Sider className={styles.sider} width={400}>
@@ -62,11 +62,13 @@ class ScaffoldPage extends PureComponent {
             </section>
             <p>{scaffold.description}</p>
             <section className={styles.links}>
-              <a href={scaffoldPreviewUrl} target="_blank" rel="noopener noreferrer">
-                <Button type="primary" icon="eye-o">
-                  <FormattedMessage id="scaffold.preview" />
-                </Button>
-              </a>
+              {scaffoldPreviewUrl && (
+                <a href={scaffoldPreviewUrl} target="_blank" rel="noopener noreferrer">
+                  <Button type="primary" icon="eye-o">
+                    <FormattedMessage id="scaffold.preview" />
+                  </Button>
+                </a>
+              )}
               {scaffold.html_url && (
                 <a href={`${scaffold.html_url}/archive/master.zip`} target="_blank" rel="noopener noreferrer">
                   <Button icon="download">

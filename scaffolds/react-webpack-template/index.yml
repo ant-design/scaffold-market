@@ -1,0 +1,75 @@
+name: react-webpack-template
+git_url: 'git://github.com/liushuangbill/react-webpack-template.git'
+author: liushuangbill
+description: Provide a template for developing React using ES6 syntax and webpack.
+tags:
+  - react
+  - webpack
+coverPicture: 'https://ucarecdn.com/00f37aa0-f2b6-4680-952e-5f2278f3d078/'
+readme: >
+  # React + Webpack template [![Build
+  Status](https://travis-ci.org/liushuangbill/react-webpack-template.svg?branch=master)](https://travis-ci.org/liushuangbill/react-webpack-template)
+
+
+  Provide a template for developing React based applications using ES6 syntax
+  and webpack.
+
+
+  ## use:
+
+  ```npm
+
+  git clone git@github.com:liushuangbill/react-webpack-template.git
+  your-app-name
+
+
+  cd your-app-name
+
+
+  git remote set-url origin your-git-url // 修改远程仓库地址
+
+
+  npm i
+
+
+  npm start // 开发模式运行
+
+
+  npm run build // 打包项目
+
+
+  // 使用Webpack ProvidePlugin插件引入React，不必重复引入，也可以定义自己的全局变量
+
+  ```
+
+
+  ## 目录结构
+
+  ```
+
+  .
+
+  |-- config                           // webpack配置目录
+
+  |-- dist                             // 打包输出目录
+
+  |-- src                              // 开发目录
+
+  |   |-- index.js                     // 打包入口文件
+
+  |-- .babelrc
+
+  |-- .editorconfig
+
+  |-- .postcssrc
+
+  |-- README.md
+
+  |-- package.json
+
+  |-- index.html
+
+  .
+
+  ```
+deployedAt: 2018-05-12T17:02:37.686Z

@@ -1,0 +1,9 @@
+name: vue2-element
+git_url: 'git://github.com/sosout/vue2-element.git'
+author: sosout
+description: vue2-element管理系统简单demo
+tags:
+  - vue
+coverPicture: 'https://ucarecdn.com/a10da881-44c4-4ced-82a5-6f2e89b82c54/'
+readme: "# vue2-element管理系统简单demo\n\n> 您有什么功能可以给我留言，我来实现！\n\n## 相关推荐\n\n[基于react + redux + immutable + less + ES6/7 + webpack2.0 + fetch + react-router + antd(1.x)实现的SPA后台管理系统模板](https://github.com/sosout/react-antd)\n\n## 最新更新\n>  项目初始化\n\n## 前言\n>  本工程主要基于vue + vuex + less + ES6/7 + webpack + fetch + vue-router + store + element-ui实现的SPA后台管理系统模板。\n\n>  如果觉得不错的话，请star一下吧 \U0001F60A\n\n>  编码时间：8:00——9:30, 下班时间——24:00，其他时间要工作。代码未优化，处女座代码必须要优化。由于代码延后，先向大家说声抱歉。您有什么问题可以私信我segmentfault。\n\n[线上demo](http://elm.sosout.com/)\n\n## 关于我自己\n\n>  使用技术： vue + vuex + less + ES6/7 + webpack + fetch + vue-router + store + element-ui\n\n>  项目说明： 此项目是本人空余时间搭建的。希望大家提供宝贵的意见和建议，谢谢。\n\n>  JS/React/Vue/Angular前端群： 599399742\n\n>  邮&emsp;&emsp;&ensp;箱： sosout@139.com\n\n>  个人网站： http://www.sosout.com/\n\n>  个人博客： http://blog.sosout.com/\n\n>  个人简书： http://www.jianshu.com/users/23b9a23b8849/latest_articles\n\n>  segmentfault：https://segmentfault.com/u/sosout\n\n### 下载\n\n```\n# git clone\n\ngit clone https://github.com/sosout/vue2-element.git\n\ncd vue2-element\n```\n\n### 安装\n```bush\n\n// 安装前请先确保已安装node和npm\n\n// 安装成功后,再安装依赖，如果之前有用npm安装过，请先删掉node_modules\nyarn install\n```\n### 运行\n\n``` bash\n\n# 开发版本，用于开发使用，热加载\nyarn run dev\n\n# 生产版本，对代码进行混淆压缩，提取公共代码，分离css文件\nyarn run build\n\n# 生产版本并查看包分析器报告\nyarn run build --report\n\n# 单元测试\nyarn run unit\n\n# e2e测试\nyarn run e2e\n\n# 所有测试\nyarn test\n```\n\n### 访问\n在浏览器地址栏输入[http://localhost:8080/](http://localhost:8080/)\n\n# vuex简单应用\n"
+deployedAt: 2017-11-23T15:20:38.859Z

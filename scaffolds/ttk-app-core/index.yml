@@ -1,0 +1,13 @@
+name: ttk-app-core
+git_url: 'git://github.com/thethreekingdoms/ttk-app-core.git'
+author: thethreekingdoms
+description: 前端框架（基于react+redux）
+tags:
+  - antd
+  - react
+  - redux
+  - react-redux
+  - react-router
+  - ttk
+coverPicture: 'https://ucarecdn.com/b90f216f-037c-4750-9004-99d9e6bd5640/'
+deployedAt: 2018-04-16T01:45:47.416Z
