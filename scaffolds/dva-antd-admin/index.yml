@@ -1,0 +1,11 @@
+name: dva-antd-admin
+git_url: 'git://github.com/bowencool/dva-antd-admin.git'
+author: bowencool
+description: 路由(v4)、权限、菜单 强耦合案例
+tags:
+  - dva
+  - react-router-v4
+  - antd
+coverPicture: 'https://ucarecdn.com/45f29b7d-e3ef-42c0-92c7-2bd70463691d/'
+readme: No README
+deployedAt: 2018-04-07T07:22:46.791Z

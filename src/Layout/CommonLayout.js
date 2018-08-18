@@ -29,7 +29,7 @@ class CommonLayout extends React.Component {
             <span className={styles.searchWrapper}>
               <Input
                 className={styles.search}
-                prefix={<Icon type="search" style={{ marginLeft: 10 }} />}
+                prefix={<Icon type="search" />}
                 placeholder={intl.formatMessage({ id: 'header.search' })}
                 onChange={this.handleSearch}
               />
@@ -42,7 +42,7 @@ class CommonLayout extends React.Component {
                     <FormattedMessage id="header.submit" />
                   </Link>
                   {!user.logining && (
-                    <span>
+                    <span style={{ marginRight: 24 }}>
                       <img alt="avatar" className={styles.avatar} src={user.avatar_url} />
                       {user.name}
                     </span>
@@ -54,7 +54,7 @@ class CommonLayout extends React.Component {
                     <Icon type="plus-circle-o" />
                     <FormattedMessage id="header.submit" />
                   </Link>
-                  <a onClick={() => dispatch({ type: 'auth/login' })}>
+                  <a className={styles.link} onClick={() => dispatch({ type: 'auth/login' })}>
                     <Icon type="github" />
                     <FormattedMessage id="header.login" />
                   </a>
@@ -103,7 +103,7 @@ class CommonLayout extends React.Component {
           <div>
             <a href="http://github.com/ant-design/scaffold-market/" target="_blank" rel="noopener noreferrer">
               <Icon style={{ marginRight: '0.3em' }} type="github" />
-              GitHub
+              <FormattedMessage id="footer.source" />
             </a>
             <a href="http://ant.design" target="_blank" rel="noopener noreferrer">
               Ant Design
@@ -119,5 +119,5 @@ class CommonLayout extends React.Component {
 }
 
 export default connect(props => ({
-  user: props.auth.user,
+  user: props.auth ? props.auth.user : {},
 }))(injectIntl(CommonLayout));

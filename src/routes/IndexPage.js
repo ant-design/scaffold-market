@@ -16,7 +16,9 @@ const filterTag = (list, tags, search) => list.filter((item) => {
   if (!tags && !search) {
     return true;
   }
-  if (search && item.name.indexOf(search) < 0 && item.description.indexOf(search) < 0) {
+  if (search &&
+      (item.name || '').indexOf(search) < 0 &&
+      (item.description || '') && item.description.indexOf(search) < 0) {
     return false;
   }
   const queryTags = typeof tags === 'string' ? [tags] : [...(tags || [])];
@@ -47,18 +49,26 @@ class IndexPage extends PureComponent {
   }
   render() {
     const { list, groupedTags, location: { query }, intl, sortWay } = this.props;
-    const tags = Object.keys(groupedTags);
+    const tags = Object.keys(groupedTags).sort((a, b) => {
+      const value = groupedTags[b].length - groupedTags[a].length;
+      if (value !== 0) {
+        return value;
+      }
+      if (a < b) return -1;
+      if (a > b) return 1;
+      return 0;
+    });
     const filteredItem = filterTag(list, query.tags, query.search);
     const scaffoldItems = (list && list.length > 0) ? (
       <Layout className={styles.normal}>
-        <Sider className={styles.sider} width={300}>
-          <Affix offsetTop={63}>
+        <Sider className={styles.sider} width={320}>
+          <Affix offsetTop={80}>
             <section className={styles.tags}>
               <h3>
                 <FormattedMessage id="home.alltags" />
                 {query.tags ? <Link to="/"><FormattedMessage id="home.cleartags" /></Link> : null}
               </h3>
-              <section>
+              <section className={styles.tagsSection}>
                 {
                   (tags && tags.length > 0)
                     ? tags.map((tag) => {
@@ -95,7 +105,7 @@ class IndexPage extends PureComponent {
             </section>
           </Affix>
         </Sider>
-        <Content style={{ overflow: 'visible' }}>
+        <Content className={styles.content}>
           <div className={styles.toolbar}>
             <div className={styles.left}>
               <FormattedMessage id="home.count" values={{ count: filteredItem.length }} />
@@ -131,6 +141,9 @@ class IndexPage extends PureComponent {
     ) : (
       <div className={styles.loading}>
         <Spin size="large" />
+        <div className={styles.tip}>
+          <FormattedMessage id="home.loading" />
+        </div>
       </div>
     );
     return (

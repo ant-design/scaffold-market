@@ -1,0 +1,254 @@
+name: vue-admin
+git_url: 'git://github.com/mowatermelon/vue-admin.git'
+author: mowatermelon
+description: 基于axios，bootstrap，vue-router，webpack和express等等的基础vue后台控制模板，默认有三个颜色主题可切换。
+tags:
+  - axios
+  - vue2
+  - vue-router
+  - webpack
+  - vue-admin
+  - express
+  - mo-theme
+  - vuex
+  - localstorage
+coverPicture: 'https://ucarecdn.com/0d2abe1a-4605-4050-9474-2199bdb355d9/'
+readme: >
+  # vue-admin
+
+
+  基于axios，bootstrap，vue-router，webpack和express等等的基础vue后台控制模板，默认有三个颜色主题可切换。
+
+
+  # 项目优势
+
+
+  - login页和register页共用一个组件页，做了相关的输入数据验证，并写了相关提示。
+
+  - 默认提供login登陆状态管理。
+
+  - 注册完成之后直接登陆，不用再跳转到登录页去登陆。
+
+  - 比较简洁的页面设计。
+
+  - 颜色主题三色可选(blue,pue,dark)，默认主题是blue。
+
+  - 按照尽可能分离的逻辑，对于各组件之间进行进行了解耦设计。
+
+  - 路由跳转实时在网址上记录当前激活的面板情况。
+
+  - 对于项目模板做了响应式设计，保证在不同屏幕状态下的良好阅读体验。
+
+  - 精简的依赖包，删除了测试相关依赖包。
+
+  - 精简的指令，删除了测试相关指令。
+
+  - 降低了对于网络环境不太好的情况，资源请求压力。
+
+  - 左侧面板数据支持灵活配置，数据修改路径是项目根文件下`static/mock/leftPanelData.json`。
+
+  - 因为集成了axios，更方便请求其他接口数据。
+
+
+  # 运行项目
+
+
+  ``` bash
+
+  # install dependencies
+
+    # Good network environment
+      # install dependencies by cnpm or npm
+      cnpm i
+
+    # Bad network environment
+      # global install yarn
+      cnpm i yarn -g
+
+      # install dependencies by yarn
+      yarn install
+
+  # serve with hot reload at localhost:8080
+
+  npm run dev
+
+
+  # build for production with minification
+
+  npm run build
+
+
+  # view after build effect at localhost:8089
+
+  npm run dist
+
+
+  ```
+
+
+  # 项目结构图
+
+
+  ```text
+
+  ├── build                                       // webpack配置文件
+
+  ├── config                                      // 基本配置
+
+  │   │   ├── dev.env.js                              // 开发环境配置文件
+
+  │   │   ├── index.js                              // 总配置文件
+
+  │   │   ├── prod.env.js                              // 生产环境配置文件
+
+  │   │   ├── test.env.js                              // 测试环境配置文件
+
+  ├── dist                                        // 上线项目文件，放在服务器即可正常访问
+
+  ├── screenshots                                 // 项目截图
+
+  │   ├── login.png                              // 登陆页面显示效果
+
+  │   ├── register.png                              // 注册页面显示效果
+
+  │   ├── large-pure.png                              // 大屏状态下紫色主题显示效果
+
+  │   ├── middle-blue.png                              // 中屏状态下蓝色主题显示效果
+
+  │   ├── small-dark.png                              // 小屏状态下黑色主题显示效果
+
+  ├── src                                         // 源码目录
+
+  │   ├── asset                              // 项目相关设计资源
+
+  │   │   ├── css                              // 项目相关样式设计文件
+
+  │   │   │   ├── app.scss                              //
+  项目主要的样式文件，整合了其他样式文件板块，最后在app.vue进行引入
+
+  │   │   │   ├── framework.scss                              // 项目主要的框架样式文件
+
+  │   │   │   ├── reset.scss                              // 项目自定义的重置样式文件
+
+  │   │   │   ├── theme.scss                              // 项目主要的主题样式文件
+
+  │   │   │   ├── tool.scss                              // 项目主要的通用帮助样式文件
+
+  │   │   ├── js                              // 项目相关样式设计文件
+
+  │   │   │   ├── router
+
+  │   │   │   │   └── index.js                           // 路由配置
+
+  │   │   │   ├── vuex                                      // vuex的状态管理
+
+  │   │   │   │   ├── store.js                            // 引用vuex，创建store
+
+  │   ├── components                              // 组件
+
+  │   │   ├── Footer.vue                    // 底部公共组件
+
+  │   │   ├── Header.vue                     // 头部公共组件
+
+  │   │   ├── LeftAside.vue                 // 左侧边公共组件
+
+  │   ├── layouts
+
+  │   │   ├── HeaderAsideFooterResponsiveLayout                    //
+  头部左侧边底部响应布局
+
+  │   │   │   ├── Layout.vue                     // 响应布局组件
+
+  │   ├── pages
+
+  │   │   ├── Feature.vue                    // 描述当前项目实现功能页
+
+  │   │   ├── Hello.vue                     // 欢迎页
+
+  │   │   ├── Login.vue                 // 登录页
+
+  │   ├── service                                 // 数据交互统一调配
+
+  │   │   ├── getData.js                          // 获取数据的统一调配文件，对接口进行统一管理
+
+  │   ├── App.vue                                 // 页面入口文件
+
+  │   ├── main.js                                 // 程序入口文件，加载各种公共组件
+
+  ├── static                                         // 源码目录
+
+  │   ├── plugins                              // 引用的插件
+
+  │   │   ├── css                              // 引用第三方的样式文件
+
+  │   │   ├── font                              // 引用第三方的字体文件
+
+  │   ├── mock                              // 数据模拟
+
+  │   │   ├── completeList.json                              // 当前项目已经完成的功能数据
+
+  │   │   ├── leftAsideData.json                             // 项目中左侧面板的数据文件
+
+  ├── index.html                                  // 入口html文件
+
+  .
+
+
+  ```
+
+
+  # 项目效果图
+
+
+  ![登陆页面显示效果](screenshots/login.png)
+
+  ![注册页面显示效果](screenshots/register.png)
+
+  ![大屏状态下紫色主题显示效果](screenshots/large-pure.png)
+
+  ![中屏状态下蓝色主题显示效果](screenshots/middle-blue.png)
+
+  ![小屏状态下黑色主题显示效果](screenshots/small-dark.png)
+
+
+  # 修改主题效果
+
+
+  放上现有颜色配置
+
+
+  ```scss
+
+  @charset "utf-8";
+
+
+  //文件路径  当前项目根文件下  src/assets/css/thems.scss
+
+
+  $linear-start:#1861D5;//高亮效果的渐变开始颜色
+
+  $linear-end:#3080FE;//高亮效果的渐变结束颜色
+
+
+  $theme_blue_color: #5bc0de; // 页面蓝色主题 --默认色
+
+  $theme_blue_normal_color:#1861D5; // 页面蓝色主题 --未激活色
+
+  $theme_blue_active_color: #31708f; // 页面蓝色主题 --默激活色
+
+
+  $theme_pure_color:#8f88f9; //页面紫色主题 --默认色
+
+  $theme_pure_normal_color:#4772d9; //页面紫色主题 --未激活色
+
+  $theme_pure_active_color:#b1c3ef; //页面紫色主题 --默激活色
+
+
+  $theme_dark_color:#323a45; //页面灰色主题 --默认色
+
+  $theme_dark_normal_color:rgb(123, 123, 123); //页面灰色主题 --未激活色
+
+  $theme_dark_active_color:#83878a; //页面灰色主题色
+
+  ```
+deployedAt: 2018-03-15T07:48:46.545Z

@@ -1,0 +1,20 @@
+name: typerx
+git_url: 'git://github.com/vellengs/typerx.git'
+author: vellengs
+description: >-
+  A lightweight typescript annotation based MEAN(Mongodb Express Angular2+
+  Nodejs).
+tags:
+  - angular
+  - 'typescript '
+  - nodejs
+  - mongodb
+  - antd
+  - 'admin '
+  - ng-zorro
+  - ng-alain
+  - swagger
+  - rest api
+  - express
+coverPicture: 'https://ucarecdn.com/38122a83-8c72-4995-ae46-101975bdba31/'
+deployedAt: 2018-05-26T10:59:10.748Z
