@@ -24,7 +24,7 @@
     font-size: 21px;
     color: rgba(0,0,0,0.65);
     letter-spacing: -1px;
-    font-weight: lighter;
+    font-weight: normal;
     text-transform: uppercase;
     a {
       text-decoration: none;
@@ -39,18 +39,29 @@
 
   .searchWrapper {
     margin-left: 32px;
-    width: 600px;
+    width: 668px;
     display: inline-block;
+    ::placeholder {
+      font-weight: lighter;
+    }
+    i {
+      color: rgba(0, 0, 0, .25);
+      margin-left: 8px;
+    }
   }
 
   .search {
-    border-radius: 100px;
-    height: 32px;
-    padding: 0 40px!important;
+    input {
+      border-radius: 100px;
+      height: 32px;
+      padding: 0 40px !important;
+    }
   }
 
   .changeLocale {
-    margin-left: 24px;
+    width: 48px;
+    font-weight: normal;
+    font-size: 12px;
   }
 
   .right {
@@ -59,6 +70,10 @@
 
   .link {
     margin-right: 24px;
+    i {
+      font-size: 16px;
+      vertical-align: text-bottom;
+    }
   }
 
   .avatar {
@@ -85,7 +100,7 @@
 .banner {
   height: 280px;
   text-align: center;
-  background: linear-gradient(128deg, @primary-color, rgb(237,51,186));
+  background: url("https://gw.alipayobjects.com/zos/rmsportal/eVzxhywWMXULoUculczM.png") center / 1440px no-repeat, linear-gradient(128deg, @primary-color, rgb(237,51,186));
   color: #fff;
   overflow: hidden;
   margin-top: 64px;
@@ -94,17 +109,13 @@
     font-size: 28px;
     color: #fff;
     text-shadow: 0 5px 10px #6E55B5;
-    font-family: "Lucida Grande";
-    margin: 60px 0 30px 0;
+    margin: 72px 0 16px 0;
     line-height: 1;
-    text-rendering: optimizeLegibility;
-    -moz-osx-font-smoothing: grayscale;
   }
   .bannerFeatures {
     font-size: 13px;
-    text-rendering: optimizeLegibility;
-    -moz-osx-font-smoothing: grayscale;
-    margin-bottom: 24px;
+    font-weight: lighter;
+    margin-bottom: 40px;
     opacity: 0.8;
     letter-spacing: .1em;
   }
@@ -121,7 +132,7 @@
     border: 0;
     box-shadow: 0 0 16px #6E55B5;
     transition: all .3s;
-    margin-top: 12px;
+    margin-bottom: 56px;
     cursor: pointer;
     &:hover {
       box-shadow: 0 0 32px rgba(0,0,0,0.5);
@@ -162,5 +173,14 @@
     &:hover {
       color: rgba(0,0,0,0.9);
     }
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .header {
+    padding: 0 24px;
+  }
+  .searchWrapper {
+    display: none!important;
   }
 }

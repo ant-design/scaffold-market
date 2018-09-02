@@ -1,0 +1,13 @@
+name: create-react-app-antd-typescript-starter
+git_url: 'git://github.com/xlsdg/create-react-app-antd-typescript-starter.git'
+author: xlsdg
+description: Get started with create-react-app and antd.
+tags:
+  - 'create-react-app '
+  - antd
+  - typescript
+coverPicture: null
+readme: |
+  # create-react-app-antd-typescript-starter
+  Get started with create-react-app and antd.
+deployedAt: 2018-01-09T02:41:09.583Z

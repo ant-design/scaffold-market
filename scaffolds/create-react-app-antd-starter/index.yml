@@ -1,0 +1,13 @@
+name: create-react-app-antd-starter
+git_url: 'git://github.com/xlsdg/create-react-app-antd-starter.git'
+author: xlsdg
+description: Get started with create-react-app and antd.
+tags:
+  - create-react-app
+  - antd
+coverPicture: null
+readme: |
+  # create-react-app-antd-starter
+
+  > Get started with create-react-app and antd.
+deployedAt: 2018-01-09T02:39:54.372Z

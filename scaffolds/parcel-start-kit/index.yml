@@ -1,0 +1,21 @@
+name: parcel-start-kit
+git_url: 'git://github.com/goWrongWay/parcel-start-kit.git'
+author: goWrongWay
+description: parcel
+tags:
+  - parcel
+  - react-loadable
+  - pretty
+  - sagas
+  - redux
+coverPicture: 'https://ucarecdn.com/869ff72c-43ad-4fe7-952e-25336fc77bfc/'
+readme: |
+  # parcel-start-kit
+
+  HI
+  这里通过 react-loadable 进行代码拆分，使用了 redux，sagas 进行同步异步状态管理。并且引入了 antd。
+  pretty 提交前自动格式化。简单好用的脚手架，希望得到你的反馈。
+
+  1.  yarn
+  2.  yarn start
+deployedAt: 2018-05-07T07:38:06.396Z
