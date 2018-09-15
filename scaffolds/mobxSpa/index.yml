@@ -1,0 +1,12 @@
+name: mobxSpa
+git_url: 'git://github.com/Tianlikai/mobxSpa.git'
+author: Tianlikai
+description: 企业级SPA项目，完整开发脚手架
+tags:
+  - react
+  - react-router V4
+  - mobx
+  - webpack V4
+  - antd
+coverPicture: 'https://ucarecdn.com/2fcbb8a6-eae0-493a-8c30-3055cc30d41b/'
+deployedAt: 2018-09-15T07:08:56.392Z
