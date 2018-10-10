@@ -1,0 +1,9 @@
+name: my-blog
+git_url: 'git://github.com/1degrees/my-blog.git'
+author: 1degrees
+description: 个人博客项目，项目采用next服务端渲染技术，并采用 Node+ MongoDB 辅助搭建后台。
+tags:
+  - blog
+  - next
+coverPicture: 'https://ucarecdn.com/8a84075c-2ca6-48ba-92fa-f76f14515575/'
+deployedAt: 2018-10-10T07:56:55.411Z
