@@ -1,0 +1,7 @@
+name: Library-reservation
+git_url: 'git://github.com/MKitty/Library-reservation.git'
+author: MKitty
+description: 图书馆预约管理系统和小程序扫码预约后台（react写的后台这个版本没有action）
+tags: []
+coverPicture: 'https://ucarecdn.com/dccd6275-8437-4522-9a13-99ab0dcf56dd/'
+deployedAt: 2018-10-23T03:52:27.985Z
