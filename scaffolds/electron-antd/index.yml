@@ -1,0 +1,8 @@
+name: electron-antd
+git_url: 'git://github.com/lanten/electron-antd.git'
+author: lanten
+description: 快速创建一个 electron + react + antd  的桌面 APP
+tags:
+  - electron
+coverPicture: null
+deployedAt: 2018-11-22T02:00:11.564Z
