@@ -1,0 +1,12 @@
+name: React-cli
+git_url: 'git://github.com/tuiche000/React-cli.git'
+author: tuiche000
+description: 基于React和antd的脚手架
+tags:
+  - antd
+  - react
+  - redux
+  - admin
+  - webpack
+coverPicture: 'https://ucarecdn.com/4c3c91b6-6f1d-4ad8-87bd-7cf675de16b6/'
+deployedAt: 2018-12-03T08:59:48.490Z
