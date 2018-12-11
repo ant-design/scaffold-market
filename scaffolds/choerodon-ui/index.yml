@@ -1,0 +1,8 @@
+name: choerodon-ui
+git_url: 'git://github.com/choerodon/choerodon-ui.git'
+author: choerodon
+description: An enterprise UI framework and react-based implementation.
+tags:
+  - Choerodon
+coverPicture: null
+deployedAt: 2018-12-11T06:16:53.769Z
