@@ -1,0 +1,8 @@
+name: ant-design
+git_url: 'git://github.com/ant-design/ant-design.git'
+author: ant-design
+description: "\U0001F41C A UI Design Language"
+tags:
+  - test
+coverPicture: null
+deployedAt: 2018-12-11T01:39:39.084Z
