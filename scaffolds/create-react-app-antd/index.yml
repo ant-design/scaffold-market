@@ -1,0 +1,7 @@
+name: create-react-app-antd
+git_url: 'git://github.com/ant-design/create-react-app-antd.git'
+author: ant-design
+description: Use antd with create-react-app without ejecting
+tags: []
+coverPicture: null
+deployedAt: 2018-12-16T08:02:19.126Z
