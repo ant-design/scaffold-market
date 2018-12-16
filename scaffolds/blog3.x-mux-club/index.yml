@@ -1,0 +1,14 @@
+name: blog3.x-mux-club
+git_url: 'git://github.com/PhotoArtLife/blog3.x-mux-club.git'
+author: PhotoArtLife
+description: "\U0001F98A3.x blog | use UmiJS、DvaJS、Node.js.etc made a animate manage flex web."
+tags:
+  - umi
+  - dva
+  - sass
+  - mobile
+  - blog
+  - redux
+  - antd
+coverPicture: 'https://ucarecdn.com/4c04cb2f-32d7-4a3d-8de1-47ae04541bcb/'
+deployedAt: 2018-10-18T07:42:27.365Z
