@@ -1,0 +1,11 @@
+name: wallpaper-app
+git_url: 'git://github.com/sppsun/wallpaper-app.git'
+author: sppsun
+description: 'A react native app based on expo, dva, etc.'
+tags:
+  - react-native
+  - expo
+  - dva
+  - react-native-elements
+coverPicture: 'https://ucarecdn.com/4f0b4b92-5094-4855-b028-35e00f143110/'
+deployedAt: 2019-02-02T06:26:58.823Z
