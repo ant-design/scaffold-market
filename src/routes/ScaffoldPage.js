@@ -1,7 +1,7 @@
 /* eslint react/no-danger: 0 */
 import React, { PureComponent } from 'react';
-import { connect } from 'dva';
-import { Link } from 'dva/router';
+import { connect } from 'dva-react-router-3';
+import { Link } from 'dva-react-router-3/router';
 import moment from 'moment';
 import Overdrive from 'react-overdrive';
 import { Card, Layout, Spin, Icon, Button, Tag, Popover } from 'antd';

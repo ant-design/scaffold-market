@@ -1,6 +1,6 @@
 import React from 'react';
 import { Icon } from 'antd';
-import { Link } from 'dva/router';
+import { Link } from 'dva-react-router-3/router';
 import Overdrive from 'react-overdrive';
 import hash from 'string-hash';
 import moment from 'moment';

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button, Icon, Input } from 'antd';
-import { connect } from 'dva';
-import { Link, routerRedux } from 'dva/router';
+import { connect } from 'dva-react-router-3';
+import { Link, routerRedux } from 'dva-react-router-3/router';
 import { FormattedMessage, injectIntl } from 'react-intl';
 import styles from './CommonLayout.less';
 

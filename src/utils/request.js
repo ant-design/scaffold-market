@@ -1,4 +1,4 @@
-import fetch from 'dva/fetch';
+import fetch from 'dva-react-router-3/fetch';
 
 function parseJSON(response) {
   return response.json();
