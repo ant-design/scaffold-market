@@ -108,8 +108,8 @@ class CommonLayout extends React.Component {
             <a href="http://ant.design" target="_blank" rel="noopener noreferrer">
               Ant Design
             </a>
-            <a href="http://mobile.ant.design" target="_blank" rel="noopener noreferrer">
-              Ant Design Mobile
+            <a href="http://pro.ant.design" target="_blank" rel="noopener noreferrer">
+              Ant Design Pro
             </a>
           </div>
         </footer>
