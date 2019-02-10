@@ -1,5 +1,5 @@
 import React from 'react';
-import { connect } from 'dva';
+import { connect } from 'dva-react-router-3';
 import { injectIntl, FormattedMessage } from 'react-intl';
 import { Helmet } from 'react-helmet';
 import Start from '../components/Contribute/Start';

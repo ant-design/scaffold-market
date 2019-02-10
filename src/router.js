@@ -1,5 +1,5 @@
 import React from 'react';
-import { Router, Route, IndexRoute } from 'dva/router';
+import { Router, Route, IndexRoute } from 'dva-react-router-3/router';
 import ReactGA from 'react-ga';
 import IntlCommonLayout from './Layout/IntlCommonLayout';
 import IndexPage from './routes/IndexPage';
