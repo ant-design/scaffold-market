@@ -176,10 +176,10 @@ class ScaffoldPage extends PureComponent {
               }
             </Card>
             {
-              scaffold.name && (
+              scaffold.git_url && (
                 <ReactDisqusComments
                   shortname="scaffolds-1"
-                  identifier={scaffold.name}
+                  identifier={scaffold.git_url}
                   title={scaffold.name}
                 />
               )
