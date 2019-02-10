@@ -49,13 +49,13 @@ export default {
           newList[targetIndex] = {
             ...newDatas[i].data,
             ...target,
-            readme: null,
+            readmeFromRemote: null,
           };
 
           if (newList[targetIndex].name === payload) {
             const { user, repo } = parseGithubUrl(target.git_url);
             const readme = yield fetchReadme(user, repo);
-            newList[targetIndex].readme = readme.data;
+            newList[targetIndex].readmeFromRemote = readme.data;
           }
         }
       }

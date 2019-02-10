@@ -19,7 +19,7 @@ class ScaffoldPage extends PureComponent {
   componentDidMount() {
     const { list, params } = this.props;
     const scaffold = list.filter(item => item.name === params.templateId)[0];
-    if (!scaffold || !('stargazers_count' in scaffold) || !scaffold.readme) {
+    if (!scaffold || !('stargazers_count' in scaffold) || !scaffold.readmeFromRemote) {
       this.props.dispatch({
         type: 'scaffold/fetch',
         payload: params.templateId,
@@ -40,7 +40,7 @@ class ScaffoldPage extends PureComponent {
     });
   }
   render() {
-    const { list, params, intl } = this.props;
+    const { list, params, intl, dispatch } = this.props;
     const scaffold = list.filter(item => item.name === params.templateId)[0];
     let content;
     if (!scaffold) {
@@ -162,20 +162,28 @@ class ScaffoldPage extends PureComponent {
               ) : null
             }
             <Card className={styles.card} title="README">
-              {scaffold.readme
+              {scaffold.readmeFromRemote
                 ? (
                   <div
                     className={styles.markdown}
-                    dangerouslySetInnerHTML={{ __html: scaffold.readme }}
+                    dangerouslySetInnerHTML={{ __html: scaffold.readmeFromRemote }}
                   />
-              ) : <Spin />
+              ) : (
+                <a onClick={() => dispatch({ type: 'auth/login' })}>
+                  <FormattedMessage id="readme.login" />
+                </a>
+              )
               }
             </Card>
-            <ReactDisqusComments
-              shortname="scaffolds-1"
-              identifier={scaffold.name}
-              title={scaffold.name}
-            />
+            {
+              scaffold.name && (
+                <ReactDisqusComments
+                  shortname="scaffolds-1"
+                  identifier={scaffold.name}
+                  title={scaffold.name}
+                />
+              )
+            }
           </Content>
         </Layout>
       );

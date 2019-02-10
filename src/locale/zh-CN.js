@@ -50,6 +50,7 @@ export default {
     'scaffold.language': '语言',
     'scaffold.tags': '标签',
     'scaffold.screenshot': '截图展示',
+    'readme.login': '请登录后查看 README',
     'footer.created': '蚂蚁金服体验技术部出品',
     'footer.source': '源码',
     'banner.feature1': '快速上手',
