@@ -32,7 +32,7 @@ export default function ScaffoldItem({
   return (
     <li className={styles.card}>
       <Link to={`/scaffolds/${name}`}>
-        <Overdrive id={`cover-${name}`} duration={400}>
+        <Overdrive id={`cover-${git_url}`} duration={400}>
           <img className={styles.picture} src={picture} alt="" />
         </Overdrive>
         <div className={styles.detail}>

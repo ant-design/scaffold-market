@@ -155,7 +155,7 @@ class ScaffoldPage extends PureComponent {
             {
               scaffold.coverPicture ? (
                 <Card className={styles.card} title={<FormattedMessage id="scaffold.screenshot" />}>
-                  <Overdrive id={`cover-${scaffold.name}`}>
+                  <Overdrive id={`cover-${scaffold.git_url}`}>
                     <img src={scaffold.coverPicture} alt="" />
                   </Overdrive>
                 </Card>
