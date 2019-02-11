@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button, Icon, Input } from 'antd';
-import { connect } from 'dva';
-import { Link, routerRedux } from 'dva/router';
+import { connect } from 'dva-react-router-3';
+import { Link, routerRedux } from 'dva-react-router-3/router';
 import { FormattedMessage, injectIntl } from 'react-intl';
 import styles from './CommonLayout.less';
 
@@ -108,8 +108,8 @@ class CommonLayout extends React.Component {
             <a href="http://ant.design" target="_blank" rel="noopener noreferrer">
               Ant Design
             </a>
-            <a href="http://mobile.ant.design" target="_blank" rel="noopener noreferrer">
-              Ant Design Mobile
+            <a href="http://pro.ant.design" target="_blank" rel="noopener noreferrer">
+              Ant Design Pro
             </a>
           </div>
         </footer>

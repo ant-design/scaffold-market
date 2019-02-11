@@ -1,0 +1,10 @@
+name: electron-mobx-member
+git_url: 'git://github.com/eaTong/electron-mobx-member.git'
+author: eaTong
+description: member manager write by electron && mobx
+tags:
+  - mobx
+  - electron
+  - mysql
+coverPicture: null
+deployedAt: 2018-12-27T08:20:05.246Z

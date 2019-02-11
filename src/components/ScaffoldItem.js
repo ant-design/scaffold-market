@@ -1,6 +1,6 @@
 import React from 'react';
 import { Icon } from 'antd';
-import { Link } from 'dva/router';
+import { Link } from 'dva-react-router-3/router';
 import Overdrive from 'react-overdrive';
 import hash from 'string-hash';
 import moment from 'moment';
@@ -32,7 +32,7 @@ export default function ScaffoldItem({
   return (
     <li className={styles.card}>
       <Link to={`/scaffolds/${name}`}>
-        <Overdrive id={`cover-${name}`} duration={400}>
+        <Overdrive id={`cover-${git_url}`} duration={400}>
           <img className={styles.picture} src={picture} alt="" />
         </Overdrive>
         <div className={styles.detail}>

@@ -1,0 +1,12 @@
+name: next-antd-scafflod
+git_url: 'git://github.com/luffyZh/next-antd-scafflod.git'
+author: luffyZh
+description: A react ssr scafflod with ant-design base on Next.js.
+tags:
+  - React
+  - Next
+  - Redux
+  - Redux-Saga
+  - ant-design
+coverPicture: 'https://ucarecdn.com/0552ab6b-e28e-4427-9f22-e5dd5773e318/'
+deployedAt: 2019-01-17T03:23:18.791Z

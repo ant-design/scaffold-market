@@ -1,0 +1,11 @@
+name: acgnfuns-app
+git_url: 'git://github.com/sppsun/acgnfuns-app.git'
+author: sppsun
+description: 'A react native app based on expo, dva, etc.'
+tags:
+  - react-native
+  - expo
+  - dva
+  - react-native-elements
+coverPicture: 'https://ucarecdn.com/d6f0e87b-a2a5-4226-84e6-639cb08fc0ab/'
+deployedAt: 2019-02-02T06:30:08.290Z

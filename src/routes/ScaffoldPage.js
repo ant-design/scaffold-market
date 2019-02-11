@@ -1,7 +1,7 @@
 /* eslint react/no-danger: 0 */
 import React, { PureComponent } from 'react';
-import { connect } from 'dva';
-import { Link } from 'dva/router';
+import { connect } from 'dva-react-router-3';
+import { Link } from 'dva-react-router-3/router';
 import moment from 'moment';
 import Overdrive from 'react-overdrive';
 import { Card, Layout, Spin, Icon, Button, Tag, Popover } from 'antd';
@@ -19,7 +19,7 @@ class ScaffoldPage extends PureComponent {
   componentDidMount() {
     const { list, params } = this.props;
     const scaffold = list.filter(item => item.name === params.templateId)[0];
-    if (!scaffold || !('stargazers_count' in scaffold) || !scaffold.readme) {
+    if (!scaffold || !('stargazers_count' in scaffold) || !scaffold.readmeFromRemote) {
       this.props.dispatch({
         type: 'scaffold/fetch',
         payload: params.templateId,
@@ -40,7 +40,7 @@ class ScaffoldPage extends PureComponent {
     });
   }
   render() {
-    const { list, params, intl } = this.props;
+    const { list, params, intl, dispatch } = this.props;
     const scaffold = list.filter(item => item.name === params.templateId)[0];
     let content;
     if (!scaffold) {
@@ -155,27 +155,35 @@ class ScaffoldPage extends PureComponent {
             {
               scaffold.coverPicture ? (
                 <Card className={styles.card} title={<FormattedMessage id="scaffold.screenshot" />}>
-                  <Overdrive id={`cover-${scaffold.name}`}>
+                  <Overdrive id={`cover-${scaffold.git_url}`}>
                     <img src={scaffold.coverPicture} alt="" />
                   </Overdrive>
                 </Card>
               ) : null
             }
             <Card className={styles.card} title="README">
-              {scaffold.readme
+              {scaffold.readmeFromRemote
                 ? (
                   <div
                     className={styles.markdown}
-                    dangerouslySetInnerHTML={{ __html: scaffold.readme }}
+                    dangerouslySetInnerHTML={{ __html: scaffold.readmeFromRemote }}
                   />
-              ) : <Spin />
+              ) : (
+                <a onClick={() => dispatch({ type: 'auth/login' })}>
+                  <FormattedMessage id="readme.login" />
+                </a>
+              )
               }
             </Card>
-            <ReactDisqusComments
-              shortname="scaffolds-1"
-              identifier={scaffold.name}
-              title={scaffold.name}
-            />
+            {
+              scaffold.git_url && (
+                <ReactDisqusComments
+                  shortname="scaffolds-1"
+                  identifier={scaffold.git_url}
+                  title={scaffold.name}
+                />
+              )
+            }
           </Content>
         </Layout>
       );

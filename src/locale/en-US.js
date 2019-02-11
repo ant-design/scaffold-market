@@ -50,6 +50,7 @@ export default {
     'scaffold.language': 'Language',
     'scaffold.tags': 'Tags',
     'scaffold.screenshot': 'Screen Shot',
+    'readme.login': 'Please login to view README',
     'footer.created': 'Created by AIUX',
     'footer.source': 'Source Code',
     'banner.feature1': 'Quick Start',

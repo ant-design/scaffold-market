@@ -1,5 +1,5 @@
 import Github from 'github-api';
-import { routerRedux } from 'dva/router';
+import { routerRedux } from 'dva-react-router-3/router';
 import yaml from 'js-yaml';
 import { message } from 'antd';
 import { fetch } from '../services/list';

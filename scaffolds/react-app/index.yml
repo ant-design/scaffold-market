@@ -1,0 +1,11 @@
+name: react-app
+git_url: 'git://github.com/pdsuwwz/react-app.git'
+author: pdsuwwz
+description: react16 + react-router + react-redux + webpack4 + express 脚手架
+tags:
+  - react
+  - redux
+  - react-router
+  - webpack
+coverPicture: 'https://ucarecdn.com/2d29193c-0761-4b54-9c92-434e85b6704b/'
+deployedAt: 2018-11-26T06:31:14.207Z

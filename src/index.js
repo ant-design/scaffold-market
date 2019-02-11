@@ -1,6 +1,4 @@
-import dva from 'dva';
-import { useRouterHistory } from 'dva/router';
-import { createHashHistory } from 'history';
+import dva from 'dva-react-router-3';
 import createLoading from 'dva-loading';
 import { notification } from 'antd';
 import './index.html';
@@ -8,7 +6,6 @@ import './index.less';
 
 // 1. Initialize
 const app = dva({
-  history: useRouterHistory(createHashHistory)({ queryKey: false }),
   onError(e) {
     // eslint-disable-next-line
     console.error(e);

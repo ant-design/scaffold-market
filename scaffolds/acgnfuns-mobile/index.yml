@@ -1,0 +1,11 @@
+name: acgnfuns-mobile
+git_url: 'git://github.com/sppsun/acgnfuns-mobile.git'
+author: sppsun
+description: 'A mobile app based on react, antd-mobile, umi, etc.'
+tags:
+  - react
+  - antd-mobile
+  - umi
+  - mock
+coverPicture: 'https://ucarecdn.com/a8be595b-2a26-4cfa-ba96-995f4e2a3619/'
+deployedAt: 2019-02-02T06:55:18.311Z
