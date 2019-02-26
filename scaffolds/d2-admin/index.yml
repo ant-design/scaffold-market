@@ -1,8 +1,0 @@
-name: d2-admin
-git_url: 'git://github.com/d2-projects/d2-admin.git'
-author: d2-projects
-description: An elegant dashboard
-tags:
-  - vue
-coverPicture: 'https://qiniucdn.fairyever.com/20190226161826.png'
-deployedAt: 2018-07-30T05:42:48.123Z
