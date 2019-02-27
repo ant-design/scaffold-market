@@ -1,6 +1,6 @@
 # Scaffold Market
 
-[![](https://img.shields.io/travis/ant-design/scaffold-market.svg?style=flat-square)](https://travis-ci.org/ant-design/scaffold-market)
+[![](https://img.shields.io/travis/ant-design/scaffold-market.svg?style=flat-square)](https://travis-ci.org/ant-design/scaffold-market) [![Greenkeeper badge](https://badges.greenkeeper.io/ant-design/scaffold-market.svg)](https://greenkeeper.io/)
 
 - All Scaffolds: http://scaffold.ant.design/
 - Submit new scaffold: http://scaffold.ant.design/#/contribute
