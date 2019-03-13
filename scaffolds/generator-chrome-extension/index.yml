@@ -1,0 +1,7 @@
+coverPicture: null
+name: generator-chrome-extension
+git_url: 'git://github.com/yeoman/generator-chrome-extension.git'
+author: yeoman
+description: Scaffold out a Chrome extension
+tags: []
+deployedAt: 2019-03-06T03:22:24.244Z
