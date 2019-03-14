@@ -1,0 +1,12 @@
+coverPicture: 'https://ucarecdn.com/0278c3e3-fdca-4aef-9bf8-25b8e0d565ea/'
+name: d2-admin
+git_url: 'git://github.com/d2-projects/d2-admin.git'
+author: d2-projects
+description: 优雅的管理系统前端模板
+tags:
+  - ElementUI
+  - vue
+  - vuex
+  - dashboard
+  - electron
+deployedAt: 2019-03-14T05:47:39.340Z
