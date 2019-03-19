@@ -1,0 +1,7 @@
+coverPicture: null
+name: create-umi
+git_url: 'git://github.com/umijs/create-umi.git'
+author: umijs
+description: Creates a UmiJS application using the command line.
+tags: []
+deployedAt: 2019-03-19T12:52:01.020Z
