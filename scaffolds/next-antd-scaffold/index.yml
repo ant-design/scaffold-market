@@ -1,0 +1,16 @@
+coverPicture: 'https://ucarecdn.com/38f07c05-6db1-4204-b3a7-157c3679927f/'
+name: next-antd-scaffold
+git_url: 'git://github.com/luffyZh/next-antd-scaffold.git'
+author: luffyZh
+description: >-
+  A simple scaffold based on Next.js for quick use with ant-design, redux,
+  redux-saga, fetch and pm2. 
+tags:
+  - ant-design
+  - next.js
+  - react
+  - redux
+  - fetch
+  - redux-saga
+  - pm2
+deployedAt: 2019-03-28T03:51:04.370Z
