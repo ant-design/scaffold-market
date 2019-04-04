@@ -1,0 +1,13 @@
+coverPicture: 'https://ucarecdn.com/d124400d-3ee0-4c02-948d-48831d853c47/'
+name: dashboard
+git_url: 'git://github.com/zce/dashboard.git'
+author: zce
+description: A dashboard scaffolding based on vue.js created by vuejs/vue-cli 3.x.
+tags:
+  - vue
+  - vue.js
+  - vuejs
+  - vuex
+  - vue-router
+  - element-ui
+deployedAt: 2019-04-04T14:19:02.058Z
