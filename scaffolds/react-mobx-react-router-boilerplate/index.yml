@@ -1,0 +1,18 @@
+coverPicture: 'https://ucarecdn.com/f5659b2a-d653-4031-b770-98ccc21f8510/'
+name: react-mobx-react-router-boilerplate
+git_url: 'git://github.com/kwzm/react-mobx-react-router-boilerplate.git'
+author: kwzm
+description: >-
+  A simple boilerplate based on create-react-app and add mobx, react-router,
+  linter, prettier and so on.
+tags:
+  - react
+  - mobx
+  - react-router
+  - stylelint
+  - prettier
+  - eslint
+  - mock
+  - less
+  - create-react-app
+deployedAt: 2019-04-24T12:43:21.702Z
