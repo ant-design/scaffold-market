@@ -1,0 +1,10 @@
+coverPicture: 'https://ucarecdn.com/c20360ad-56b3-42e4-b2b2-a92bfa54c4a0/'
+name: react-mobx-antd-spa
+git_url: 'git://github.com/lazybear1017/react-mobx-antd-router-xcf.git'
+author: lazybear1017
+description: 基于react-react-app脚手架搭建，mobx状态管理，antd按需加载，router单页应用架子
+tags:
+  - react
+  - mobx
+  - antd
+deployedAt: 2019-05-31T12:27:40.709Z
