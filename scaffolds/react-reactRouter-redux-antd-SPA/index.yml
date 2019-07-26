@@ -1,0 +1,13 @@
+coverPicture: 'https://ucarecdn.com/0ff3bbb6-851a-485c-9806-2c229cc409a8/'
+name: react-reactRouter-redux-antd-SPA
+git_url: 'git://github.com/greenhaha/react-antd.git'
+author: greenhaha
+description: "\_这是一个基于creat-react-app 搭建的reactrouterv4 redux antd的demo工程"
+tags:
+  - react
+  - react-router-v4
+  - redux
+  - antd
+  - create-react-app
+  - spa
+deployedAt: 2019-07-26T14:19:27.103Z
