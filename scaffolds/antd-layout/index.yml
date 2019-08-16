@@ -1,0 +1,15 @@
+coverPicture: 'https://ucarecdn.com/4adca557-d8f2-4ddb-92c1-8fb43ad70f9e/'
+name: antd-layout
+git_url: 'git://github.com/1006223320/antd-layout.git'
+author: '1006223320'
+description: antd-layout 最轻便的实现(特别适合pug爱好者)
+tags:
+  - pug
+  - jade
+  - stylus
+  - styl
+  - react
+  - layout
+  - antd
+  - react-router
+deployedAt: 2019-08-16T09:47:36.112Z
