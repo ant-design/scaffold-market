@@ -1,0 +1,9 @@
+coverPicture: 'https://ucarecdn.com/8319d7ce-aa46-48ff-81d7-f6b40cde5857/'
+name: antd-pro-concent
+git_url: 'git://github.com/concentjs/antd-pro-concent.git'
+author: concentjs
+description: 基于最新的js版本的antd-pro(v2.2.0)，将其改造成concent版本
+tags:
+  - concent
+  - react
+deployedAt: 2019-08-28T05:07:26.735Z
