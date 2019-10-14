@@ -153,13 +153,13 @@ class ScaffoldPage extends PureComponent {
           </Sider>
           <Content>
             {
-              scaffold.coverPicture ? (
+              scaffold.coverPicture && (
                 <Card className={styles.card} title={<FormattedMessage id="scaffold.screenshot" />}>
                   <Overdrive id={`cover-${scaffold.git_url}`}>
                     <img src={scaffold.coverPicture} alt="" />
                   </Overdrive>
                 </Card>
-              ) : null
+              )
             }
             <Card className={styles.card} title="README">
               {scaffold.readmeFromRemote

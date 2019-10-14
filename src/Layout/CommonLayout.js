@@ -71,7 +71,7 @@ class CommonLayout extends React.Component {
           </div>
         </header>
         {
-          pathname === '/' ? (
+          pathname === '/' && (
             <div className={styles.banner}>
               <div className={styles.bannerText}>
                 <FormattedMessage id="home.slogan" />
@@ -89,7 +89,7 @@ class CommonLayout extends React.Component {
                 </button>
               </Link>
             </div>
-          ) : null
+          )
         }
         <div className={styles.container}>
           {children}
