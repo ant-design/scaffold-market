@@ -1,0 +1,11 @@
+coverPicture: 'https://ucarecdn.com/b873e76e-c309-44f7-9a8e-c737bf281a6e/'
+name: epee-react-admin-ts
+git_url: 'git://github.com/dobble11/epee-react-admin-ts.git'
+author: dobble11
+description: TypeScript 与 React Hooks 最佳实践项目模版，无模版代码，无字符串约定，简洁，不干预，全链路类型检查保证代码质量，适应大型团队协作开发
+tags:
+  - react-hooks
+  - easy-peasy
+  - typescript
+  - antd
+deployedAt: 2019-10-16T06:00:46.018Z
