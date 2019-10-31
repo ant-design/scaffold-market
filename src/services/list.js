@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 export function fetch() {
-  return axios.get('http://scaffold.ant.design/list.json');
+  return axios.get('https://scaffold.ant.design/list.json');
 }
 
 export function fetchReadme(user, repo) {
