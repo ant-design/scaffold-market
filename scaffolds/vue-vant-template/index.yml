@@ -1,0 +1,14 @@
+coverPicture: null
+name: vue-vant-template
+git_url: 'git://github.com/hubery3721/vue-vant-template.git'
+author: hubery3721
+description: A custom vue mobile project template
+tags:
+  - vue
+  - vuex
+  - vant-ui
+  - axios
+  - sass
+  - underscore
+  - momentjs
+deployedAt: 2019-10-31T17:41:58.226Z
