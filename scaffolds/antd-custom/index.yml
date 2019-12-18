@@ -1,0 +1,17 @@
+coverPicture: 'https://ucarecdn.com/a476e06d-f812-4402-88e6-0f8eb1f7f379/'
+name: antd-custom
+git_url: 'git://github.com/ctq123/antd-custom.git'
+author: ctq123
+description: >-
+  该基础框架采用第三方依赖包都是目前最新版本，结合antd的UI框架，实现主题定制，webpack自主配置，动态菜单路由设计，redux数据管理，国际化多语言，错误统一处理，本地mock服务等功能
+tags:
+  - antd
+  - react
+  - webpcak4
+  - redux
+  - redux-saga
+  - react-router4
+  - react-intl
+  - axios
+  - antd-custom
+deployedAt: 2019-12-18T08:15:33.521Z
