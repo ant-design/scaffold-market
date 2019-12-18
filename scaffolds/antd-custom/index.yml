@@ -1,0 +1,8 @@
+coverPicture: 'https://ucarecdn.com/9aee6f34-3813-469a-9b77-e1d3d341ca2b/'
+name: antd-custom
+git_url: 'git://github.com/ctq123/generator-antd-custom.git'
+author: ctq123
+description: 'antd-custom脚手架, 实现ant-custom项目初始化脚手架，同时校验脚手架的最新版本并更新'
+tags:
+  - antd-custom
+deployedAt: 2019-12-18T08:33:21.662Z
