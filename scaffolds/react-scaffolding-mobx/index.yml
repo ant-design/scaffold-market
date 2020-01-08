@@ -1,0 +1,9 @@
+coverPicture: 'https://ucarecdn.com/eab7d160-50d2-4241-9d26-67af0e239b36/'
+name: react-scaffolding-mobx
+git_url: 'git://github.com/xuya227939/react-scaffolding-mobx.git'
+author: xuya227939
+description: 一款基于Mobx打造的脚手架，自定义修改，随心所欲。
+tags:
+  - mobx
+  - react
+deployedAt: 2020-01-08T01:44:39.254Z
