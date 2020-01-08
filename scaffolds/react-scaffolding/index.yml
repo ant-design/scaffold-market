@@ -1,0 +1,11 @@
+coverPicture: 'https://ucarecdn.com/68380ef1-7757-4abd-8afe-1faac401f45d/'
+name: react-scaffolding
+git_url: 'git://github.com/xuya227939/react-scaffolding.git'
+author: xuya227939
+description: react脚手架(redux)
+tags:
+  - react
+  - redux
+  - redux-immutablejs
+  - immutable
+deployedAt: 2020-01-08T01:41:20.495Z
