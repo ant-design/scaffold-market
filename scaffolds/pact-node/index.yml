@@ -1,0 +1,7 @@
+coverPicture: null
+name: pact-node
+git_url: 'git://github.com/pact-foundation/pact-node.git'
+author: pact-foundation
+description: 'Node version of Pact, a Contract Testing Framework'
+tags: []
+deployedAt: 2020-02-28T02:39:36.268Z
