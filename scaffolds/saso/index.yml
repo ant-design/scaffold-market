@@ -1,0 +1,9 @@
+coverPicture: 'https://ucarecdn.com/1ad6bb8a-eaab-40b5-834f-fda1f5f57d52/'
+name: saso
+git_url: 'git://github.com/huruji/saso.git'
+author: huruji
+description: Zero config bundler to help you to build fantastic APP
+tags:
+  - react
+  - Vue
+deployedAt: 2019-08-13T10:39:51.236Z
