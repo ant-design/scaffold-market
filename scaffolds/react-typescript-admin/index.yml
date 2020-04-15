@@ -1,0 +1,11 @@
+coverPicture: null
+name: react-typescript-admin
+git_url: 'git://github.com/chachaxw/react-typescript-admin.git'
+author: chachaxw
+description: A starter template for TypeScript and React with AntDesign and Dva
+tags:
+  - react
+  - typescript
+  - dva
+  - antd
+deployedAt: 2020-04-15T07:08:26.263Z
