@@ -1,0 +1,10 @@
+coverPicture: 'https://ucarecdn.com/a1290dff-6d06-41d9-b042-b44e78c0b530/'
+name: want
+git_url: 'git://github.com/way-jm/want.git'
+author: way-jm
+description: A enterprise applications as a React boilerplate based React & Ant-Design
+tags:
+  - 'react '
+  - typescript
+  - ant-desgin
+deployedAt: 2020-04-27T08:08:14.300Z
