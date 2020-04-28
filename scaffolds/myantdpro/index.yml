@@ -1,0 +1,11 @@
+coverPicture: null
+name: myantdpro
+git_url: 'git://github.com/hankaibo/myantdpro.git'
+author: hankaibo
+description: 一个简洁的后台管理系统前端代码。
+tags:
+  - antd
+  - antdpro
+  - js
+  - javascript
+deployedAt: 2020-04-28T01:55:45.975Z
