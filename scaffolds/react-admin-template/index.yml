@@ -1,0 +1,8 @@
+coverPicture: 'https://ucarecdn.com/06abdd43-dfa6-4204-a917-babe2a460262/'
+name: react-admin-template
+git_url: 'git://github.com/woleicom/react-admin-template.git'
+author: woleicom
+description: >-
+  react开发脚手架二次开发后台管理系统模板,antd、国际化、router、redux、ui仿antd-admin-pro、mock、动态路由、动态菜单权限、页面状态缓存
+tags: []
+deployedAt: 2020-05-07T06:35:14.497Z
