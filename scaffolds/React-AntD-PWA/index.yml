@@ -1,0 +1,13 @@
+coverPicture: null
+name: React-AntD-PWA
+git_url: 'git://github.com/akshaycj/react-antd-starter.git'
+author: akshaycj
+description: >-
+  Starter skeleton for ReactJS + Ant Design + React-Router + PWA  with
+  Configurartions and compatibility with CRA 2.0
+tags:
+  - react
+  - antd
+  - pwa
+  - starter
+deployedAt: 2020-05-14T19:34:44.182Z
