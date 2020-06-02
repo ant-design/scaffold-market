@@ -1,0 +1,9 @@
+coverPicture: null
+name: frontend-cli
+git_url: 'git://github.com/ashuihui/frontend-cli.git'
+author: ashuihui
+description: react 前端脚手架
+tags:
+  - >-
+    react、typescript、redux、router、sass/less、antd、echarts、babel、ESLint、storybook、jest&enzyme
+deployedAt: 2020-06-02T14:07:03.861Z
