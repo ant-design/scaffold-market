@@ -1,0 +1,11 @@
+coverPicture: 'https://ucarecdn.com/4fb2dbd6-07ab-43e2-96f5-a840446aba16/'
+name: react-study
+git_url: 'git://github.com/liubin915249126/react-study.git'
+author: liubin915249126
+description: 'webpack4.16.5+react+react-router-dom4.0+fetch+koa2+antd后台管理页面 '
+tags:
+  - webpack
+  - react
+  - react-router
+  - dva
+deployedAt: 2020-06-05T04:01:03.457Z
