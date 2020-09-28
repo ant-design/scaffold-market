@@ -1,0 +1,15 @@
+coverPicture: 'https://ucarecdn.com/66988848-c89d-473f-9145-4110ad61dc0d/'
+name: react-antd-multi-tabs-admin
+git_url: 'git://github.com/hsl947/react-antd-multi-tabs-admin.git'
+author: hsl947
+description: ts+react+antd-多页签后台模板(纯净版，非 antd pro！)
+tags:
+  - react
+  - redux
+  - hooks
+  - typescript
+  - tabs
+  - antd
+  - ant design
+  - multitabs
+deployedAt: 2020-09-27T01:42:45.788Z
