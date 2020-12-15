@@ -1,0 +1,7 @@
+coverPicture: 'https://ucarecdn.com/ea444920-5dad-4e62-a089-a3f67ad2e628/'
+name: Dicom-demo
+git_url: 'git://github.com/wuwei-3/Dicom-demo.git'
+author: wuwei-3
+description: 3D医疗影像查看，支持volume，colorMap，slices等工具，功能强大，可直接复用。
+tags: []
+deployedAt: 2020-12-15T10:43:33.181Z
