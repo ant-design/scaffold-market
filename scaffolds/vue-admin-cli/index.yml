@@ -1,0 +1,9 @@
+coverPicture: null
+name: vue-admin-cli
+git_url: 'git://github.com/youletme/vue-admin-cli.git'
+author: youletme
+description: 配套的管理系统前端脚手架
+tags:
+  - vue
+  - 后台管理
+deployedAt: 2021-01-21T05:25:02.453Z
