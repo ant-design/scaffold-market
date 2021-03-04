@@ -1,0 +1,10 @@
+coverPicture: 'https://ucarecdn.com/c0596684-1c66-4308-b538-73a4d90455b1/'
+name: react-laravel
+git_url: 'git://github.com/arifszn/react-laravel.git'
+author: arifszn
+description: A simple crud based laravel app to learn how to use react with laravel.
+tags:
+  - react
+  - laravel
+  - crud
+deployedAt: 2021-03-04T06:29:19.756Z
