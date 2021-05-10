@@ -1,0 +1,11 @@
+coverPicture: null
+name: wedding-app
+git_url: 'git://github.com/wforguo/wedding-app.git'
+author: wforguo
+description: Taro + 云开发 打造婚礼邀请函
+tags:
+  - Taro
+  - 云开发
+  - 小程序
+  - 邀请函
+deployedAt: 2021-05-10T09:36:50.582Z
