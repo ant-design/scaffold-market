@@ -1,0 +1,7 @@
+coverPicture: null
+name: single-spa
+git_url: 'git://github.com/single-spa/single-spa.git'
+author: single-spa
+description: The router for easy microfrontends
+tags: []
+deployedAt: 2021-06-20T16:01:17.442Z
