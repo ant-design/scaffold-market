@@ -1,0 +1,8 @@
+coverPicture: null
+name: pv-cli
+git_url: 'git://github.com/yiyi17/pv-cli.git'
+author: yiyi17
+description: 项目的初始化工具
+tags:
+  - 脚手架
+deployedAt: 2021-10-05T16:38:31.750Z
