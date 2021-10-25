@@ -1,0 +1,15 @@
+coverPicture: 'https://ucarecdn.com/7b2eb3a7-4c41-4c6f-8e67-f37d948ac3f4/'
+name: v3-admin
+git_url: 'git://github.com/un-pany/v3-admin.git'
+author: un-pany
+description: >-
+  ✨ a vue3 admin template 一个简单的 vue3 模板，采用 <script setup> + typescript + volar +
+  element-plus
+tags:
+  - vue
+  - typescript
+  - admin
+  - vuex
+  - vue3
+  - element-plus
+deployedAt: 2021-10-22T09:42:30.229Z
