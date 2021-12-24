@@ -1,0 +1,12 @@
+coverPicture: null
+name: feup
+git_url: 'git://github.com/feupjs/feup.git'
+author: feupjs
+description: 解决前端所有业务场景，及快速搭建、监控。  当公司选型react为生态的时候，如果你不想使用umi的时候，可以试用一下 FEUP
+tags:
+  - react
+  - umi
+  - dumi
+  - 脚手架
+  - 前端脚手架
+deployedAt: 2021-12-24T11:49:37.785Z
