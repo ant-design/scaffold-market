@@ -1,0 +1,11 @@
+coverPicture: null
+name: react-backstage-template
+git_url: 'git://github.com/gujiwuqing/react-backstage-template.git'
+author: gujiwuqing
+description: 一个很不错的react后台管理模板
+tags:
+  - antd
+  - umi
+  - prettier
+  - eslint
+deployedAt: 2022-05-20T09:11:14.679Z
