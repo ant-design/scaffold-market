@@ -1,0 +1,19 @@
+coverPicture: 'https://ucarecdn.com/118a0926-a141-4f6f-8309-032a049e21a0/'
+name: create-chrome-ext
+git_url: 'git://github.com/guocaoyi/create-chrome-ext.git'
+author: guocaoyi
+description: >-
+  Scaffolding your chrome extension, boilerplates:react \ vue \ svelte \ solid \
+  preact \ alpine \ lit \ stencil \ inferno \ vanilla
+tags:
+  - chrome-extension
+  - boilterplate
+  - react
+  - vue
+  - svelte
+  - preact
+  - solid
+  - inferno
+  - stencil
+  - crx3
+deployedAt: 2022-09-19T02:31:24.916Z
