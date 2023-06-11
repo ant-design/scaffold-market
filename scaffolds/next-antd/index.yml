@@ -1,0 +1,11 @@
+coverPicture: 'https://ucarecdn.com/1a3b41ed-7de6-4174-b442-19ff7d804b52/'
+name: next-antd
+git_url: 'git://github.com/hqwlkj/next-antd.git'
+author: hqwlkj
+description: 基于 Next13 和 Antd 5 的一个应用框架
+tags:
+  - next
+  - nextjs
+  - antd
+  - admin
+deployedAt: 2023-06-11T12:27:43.131Z
