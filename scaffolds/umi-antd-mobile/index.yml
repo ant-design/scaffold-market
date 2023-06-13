@@ -2,7 +2,7 @@ coverPicture: 'https://ucarecdn.com/b680f69d-a6ac-4fb8-b732-461a8315f61f/'
 name: umi-antd-mobile
 git_url: 'git://github.com/hqwlkj/umi-antd-mobile.git'
 author: hqwlkj
-description: 基于umi@3.x + antd-mobile@next 快速构建h5及网页app应用
+description: 基于umi@4.x + antd-mobile@next 快速构建h5及网页app应用
 tags:
   - mobile
   - antd-mobile
