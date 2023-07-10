@@ -1,0 +1,9 @@
+coverPicture: null
+name: wwvue-cli
+git_url: 'git://github.com/vannvan/wwvue-cli.git'
+author: vannvan
+description: >-
+  vue-cli升级版脚手架，应有尽有的开箱即用方法及配置，没有花里胡哨的晦涩难懂的操作，上手成本极低，现已新增simple(极简模式)、vue@3和iview-template，可作为基建基础工程，也可以进一步升级改造
+tags:
+  - vue
+deployedAt: 2023-07-10T03:25:12.661Z
