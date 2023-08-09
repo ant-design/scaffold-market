@@ -1,0 +1,10 @@
+coverPicture: 'https://ucarecdn.com/8bf89647-afdd-40ff-95fa-10d192687b77/'
+name: bruce-cli
+git_url: 'git://github.com/JowayYoung/bruce-cli.git'
+author: JowayYoung
+description: 一个零配置开箱即用的React/Vue应用自动化构建脚手架
+tags:
+  - react
+  - vue
+  - webpack
+deployedAt: 2022-02-10T06:13:13.965Z
