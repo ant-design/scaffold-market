@@ -1,0 +1,12 @@
+coverPicture: 'https://ucarecdn.com/9c76f023-5929-4320-bb2e-559d66dac3ae/'
+name: xinadmin
+git_url: 'git://github.com/xiaoliu978/xinadmin.git'
+author: xiaoliu978
+description: Xin Admin 快速开发框架
+tags:
+  - umi
+  - antd
+  - react
+  - umimax
+  - admin
+deployedAt: 2023-10-30T09:35:42.627Z
