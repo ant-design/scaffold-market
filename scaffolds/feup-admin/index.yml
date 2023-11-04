@@ -1,0 +1,12 @@
+coverPicture: null
+name: feup-admin
+git_url: 'git://github.com/feupjs/feup-admin.git'
+author: feupjs
+description: 基于react、antd的应用于后台管理系统，包含基础功能，布局。
+tags:
+  - react
+  - 后台
+  - cms
+  - admin
+  - cms脚手架
+deployedAt: 2021-12-24T11:47:40.418Z
