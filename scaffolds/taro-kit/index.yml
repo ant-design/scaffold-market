@@ -1,0 +1,11 @@
+coverPicture: 'https://ucarecdn.com/6069b287-90e8-49f5-8bf7-74d41393edf0/'
+name: taro-kit
+git_url: 'git://github.com/wsdo/taro-kit.git'
+author: wsdo
+description: "\U0001F3C6✌️taro 小程序脚手架。 特性： 封装api、redux优雅集成、生成海报类，异常日志上报。 如果能帮到你，就给个 star\U0001F60A"
+tags:
+  - taro
+  - React
+  - 跨平台
+  - 多端解决方案
+deployedAt: 2021-12-24T11:45:33.271Z
