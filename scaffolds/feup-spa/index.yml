@@ -1,0 +1,11 @@
+coverPicture: null
+name: feup-spa
+git_url: 'git://github.com/feupjs/feup-spa.git'
+author: feupjs
+description: 基于 react + rematch + router + webpack 脚手架，拿来即用。
+tags:
+  - react
+  - reactSpa
+  - next
+  - SSR
+deployedAt: 2021-12-24T11:46:49.295Z
