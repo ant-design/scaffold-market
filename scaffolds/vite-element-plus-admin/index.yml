@@ -1,0 +1,18 @@
+coverPicture: 'https://ucarecdn.com/e84c773a-b16f-4af3-b5cd-18bc1a71dc80/'
+name: vite-element-plus-admin
+git_url: 'git://github.com/mvpyb/vite-element-plus-admin.git'
+author: mvpyb
+description: >-
+  Vite Element Admin
+  是一个免费开源的中后台模版。使用了最新的vue3,vite2等主流技术开发，开箱即用的中后台前端解决方案，也可用于学习参考
+tags:
+  - vite
+  - element
+  - element-plus
+  - vue-router
+  - vue3.x
+  - vuex
+  - axios
+  - setup
+  - vue3.0
+deployedAt: 2022-02-23T09:27:41.662Z
