@@ -1,0 +1,8 @@
+coverPicture: 'https://ucarecdn.com/2342bab8-7e66-4fba-9587-eae652048107/'
+name: lyr-cli
+git_url: 'git://github.com/yunliang-ding/lyr-cli.git'
+author: yunliang-ding
+description: 轻量级 React 全栈开发框架
+tags:
+  - react
+deployedAt: 2024-04-10T05:44:11.349Z
