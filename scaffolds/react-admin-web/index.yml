@@ -1,0 +1,9 @@
+coverPicture: 'https://ucarecdn.com/90744e5c-7fbe-4ebd-babc-dad58139bd45/'
+name: react-admin-web
+git_url: 'git://github.com/caihai123/react-admin-web.git'
+author: caihai123
+description: >-
+  本项目是一个后台前端开发模板，他是基于 React18 和 Ant Design 5
+  实现，它使用了最新的技术栈，内置了路由权限验证，动态换肤等功能，可以帮助你快速搭建企业级中后台产品原型。
+tags: []
+deployedAt: 2024-05-05T14:24:48.408Z
