@@ -1,0 +1,9 @@
+coverPicture: 'https://ucarecdn.com/d38bf362-e4a6-4bfe-bf10-ed2f2333a742/'
+name: iview-admin-amend
+git_url: 'git://github.com/ComicAuthor/iview-admin-amend.git'
+author: ComicAuthor
+description: Learn from iview-admin and make an upgrade. Supports mobile display.
+tags:
+  - vue
+  - iview
+deployedAt: 2022-02-11T07:14:18.522Z
