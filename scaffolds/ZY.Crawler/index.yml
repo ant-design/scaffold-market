@@ -1,0 +1,8 @@
+coverPicture: null
+name: ZY.Crawler
+git_url: 'git://github.com/ZHYI-source/ZY.Crawler.git'
+author: ZHYI-source
+description: zy-crawler是一个基于Node.js的简单易用的爬虫工具，可以方便地获取指定网页的内容并进行自定义格式化处理。
+tags:
+  - 爬虫
+deployedAt: 2023-05-31T07:15:27.945Z
