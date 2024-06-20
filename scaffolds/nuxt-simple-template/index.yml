@@ -1,0 +1,15 @@
+coverPicture: null
+name: nuxt-simple-template
+git_url: 'git://github.com/mvpyb/nuxt-simple-template.git'
+author: mvpyb
+description: >-
+  这是一个极简的 nuxt + element UI 的模板。它只包含了 Nuxt & Element & axios & iconfont &
+  EsLint，这些搭建nuxt项目时必要的东西
+tags:
+  - nuxt
+  - vue
+  - webpack
+  - element
+  - vue-router
+  - vuex
+deployedAt: 2022-02-23T10:20:15.040Z
