@@ -1,0 +1,12 @@
+coverPicture: null
+name: React-MobX-Ant-Design-ts
+git_url: 'git://github.com/idea2app/React-MobX-Ant-Design-ts.git'
+author: idea2app
+description: 基于 TypeScript、MobX 和 Ant Design 的 React 应用脚手架，且受 WebCell 脚手架的启发。
+tags:
+  - TypeScript
+  - MobX
+  - React
+  - Ant Design
+  - WebCell
+deployedAt: 2024-06-27T18:09:25.762Z
